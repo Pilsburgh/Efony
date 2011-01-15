@@ -20,7 +20,7 @@ import sun.jkernel.ByteArrayToFromHexDigits;
 import evonyproxy.AMF;
 
 /**
- *Handles communcations between clients and server.
+ * Handles communcations between clients and server.
  * @version .01
  * @author HP_Administrator
  */

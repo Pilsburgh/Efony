@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Listens for certain Events and notifys the client through the games
+ * chat interface. It also allows a user to send commands through the games
+ * chat interface.
  * @version .01
  * @author Michael Archibald
  */

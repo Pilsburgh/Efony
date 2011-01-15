@@ -12,7 +12,10 @@ import java.util.logging.Level;
 import java.io.IOException;
 
 /**
- *
+ * Listens for clients attempting to connect to the server and hooks them into IO
+ * so that they will be able to recieve incoming data. A legitimate client needs
+ * to be the first to connect because it is treated special. After that, as many
+ * arbatrary clients can connect as desired.
  * @author HP_Administrator
  */
 public class EvonyConnector implements Runnable {
@@ -36,6 +39,14 @@ public class EvonyConnector implements Runnable {
         constructerConstants();
     }
 
+    /**
+     *
+     * @param io IO instance to connect the client to
+     * @param verbose
+     * @param instanceType can be the name of an EvonyClient instance, EvonyPolicy
+     * instance, or a number representing what port you want to listen for
+     * clients on.
+     */
     public EvonyConnector(Sender io, boolean verbose, String instanceType) {
         log = LoggerFactory.newLogger(this.getClass().getName());
         this.io = io;

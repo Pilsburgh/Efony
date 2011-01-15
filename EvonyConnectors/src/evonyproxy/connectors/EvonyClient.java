@@ -34,6 +34,12 @@ public class EvonyClient extends AbstractEvony {
         primaryConnection = false;
     }
 
+    /**
+     *
+     * @param primaryConnection if primaryConnection then client is ligitimate.
+     * @param io
+     * @param s
+     */
     EvonyClient(boolean primaryConnection, Sender io, Socket s) {
         super(io, s);
         this.primaryConnection = primaryConnection;

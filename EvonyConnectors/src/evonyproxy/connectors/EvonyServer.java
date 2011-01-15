@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
+ * Represents a connection to an Evony server.
  * @version .02
  * @author HP_Administrator
  */

@@ -20,10 +20,14 @@ import java.util.logging.Level;
 import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
- * @version .02
- * @author HP_Administrator
+ * When connecting to a flash server, a policy request is sent first on port 843
+ * and if that fails, it sends the request to the port you connected with.
+ *  This class recieves the policy request and replies with the policy.
+ * Only one instance of this class is needed.
+ * @author Eustache
  */
 public class EvonyPolicy extends EvonyClient implements PolicyListener {
+    // TODO: Make class a singleton.
     private static int PORT = 843;
     List<PolicyListener> policyRequestListeners;
 

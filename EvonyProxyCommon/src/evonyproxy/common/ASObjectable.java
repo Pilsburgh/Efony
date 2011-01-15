@@ -8,6 +8,7 @@ package evonyproxy.common;
 import flex.messaging.io.amf.ASObject;
 
 /**
+ * Represents an object that can be serialized into AMF (Action Message Format)
  * @version .01
  * @author Michael Archibald
  */
