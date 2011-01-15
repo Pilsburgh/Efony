@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: evonyproxy.console
+OpenIDE-Module-Layer: evonyproxy/console/layer.xml
+OpenIDE-Module-Localizing-Bundle: evonyproxy/console/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
