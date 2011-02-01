@@ -8,9 +8,12 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class ArmyPracticeResponse implements ASObjectable {
 public static final int ARMY_PRACTICE_RESULT_GUARD_WIN = -1;
 public static final int ARMY_PRACTICE_RESULT_ATTACK_WIN = 1;

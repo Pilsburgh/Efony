@@ -14,9 +14,12 @@ import java.util.logging.*;
 import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
- *Handles communcations between clients and server.
  * @version .01
- * @author HP_Administrator
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ * Handles communcations between clients and server.
  */
 public class IO implements Sender {
     protected Logger log;

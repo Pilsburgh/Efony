@@ -39,6 +39,9 @@ import sun.jkernel.ByteArrayToFromHexDigits;
 /**
  * @version .01
  * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
  */
 public class AMF implements AmfListener, Serializer {
     public static final String VERSION_REQUEST = "gameClient.version";

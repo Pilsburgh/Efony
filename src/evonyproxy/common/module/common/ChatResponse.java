@@ -7,9 +7,12 @@ import evonyproxy.common.ASObjectable;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class ChatResponse implements ASObjectable {
 public static final int ERROR_NO_USER = -3;
 public static final int ERROR_NO_ALLIANCE = -2;

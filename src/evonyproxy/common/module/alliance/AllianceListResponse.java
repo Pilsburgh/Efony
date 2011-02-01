@@ -8,9 +8,12 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class AllianceListResponse implements ASObjectable {
 public static final int ALLIANCE_LIST_NOT_IN_ALLI = -1;
 public Double packageId = null;

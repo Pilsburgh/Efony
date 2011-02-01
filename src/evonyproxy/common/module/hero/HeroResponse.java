@@ -8,9 +8,12 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class HeroResponse implements ASObjectable {
 public static final int FREE_HERO_STATUS = 0;
 public static final int INVALID_ADD_POINT = -10;

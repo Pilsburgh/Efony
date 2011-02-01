@@ -7,9 +7,12 @@ import evonyproxy.common.ASObjectable;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class GetPackageResponse implements ASObjectable {
 public static final int ERROR_PACKAGE_EXPIRED = -3;
 public static final int ERROR_REQUIRMENT_NOT_MET = -2;

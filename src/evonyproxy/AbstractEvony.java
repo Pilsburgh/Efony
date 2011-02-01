@@ -24,6 +24,9 @@ import java.util.logging.Logger;
 /**
  * @version .01
  * @author HP_Administrator
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
  */
 public abstract class AbstractEvony implements Runnable {
     protected int bufferSize;

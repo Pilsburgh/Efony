@@ -8,9 +8,12 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class RankHeroResponse implements ASObjectable {
 public Double packageId = null;
 public String msg = null;

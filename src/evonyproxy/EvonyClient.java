@@ -10,8 +10,11 @@ import java.util.logging.*;
 import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
- * @version .02
- * @author HP_Administrator
+ * @version .01
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
  */
 public class EvonyClient extends AbstractEvony {
     private static int PORT = 443;

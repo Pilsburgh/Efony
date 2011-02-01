@@ -8,9 +8,12 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class CreatePlayerResponse implements ASObjectable {
 public static final int CREATE_RESULT_HAVE_CREATED = -3;
 public static final int CREATE_RESULT_ZONE_FULL = -2;

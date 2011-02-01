@@ -21,7 +21,10 @@ import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
  * @version .02
- * @author HP_Administrator
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
  */
 public class EvonyServer extends AbstractEvony {
     public static int BUFFER_SIZE = 12288;

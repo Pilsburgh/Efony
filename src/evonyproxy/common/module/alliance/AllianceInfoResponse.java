@@ -7,9 +7,12 @@ import evonyproxy.common.ASObjectable;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
+ */
 public class AllianceInfoResponse implements ASObjectable {
 public String errorMsg = null;
 public String msg = null;

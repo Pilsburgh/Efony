@@ -10,6 +10,9 @@ import java.util.EventObject;
 /**
  * @version .01
  * @author Michael Archibald
+ * @deprecated
+ * This only exists for reverse compatability. Use the modularized version of
+ * this class instead.
  */
 public class PolicyResponseEvent extends EventObject {
     byte[] policyResponse;
