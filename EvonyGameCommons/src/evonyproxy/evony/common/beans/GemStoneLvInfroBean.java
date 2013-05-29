@@ -7,84 +7,85 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class GemStoneLvInfroBean implements EvonyPacket {
-private ArrayList<GemStoneBean> gemstoneids = null;
-private Integer lv = null;
 
-public GemStoneLvInfroBean(ASObject aso) {
-gemstoneids = new ArrayList<GemStoneBean>();
+    private ArrayList<GemStoneBean> gemstoneids = null;
+    private Integer lv = null;
 
-if(aso.get("gemstoneids") != null) {
-Object[] objArr = (Object[]) aso.get("gemstoneids");
-for(int j = 0; j < objArr.length; j++) {
-gemstoneids.add(new GemStoneBean((ASObject) objArr[j]));
-}
-}
+    public GemStoneLvInfroBean(ASObject aso) {
+        gemstoneids = new ArrayList<GemStoneBean>();
 
-if(aso.get("lv") != null) {
-this.lv = (Integer) aso.get("lv");
-}
-}
+        if (aso.get("gemstoneids") != null) {
+            Object[] objArr = (Object[]) aso.get("gemstoneids");
+            for (int j = 0; j < objArr.length; j++) {
+                gemstoneids.add(new GemStoneBean((ASObject) objArr[j]));
+            }
+        }
 
-public GemStoneLvInfroBean() {
-}
+        if (aso.get("lv") != null) {
+            this.lv = (Integer) aso.get("lv");
+        }
+    }
 
-@Override
-public GemStoneLvInfroBean clone() {
-GemStoneLvInfroBean clone = new GemStoneLvInfroBean();
+    public GemStoneLvInfroBean() {
+    }
 
-if(this.gemstoneids != null) {
-ArrayList tmpArrLst = new ArrayList<GemStoneBean>();
+    @Override
+    public GemStoneLvInfroBean clone() {
+        GemStoneLvInfroBean clone = new GemStoneLvInfroBean();
 
-for(Object bean : gemstoneids) {
-GemStoneBean tmpBean = (GemStoneBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setGemstoneids(tmpArrLst);
-}
+        if (this.gemstoneids != null) {
+            ArrayList tmpArrLst = new ArrayList<GemStoneBean>();
 
-if(this.lv != null) {
-clone.setLv(this.lv);
-}
+            for (Object bean : gemstoneids) {
+                GemStoneBean tmpBean = (GemStoneBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setGemstoneids(tmpArrLst);
+        }
 
-return clone;
-}
+        if (this.lv != null) {
+            clone.setLv(this.lv);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.gemstoneids != null) {
-ArrayList al = new ArrayList();
-for(Object obj : gemstoneids) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("gemstoneids", al);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.lv != null) {
-aso.put("lv", lv);
-}
+        if (this.gemstoneids != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : gemstoneids) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("gemstoneids", al);
+        }
 
-return aso;
-}
+        if (this.lv != null) {
+            aso.put("lv", lv);
+        }
 
-public ArrayList getGemstoneids() {
-return gemstoneids;
-}
+        return aso;
+    }
 
-public void setGemstoneids(ArrayList gemstoneids) {
-this.gemstoneids = gemstoneids;
-}
+    public ArrayList getGemstoneids() {
+        return gemstoneids;
+    }
 
-public Integer getLv() {
-return lv;
-}
+    public void setGemstoneids(ArrayList gemstoneids) {
+        this.gemstoneids = gemstoneids;
+    }
 
-public void setLv(Integer lv) {
-this.lv = lv;
-}
+    public Integer getLv() {
+        return lv;
+    }
+
+    public void setLv(Integer lv) {
+        this.lv = lv;
+    }
 }

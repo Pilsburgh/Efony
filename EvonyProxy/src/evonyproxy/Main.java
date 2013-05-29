@@ -5,7 +5,7 @@
 package evonyproxy;
 
 import evonyproxy.connectors.EvonyPolicy;
-import evonyproxy.connectors.EvonyConnector;
+import evonyproxy.connectors.EvonyConnectorFactory;
 import evonyproxy.connectors.EvonyServer;
 import evonyproxy.connectors.EvonyClient;
 import java.net.*;
@@ -42,11 +42,11 @@ public class Main {
         /* Starts a policy listener that listens for the policy that all 
          * flash programs transmit before they start up.
          */
-        Thread policyConnector = new Thread(new EvonyConnector(io,verbose, EvonyPolicy.class.getName()), "policyConnector");
+        Thread policyConnector = new Thread(new EvonyConnectorFactory(io,verbose, EvonyPolicy.class.getName()), "policyConnector");
         /* Listens for Evony Clients. Their configurations need to be modified
          * to point to a local port.
          */
-        Thread clientConnector = new Thread(new EvonyConnector(io,verbose, EvonyClient.class.getName()), "clientConnector");
+        Thread clientConnector = new Thread(new EvonyConnectorFactory(io,verbose, EvonyClient.class.getName()), "clientConnector");
 
 
 //        serverThread.start();

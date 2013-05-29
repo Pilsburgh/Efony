@@ -7,90 +7,91 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class FortProduceListBean implements EvonyPacket {
-private ConditionBean conditionBean = null;
-private Integer typeId = null;
-private Boolean permition = null;
 
-public FortProduceListBean(ASObject aso) {
+    private ConditionBean conditionBean = null;
+    private Integer typeId = null;
+    private Boolean permition = null;
 
-if(aso.get("conditionBean") != null) {
-this.conditionBean = new ConditionBean((ASObject) aso.get("conditionBean"));
-}
+    public FortProduceListBean(ASObject aso) {
 
-if(aso.get("typeId") != null) {
-this.typeId = (Integer) aso.get("typeId");
-}
+        if (aso.get("conditionBean") != null) {
+            this.conditionBean = new ConditionBean((ASObject) aso.get("conditionBean"));
+        }
 
-if(aso.get("permition") != null) {
-this.permition = (Boolean) aso.get("permition");
-}
-}
+        if (aso.get("typeId") != null) {
+            this.typeId = (Integer) aso.get("typeId");
+        }
 
-public FortProduceListBean() {
-}
+        if (aso.get("permition") != null) {
+            this.permition = (Boolean) aso.get("permition");
+        }
+    }
 
-@Override
-public FortProduceListBean clone() {
-FortProduceListBean clone = new FortProduceListBean();
+    public FortProduceListBean() {
+    }
 
-if(this.conditionBean != null) {
-clone.setConditionBean(this.conditionBean);
-}
+    @Override
+    public FortProduceListBean clone() {
+        FortProduceListBean clone = new FortProduceListBean();
 
-if(this.typeId != null) {
-clone.setTypeId(this.typeId);
-}
+        if (this.conditionBean != null) {
+            clone.setConditionBean(this.conditionBean);
+        }
 
-if(this.permition != null) {
-clone.setPermition(this.permition);
-}
+        if (this.typeId != null) {
+            clone.setTypeId(this.typeId);
+        }
 
-return clone;
-}
+        if (this.permition != null) {
+            clone.setPermition(this.permition);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.conditionBean != null) {
-aso.put("conditionBean", conditionBean.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.typeId != null) {
-aso.put("typeId", typeId);
-}
+        if (this.conditionBean != null) {
+            aso.put("conditionBean", conditionBean.toASObject());
+        }
 
-if(this.permition != null) {
-aso.put("permition", permition);
-}
+        if (this.typeId != null) {
+            aso.put("typeId", typeId);
+        }
 
-return aso;
-}
+        if (this.permition != null) {
+            aso.put("permition", permition);
+        }
 
-public ConditionBean getConditionBean() {
-return conditionBean;
-}
+        return aso;
+    }
 
-public void setConditionBean(ConditionBean conditionBean) {
-this.conditionBean = conditionBean;
-}
+    public ConditionBean getConditionBean() {
+        return conditionBean;
+    }
 
-public Integer getTypeId() {
-return typeId;
-}
+    public void setConditionBean(ConditionBean conditionBean) {
+        this.conditionBean = conditionBean;
+    }
 
-public void setTypeId(Integer typeId) {
-this.typeId = typeId;
-}
+    public Integer getTypeId() {
+        return typeId;
+    }
 
-public Boolean getPermition() {
-return permition;
-}
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
 
-public void setPermition(Boolean permition) {
-this.permition = permition;
-}
+    public Boolean getPermition() {
+        return permition;
+    }
+
+    public void setPermition(Boolean permition) {
+        this.permition = permition;
+    }
 }

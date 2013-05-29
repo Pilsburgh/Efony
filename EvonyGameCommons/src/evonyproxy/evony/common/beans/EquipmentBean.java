@@ -7,153 +7,154 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class EquipmentBean implements EvonyPacket {
-private String gemstoneid = null;
-private Integer addAttribute = null;
-private Integer lv = null;
-private Integer heroPos = null;
-private Integer equipmenttech = null;
-private Integer addAttributeType = null;
 
-public EquipmentBean(ASObject aso) {
+    private String gemstoneid = null;
+    private Integer addAttribute = null;
+    private Integer lv = null;
+    private Integer heroPos = null;
+    private Integer equipmenttech = null;
+    private Integer addAttributeType = null;
 
-if(aso.get("gemstoneid") != null) {
-this.gemstoneid = (String) aso.get("gemstoneid");
-}
+    public EquipmentBean(ASObject aso) {
 
-if(aso.get("addAttribute") != null) {
-this.addAttribute = (Integer) aso.get("addAttribute");
-}
+        if (aso.get("gemstoneid") != null) {
+            this.gemstoneid = (String) aso.get("gemstoneid");
+        }
 
-if(aso.get("lv") != null) {
-this.lv = (Integer) aso.get("lv");
-}
+        if (aso.get("addAttribute") != null) {
+            this.addAttribute = (Integer) aso.get("addAttribute");
+        }
 
-if(aso.get("heroPos") != null) {
-this.heroPos = (Integer) aso.get("heroPos");
-}
+        if (aso.get("lv") != null) {
+            this.lv = (Integer) aso.get("lv");
+        }
 
-if(aso.get("equipmenttech") != null) {
-this.equipmenttech = (Integer) aso.get("equipmenttech");
-}
+        if (aso.get("heroPos") != null) {
+            this.heroPos = (Integer) aso.get("heroPos");
+        }
 
-if(aso.get("addAttributeType") != null) {
-this.addAttributeType = (Integer) aso.get("addAttributeType");
-}
-}
+        if (aso.get("equipmenttech") != null) {
+            this.equipmenttech = (Integer) aso.get("equipmenttech");
+        }
 
-public EquipmentBean() {
-}
+        if (aso.get("addAttributeType") != null) {
+            this.addAttributeType = (Integer) aso.get("addAttributeType");
+        }
+    }
 
-@Override
-public EquipmentBean clone() {
-EquipmentBean clone = new EquipmentBean();
+    public EquipmentBean() {
+    }
 
-if(this.gemstoneid != null) {
-clone.setGemstoneid(this.gemstoneid);
-}
+    @Override
+    public EquipmentBean clone() {
+        EquipmentBean clone = new EquipmentBean();
 
-if(this.addAttribute != null) {
-clone.setAddAttribute(this.addAttribute);
-}
+        if (this.gemstoneid != null) {
+            clone.setGemstoneid(this.gemstoneid);
+        }
 
-if(this.lv != null) {
-clone.setLv(this.lv);
-}
+        if (this.addAttribute != null) {
+            clone.setAddAttribute(this.addAttribute);
+        }
 
-if(this.heroPos != null) {
-clone.setHeroPos(this.heroPos);
-}
+        if (this.lv != null) {
+            clone.setLv(this.lv);
+        }
 
-if(this.equipmenttech != null) {
-clone.setEquipmenttech(this.equipmenttech);
-}
+        if (this.heroPos != null) {
+            clone.setHeroPos(this.heroPos);
+        }
 
-if(this.addAttributeType != null) {
-clone.setAddAttributeType(this.addAttributeType);
-}
+        if (this.equipmenttech != null) {
+            clone.setEquipmenttech(this.equipmenttech);
+        }
 
-return clone;
-}
+        if (this.addAttributeType != null) {
+            clone.setAddAttributeType(this.addAttributeType);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.gemstoneid != null) {
-aso.put("gemstoneid", gemstoneid);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.addAttribute != null) {
-aso.put("addAttribute", addAttribute);
-}
+        if (this.gemstoneid != null) {
+            aso.put("gemstoneid", gemstoneid);
+        }
 
-if(this.lv != null) {
-aso.put("lv", lv);
-}
+        if (this.addAttribute != null) {
+            aso.put("addAttribute", addAttribute);
+        }
 
-if(this.heroPos != null) {
-aso.put("heroPos", heroPos);
-}
+        if (this.lv != null) {
+            aso.put("lv", lv);
+        }
 
-if(this.equipmenttech != null) {
-aso.put("equipmenttech", equipmenttech);
-}
+        if (this.heroPos != null) {
+            aso.put("heroPos", heroPos);
+        }
 
-if(this.addAttributeType != null) {
-aso.put("addAttributeType", addAttributeType);
-}
+        if (this.equipmenttech != null) {
+            aso.put("equipmenttech", equipmenttech);
+        }
 
-return aso;
-}
+        if (this.addAttributeType != null) {
+            aso.put("addAttributeType", addAttributeType);
+        }
 
-public String getGemstoneid() {
-return gemstoneid;
-}
+        return aso;
+    }
 
-public void setGemstoneid(String gemstoneid) {
-this.gemstoneid = gemstoneid;
-}
+    public String getGemstoneid() {
+        return gemstoneid;
+    }
 
-public Integer getAddAttribute() {
-return addAttribute;
-}
+    public void setGemstoneid(String gemstoneid) {
+        this.gemstoneid = gemstoneid;
+    }
 
-public void setAddAttribute(Integer addAttribute) {
-this.addAttribute = addAttribute;
-}
+    public Integer getAddAttribute() {
+        return addAttribute;
+    }
 
-public Integer getLv() {
-return lv;
-}
+    public void setAddAttribute(Integer addAttribute) {
+        this.addAttribute = addAttribute;
+    }
 
-public void setLv(Integer lv) {
-this.lv = lv;
-}
+    public Integer getLv() {
+        return lv;
+    }
 
-public Integer getHeroPos() {
-return heroPos;
-}
+    public void setLv(Integer lv) {
+        this.lv = lv;
+    }
 
-public void setHeroPos(Integer heroPos) {
-this.heroPos = heroPos;
-}
+    public Integer getHeroPos() {
+        return heroPos;
+    }
 
-public Integer getEquipmenttech() {
-return equipmenttech;
-}
+    public void setHeroPos(Integer heroPos) {
+        this.heroPos = heroPos;
+    }
 
-public void setEquipmenttech(Integer equipmenttech) {
-this.equipmenttech = equipmenttech;
-}
+    public Integer getEquipmenttech() {
+        return equipmenttech;
+    }
 
-public Integer getAddAttributeType() {
-return addAttributeType;
-}
+    public void setEquipmenttech(Integer equipmenttech) {
+        this.equipmenttech = equipmenttech;
+    }
 
-public void setAddAttributeType(Integer addAttributeType) {
-this.addAttributeType = addAttributeType;
-}
+    public Integer getAddAttributeType() {
+        return addAttributeType;
+    }
+
+    public void setAddAttributeType(Integer addAttributeType) {
+        this.addAttributeType = addAttributeType;
+    }
 }

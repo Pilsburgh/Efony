@@ -7,174 +7,175 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class RankCastleBean implements EvonyPacket {
-private Integer population = null;
-private String name = null;
-private String grade = null;
-private String kind = null;
-private Integer level = null;
-private Integer rank = null;
-private String alliance = null;
 
-public RankCastleBean(ASObject aso) {
+    private Integer population = null;
+    private String name = null;
+    private String grade = null;
+    private String kind = null;
+    private Integer level = null;
+    private Integer rank = null;
+    private String alliance = null;
 
-if(aso.get("population") != null) {
-this.population = (Integer) aso.get("population");
-}
+    public RankCastleBean(ASObject aso) {
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("population") != null) {
+            this.population = (Integer) aso.get("population");
+        }
 
-if(aso.get("grade") != null) {
-this.grade = (String) aso.get("grade");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("kind") != null) {
-this.kind = (String) aso.get("kind");
-}
+        if (aso.get("grade") != null) {
+            this.grade = (String) aso.get("grade");
+        }
 
-if(aso.get("level") != null) {
-this.level = (Integer) aso.get("level");
-}
+        if (aso.get("kind") != null) {
+            this.kind = (String) aso.get("kind");
+        }
 
-if(aso.get("rank") != null) {
-this.rank = (Integer) aso.get("rank");
-}
+        if (aso.get("level") != null) {
+            this.level = (Integer) aso.get("level");
+        }
 
-if(aso.get("alliance") != null) {
-this.alliance = (String) aso.get("alliance");
-}
-}
+        if (aso.get("rank") != null) {
+            this.rank = (Integer) aso.get("rank");
+        }
 
-public RankCastleBean() {
-}
+        if (aso.get("alliance") != null) {
+            this.alliance = (String) aso.get("alliance");
+        }
+    }
 
-@Override
-public RankCastleBean clone() {
-RankCastleBean clone = new RankCastleBean();
+    public RankCastleBean() {
+    }
 
-if(this.population != null) {
-clone.setPopulation(this.population);
-}
+    @Override
+    public RankCastleBean clone() {
+        RankCastleBean clone = new RankCastleBean();
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.population != null) {
+            clone.setPopulation(this.population);
+        }
 
-if(this.grade != null) {
-clone.setGrade(this.grade);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.kind != null) {
-clone.setKind(this.kind);
-}
+        if (this.grade != null) {
+            clone.setGrade(this.grade);
+        }
 
-if(this.level != null) {
-clone.setLevel(this.level);
-}
+        if (this.kind != null) {
+            clone.setKind(this.kind);
+        }
 
-if(this.rank != null) {
-clone.setRank(this.rank);
-}
+        if (this.level != null) {
+            clone.setLevel(this.level);
+        }
 
-if(this.alliance != null) {
-clone.setAlliance(this.alliance);
-}
+        if (this.rank != null) {
+            clone.setRank(this.rank);
+        }
 
-return clone;
-}
+        if (this.alliance != null) {
+            clone.setAlliance(this.alliance);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.population != null) {
-aso.put("population", population);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.population != null) {
+            aso.put("population", population);
+        }
 
-if(this.grade != null) {
-aso.put("grade", grade);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.kind != null) {
-aso.put("kind", kind);
-}
+        if (this.grade != null) {
+            aso.put("grade", grade);
+        }
 
-if(this.level != null) {
-aso.put("level", level);
-}
+        if (this.kind != null) {
+            aso.put("kind", kind);
+        }
 
-if(this.rank != null) {
-aso.put("rank", rank);
-}
+        if (this.level != null) {
+            aso.put("level", level);
+        }
 
-if(this.alliance != null) {
-aso.put("alliance", alliance);
-}
+        if (this.rank != null) {
+            aso.put("rank", rank);
+        }
 
-return aso;
-}
+        if (this.alliance != null) {
+            aso.put("alliance", alliance);
+        }
 
-public Integer getPopulation() {
-return population;
-}
+        return aso;
+    }
 
-public void setPopulation(Integer population) {
-this.population = population;
-}
+    public Integer getPopulation() {
+        return population;
+    }
 
-public String getName() {
-return name;
-}
+    public void setPopulation(Integer population) {
+        this.population = population;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public String getGrade() {
-return grade;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setGrade(String grade) {
-this.grade = grade;
-}
+    public String getGrade() {
+        return grade;
+    }
 
-public String getKind() {
-return kind;
-}
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 
-public void setKind(String kind) {
-this.kind = kind;
-}
+    public String getKind() {
+        return kind;
+    }
 
-public Integer getLevel() {
-return level;
-}
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
 
-public void setLevel(Integer level) {
-this.level = level;
-}
+    public Integer getLevel() {
+        return level;
+    }
 
-public Integer getRank() {
-return rank;
-}
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
-public void setRank(Integer rank) {
-this.rank = rank;
-}
+    public Integer getRank() {
+        return rank;
+    }
 
-public String getAlliance() {
-return alliance;
-}
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 
-public void setAlliance(String alliance) {
-this.alliance = alliance;
-}
+    public String getAlliance() {
+        return alliance;
+    }
+
+    public void setAlliance(String alliance) {
+        this.alliance = alliance;
+    }
 }

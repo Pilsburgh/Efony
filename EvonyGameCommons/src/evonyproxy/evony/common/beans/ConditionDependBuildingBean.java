@@ -7,111 +7,112 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ConditionDependBuildingBean implements EvonyPacket {
-private Integer curLevel = null;
-private Boolean successFlag = null;
-private Integer typeId = null;
-private Integer level = null;
 
-public ConditionDependBuildingBean(ASObject aso) {
+    private Integer curLevel = null;
+    private Boolean successFlag = null;
+    private Integer typeId = null;
+    private Integer level = null;
 
-if(aso.get("curLevel") != null) {
-this.curLevel = (Integer) aso.get("curLevel");
-}
+    public ConditionDependBuildingBean(ASObject aso) {
 
-if(aso.get("successFlag") != null) {
-this.successFlag = (Boolean) aso.get("successFlag");
-}
+        if (aso.get("curLevel") != null) {
+            this.curLevel = (Integer) aso.get("curLevel");
+        }
 
-if(aso.get("typeId") != null) {
-this.typeId = (Integer) aso.get("typeId");
-}
+        if (aso.get("successFlag") != null) {
+            this.successFlag = (Boolean) aso.get("successFlag");
+        }
 
-if(aso.get("level") != null) {
-this.level = (Integer) aso.get("level");
-}
-}
+        if (aso.get("typeId") != null) {
+            this.typeId = (Integer) aso.get("typeId");
+        }
 
-public ConditionDependBuildingBean() {
-}
+        if (aso.get("level") != null) {
+            this.level = (Integer) aso.get("level");
+        }
+    }
 
-@Override
-public ConditionDependBuildingBean clone() {
-ConditionDependBuildingBean clone = new ConditionDependBuildingBean();
+    public ConditionDependBuildingBean() {
+    }
 
-if(this.curLevel != null) {
-clone.setCurLevel(this.curLevel);
-}
+    @Override
+    public ConditionDependBuildingBean clone() {
+        ConditionDependBuildingBean clone = new ConditionDependBuildingBean();
 
-if(this.successFlag != null) {
-clone.setSuccessFlag(this.successFlag);
-}
+        if (this.curLevel != null) {
+            clone.setCurLevel(this.curLevel);
+        }
 
-if(this.typeId != null) {
-clone.setTypeId(this.typeId);
-}
+        if (this.successFlag != null) {
+            clone.setSuccessFlag(this.successFlag);
+        }
 
-if(this.level != null) {
-clone.setLevel(this.level);
-}
+        if (this.typeId != null) {
+            clone.setTypeId(this.typeId);
+        }
 
-return clone;
-}
+        if (this.level != null) {
+            clone.setLevel(this.level);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.curLevel != null) {
-aso.put("curLevel", curLevel);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.successFlag != null) {
-aso.put("successFlag", successFlag);
-}
+        if (this.curLevel != null) {
+            aso.put("curLevel", curLevel);
+        }
 
-if(this.typeId != null) {
-aso.put("typeId", typeId);
-}
+        if (this.successFlag != null) {
+            aso.put("successFlag", successFlag);
+        }
 
-if(this.level != null) {
-aso.put("level", level);
-}
+        if (this.typeId != null) {
+            aso.put("typeId", typeId);
+        }
 
-return aso;
-}
+        if (this.level != null) {
+            aso.put("level", level);
+        }
 
-public Integer getCurLevel() {
-return curLevel;
-}
+        return aso;
+    }
 
-public void setCurLevel(Integer curLevel) {
-this.curLevel = curLevel;
-}
+    public Integer getCurLevel() {
+        return curLevel;
+    }
 
-public Boolean getSuccessFlag() {
-return successFlag;
-}
+    public void setCurLevel(Integer curLevel) {
+        this.curLevel = curLevel;
+    }
 
-public void setSuccessFlag(Boolean successFlag) {
-this.successFlag = successFlag;
-}
+    public Boolean getSuccessFlag() {
+        return successFlag;
+    }
 
-public Integer getTypeId() {
-return typeId;
-}
+    public void setSuccessFlag(Boolean successFlag) {
+        this.successFlag = successFlag;
+    }
 
-public void setTypeId(Integer typeId) {
-this.typeId = typeId;
-}
+    public Integer getTypeId() {
+        return typeId;
+    }
 
-public Integer getLevel() {
-return level;
-}
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
 
-public void setLevel(Integer level) {
-this.level = level;
-}
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 }

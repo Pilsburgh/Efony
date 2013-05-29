@@ -7,174 +7,175 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class StoreBean implements EvonyPacket {
-private Integer storePercent = null;
-private Integer magnitude = null;
-private Integer warehourseCapacity = null;
-private Integer resLimt = null;
-private Integer unstorage = null;
-private Integer storeTypeId = null;
-private Integer storage = null;
 
-public StoreBean(ASObject aso) {
+    private Integer storePercent = null;
+    private Integer magnitude = null;
+    private Integer warehourseCapacity = null;
+    private Integer resLimt = null;
+    private Integer unstorage = null;
+    private Integer storeTypeId = null;
+    private Integer storage = null;
 
-if(aso.get("storePercent") != null) {
-this.storePercent = (Integer) aso.get("storePercent");
-}
+    public StoreBean(ASObject aso) {
 
-if(aso.get("magnitude") != null) {
-this.magnitude = (Integer) aso.get("magnitude");
-}
+        if (aso.get("storePercent") != null) {
+            this.storePercent = (Integer) aso.get("storePercent");
+        }
 
-if(aso.get("warehourseCapacity") != null) {
-this.warehourseCapacity = (Integer) aso.get("warehourseCapacity");
-}
+        if (aso.get("magnitude") != null) {
+            this.magnitude = (Integer) aso.get("magnitude");
+        }
 
-if(aso.get("resLimt") != null) {
-this.resLimt = (Integer) aso.get("resLimt");
-}
+        if (aso.get("warehourseCapacity") != null) {
+            this.warehourseCapacity = (Integer) aso.get("warehourseCapacity");
+        }
 
-if(aso.get("unstorage") != null) {
-this.unstorage = (Integer) aso.get("unstorage");
-}
+        if (aso.get("resLimt") != null) {
+            this.resLimt = (Integer) aso.get("resLimt");
+        }
 
-if(aso.get("storeTypeId") != null) {
-this.storeTypeId = (Integer) aso.get("storeTypeId");
-}
+        if (aso.get("unstorage") != null) {
+            this.unstorage = (Integer) aso.get("unstorage");
+        }
 
-if(aso.get("storage") != null) {
-this.storage = (Integer) aso.get("storage");
-}
-}
+        if (aso.get("storeTypeId") != null) {
+            this.storeTypeId = (Integer) aso.get("storeTypeId");
+        }
 
-public StoreBean() {
-}
+        if (aso.get("storage") != null) {
+            this.storage = (Integer) aso.get("storage");
+        }
+    }
 
-@Override
-public StoreBean clone() {
-StoreBean clone = new StoreBean();
+    public StoreBean() {
+    }
 
-if(this.storePercent != null) {
-clone.setStorePercent(this.storePercent);
-}
+    @Override
+    public StoreBean clone() {
+        StoreBean clone = new StoreBean();
 
-if(this.magnitude != null) {
-clone.setMagnitude(this.magnitude);
-}
+        if (this.storePercent != null) {
+            clone.setStorePercent(this.storePercent);
+        }
 
-if(this.warehourseCapacity != null) {
-clone.setWarehourseCapacity(this.warehourseCapacity);
-}
+        if (this.magnitude != null) {
+            clone.setMagnitude(this.magnitude);
+        }
 
-if(this.resLimt != null) {
-clone.setResLimt(this.resLimt);
-}
+        if (this.warehourseCapacity != null) {
+            clone.setWarehourseCapacity(this.warehourseCapacity);
+        }
 
-if(this.unstorage != null) {
-clone.setUnstorage(this.unstorage);
-}
+        if (this.resLimt != null) {
+            clone.setResLimt(this.resLimt);
+        }
 
-if(this.storeTypeId != null) {
-clone.setStoreTypeId(this.storeTypeId);
-}
+        if (this.unstorage != null) {
+            clone.setUnstorage(this.unstorage);
+        }
 
-if(this.storage != null) {
-clone.setStorage(this.storage);
-}
+        if (this.storeTypeId != null) {
+            clone.setStoreTypeId(this.storeTypeId);
+        }
 
-return clone;
-}
+        if (this.storage != null) {
+            clone.setStorage(this.storage);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.storePercent != null) {
-aso.put("storePercent", storePercent);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.magnitude != null) {
-aso.put("magnitude", magnitude);
-}
+        if (this.storePercent != null) {
+            aso.put("storePercent", storePercent);
+        }
 
-if(this.warehourseCapacity != null) {
-aso.put("warehourseCapacity", warehourseCapacity);
-}
+        if (this.magnitude != null) {
+            aso.put("magnitude", magnitude);
+        }
 
-if(this.resLimt != null) {
-aso.put("resLimt", resLimt);
-}
+        if (this.warehourseCapacity != null) {
+            aso.put("warehourseCapacity", warehourseCapacity);
+        }
 
-if(this.unstorage != null) {
-aso.put("unstorage", unstorage);
-}
+        if (this.resLimt != null) {
+            aso.put("resLimt", resLimt);
+        }
 
-if(this.storeTypeId != null) {
-aso.put("storeTypeId", storeTypeId);
-}
+        if (this.unstorage != null) {
+            aso.put("unstorage", unstorage);
+        }
 
-if(this.storage != null) {
-aso.put("storage", storage);
-}
+        if (this.storeTypeId != null) {
+            aso.put("storeTypeId", storeTypeId);
+        }
 
-return aso;
-}
+        if (this.storage != null) {
+            aso.put("storage", storage);
+        }
 
-public Integer getStorePercent() {
-return storePercent;
-}
+        return aso;
+    }
 
-public void setStorePercent(Integer storePercent) {
-this.storePercent = storePercent;
-}
+    public Integer getStorePercent() {
+        return storePercent;
+    }
 
-public Integer getMagnitude() {
-return magnitude;
-}
+    public void setStorePercent(Integer storePercent) {
+        this.storePercent = storePercent;
+    }
 
-public void setMagnitude(Integer magnitude) {
-this.magnitude = magnitude;
-}
+    public Integer getMagnitude() {
+        return magnitude;
+    }
 
-public Integer getWarehourseCapacity() {
-return warehourseCapacity;
-}
+    public void setMagnitude(Integer magnitude) {
+        this.magnitude = magnitude;
+    }
 
-public void setWarehourseCapacity(Integer warehourseCapacity) {
-this.warehourseCapacity = warehourseCapacity;
-}
+    public Integer getWarehourseCapacity() {
+        return warehourseCapacity;
+    }
 
-public Integer getResLimt() {
-return resLimt;
-}
+    public void setWarehourseCapacity(Integer warehourseCapacity) {
+        this.warehourseCapacity = warehourseCapacity;
+    }
 
-public void setResLimt(Integer resLimt) {
-this.resLimt = resLimt;
-}
+    public Integer getResLimt() {
+        return resLimt;
+    }
 
-public Integer getUnstorage() {
-return unstorage;
-}
+    public void setResLimt(Integer resLimt) {
+        this.resLimt = resLimt;
+    }
 
-public void setUnstorage(Integer unstorage) {
-this.unstorage = unstorage;
-}
+    public Integer getUnstorage() {
+        return unstorage;
+    }
 
-public Integer getStoreTypeId() {
-return storeTypeId;
-}
+    public void setUnstorage(Integer unstorage) {
+        this.unstorage = unstorage;
+    }
 
-public void setStoreTypeId(Integer storeTypeId) {
-this.storeTypeId = storeTypeId;
-}
+    public Integer getStoreTypeId() {
+        return storeTypeId;
+    }
 
-public Integer getStorage() {
-return storage;
-}
+    public void setStoreTypeId(Integer storeTypeId) {
+        this.storeTypeId = storeTypeId;
+    }
 
-public void setStorage(Integer storage) {
-this.storage = storage;
-}
+    public Integer getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Integer storage) {
+        this.storage = storage;
+    }
 }

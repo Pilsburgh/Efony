@@ -11,12 +11,19 @@ import java.util.logging.*;
 import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
+ * Listens on a local port for an Evony client to connect.
+ * Once connected the client is added to the IO communication channel.
  * @version .02
- * @author HP_Administrator
+ * @author Michael Archibald
  */
 public class EvonyClient extends AbstractEvony {
     private static int PORT = 443;
-    protected boolean primaryConnection, initialDataHandled;
+    /**
+     * True if the Evony Client is a legal client. This is used for initial
+     * validation by the Evony Server.
+     */
+    protected boolean primaryConnection;
+    protected boolean initialDataHandled;
 
     EvonyClient(Sender io, Socket s, boolean verbose) {
         super(io, s, verbose);

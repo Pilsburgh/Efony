@@ -11,16 +11,17 @@ import flex.messaging.io.ArrayCollection;
  * @author Michael Archibald
  */
 public class SaleItemBean implements EvonyPacket {
+
     private String items = null;
     private Integer saleType = null;
 
     public SaleItemBean(ASObject aso) {
 
-        if(aso.get("items") != null) {
+        if (aso.get("items") != null) {
             this.items = (String) aso.get("items");
         }
 
-        if(aso.get("saleType") != null) {
+        if (aso.get("saleType") != null) {
             this.saleType = (Integer) aso.get("saleType");
         }
     }
@@ -32,11 +33,11 @@ public class SaleItemBean implements EvonyPacket {
     public SaleItemBean clone() {
         SaleItemBean clone = new SaleItemBean();
 
-        if(this.items != null) {
+        if (this.items != null) {
             clone.setItems(this.items);
         }
 
-        if(this.saleType != null) {
+        if (this.saleType != null) {
             clone.setSaleType(this.saleType);
         }
 
@@ -46,11 +47,11 @@ public class SaleItemBean implements EvonyPacket {
     public ASObject toASObject() {
         ASObject aso = new ASObject();
 
-        if(this.items != null) {
+        if (this.items != null) {
             aso.put("items", items);
         }
 
-        if(this.saleType != null) {
+        if (this.saleType != null) {
             aso.put("saleType", saleType);
         }
 

@@ -24,7 +24,7 @@ import sun.jkernel.ByteArrayToFromHexDigits;
  * and if that fails, it sends the request to the port you connected with.
  *  This class recieves the policy request and replies with the policy.
  * Only one instance of this class is needed.
- * @author Eustache
+ * @author Michael Archibald
  */
 public class EvonyPolicy extends EvonyClient implements PolicyListener {
     // TODO: Make class a singleton.

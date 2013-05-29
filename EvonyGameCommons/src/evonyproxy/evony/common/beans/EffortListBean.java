@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class EffortListBean implements EvonyPacket {
-private String effortListInfo = null;
-private Integer effortTypeid = null;
 
-public EffortListBean(ASObject aso) {
+    private String effortListInfo = null;
+    private Integer effortTypeid = null;
 
-if(aso.get("effortListInfo") != null) {
-this.effortListInfo = (String) aso.get("effortListInfo");
-}
+    public EffortListBean(ASObject aso) {
 
-if(aso.get("effortTypeid") != null) {
-this.effortTypeid = (Integer) aso.get("effortTypeid");
-}
-}
+        if (aso.get("effortListInfo") != null) {
+            this.effortListInfo = (String) aso.get("effortListInfo");
+        }
 
-public EffortListBean() {
-}
+        if (aso.get("effortTypeid") != null) {
+            this.effortTypeid = (Integer) aso.get("effortTypeid");
+        }
+    }
 
-@Override
-public EffortListBean clone() {
-EffortListBean clone = new EffortListBean();
+    public EffortListBean() {
+    }
 
-if(this.effortListInfo != null) {
-clone.setEffortListInfo(this.effortListInfo);
-}
+    @Override
+    public EffortListBean clone() {
+        EffortListBean clone = new EffortListBean();
 
-if(this.effortTypeid != null) {
-clone.setEffortTypeid(this.effortTypeid);
-}
+        if (this.effortListInfo != null) {
+            clone.setEffortListInfo(this.effortListInfo);
+        }
 
-return clone;
-}
+        if (this.effortTypeid != null) {
+            clone.setEffortTypeid(this.effortTypeid);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.effortListInfo != null) {
-aso.put("effortListInfo", effortListInfo);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.effortTypeid != null) {
-aso.put("effortTypeid", effortTypeid);
-}
+        if (this.effortListInfo != null) {
+            aso.put("effortListInfo", effortListInfo);
+        }
 
-return aso;
-}
+        if (this.effortTypeid != null) {
+            aso.put("effortTypeid", effortTypeid);
+        }
 
-public String getEffortListInfo() {
-return effortListInfo;
-}
+        return aso;
+    }
 
-public void setEffortListInfo(String effortListInfo) {
-this.effortListInfo = effortListInfo;
-}
+    public String getEffortListInfo() {
+        return effortListInfo;
+    }
 
-public Integer getEffortTypeid() {
-return effortTypeid;
-}
+    public void setEffortListInfo(String effortListInfo) {
+        this.effortListInfo = effortListInfo;
+    }
 
-public void setEffortTypeid(Integer effortTypeid) {
-this.effortTypeid = effortTypeid;
-}
+    public Integer getEffortTypeid() {
+        return effortTypeid;
+    }
+
+    public void setEffortTypeid(Integer effortTypeid) {
+        this.effortTypeid = effortTypeid;
+    }
 }

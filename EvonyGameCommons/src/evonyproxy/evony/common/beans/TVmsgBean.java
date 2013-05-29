@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class TVmsgBean implements EvonyPacket {
-private Double time = null;
-private String msg = null;
 
-public TVmsgBean(ASObject aso) {
+    private Double time = null;
+    private String msg = null;
 
-if(aso.get("time") != null) {
-this.time = (Double) aso.get("time");
-}
+    public TVmsgBean(ASObject aso) {
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
-}
+        if (aso.get("time") != null) {
+            this.time = (Double) aso.get("time");
+        }
 
-public TVmsgBean() {
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
+    }
 
-@Override
-public TVmsgBean clone() {
-TVmsgBean clone = new TVmsgBean();
+    public TVmsgBean() {
+    }
 
-if(this.time != null) {
-clone.setTime(this.time);
-}
+    @Override
+    public TVmsgBean clone() {
+        TVmsgBean clone = new TVmsgBean();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.time != null) {
+            clone.setTime(this.time);
+        }
 
-return clone;
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.time != null) {
-aso.put("time", time);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.time != null) {
+            aso.put("time", time);
+        }
 
-return aso;
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-public Double getTime() {
-return time;
-}
+        return aso;
+    }
 
-public void setTime(Double time) {
-this.time = time;
-}
+    public Double getTime() {
+        return time;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setTime(Double time) {
+        this.time = time;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

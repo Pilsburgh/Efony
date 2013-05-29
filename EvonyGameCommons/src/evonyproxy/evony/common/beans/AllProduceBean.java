@@ -7,84 +7,85 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class AllProduceBean implements EvonyPacket {
-private ArrayList<ProduceBean> allProduceQueue = null;
-private Integer positionId = null;
 
-public AllProduceBean(ASObject aso) {
-allProduceQueue = new ArrayList<ProduceBean>();
+    private ArrayList<ProduceBean> allProduceQueue = null;
+    private Integer positionId = null;
 
-if(aso.get("allProduceQueue") != null) {
-Object[] objArr = (Object[]) aso.get("allProduceQueue");
-for(int j = 0; j < objArr.length; j++) {
-allProduceQueue.add(new ProduceBean((ASObject) objArr[j]));
-}
-}
+    public AllProduceBean(ASObject aso) {
+        allProduceQueue = new ArrayList<ProduceBean>();
 
-if(aso.get("positionId") != null) {
-this.positionId = (Integer) aso.get("positionId");
-}
-}
+        if (aso.get("allProduceQueue") != null) {
+            Object[] objArr = (Object[]) aso.get("allProduceQueue");
+            for (int j = 0; j < objArr.length; j++) {
+                allProduceQueue.add(new ProduceBean((ASObject) objArr[j]));
+            }
+        }
 
-public AllProduceBean() {
-}
+        if (aso.get("positionId") != null) {
+            this.positionId = (Integer) aso.get("positionId");
+        }
+    }
 
-@Override
-public AllProduceBean clone() {
-AllProduceBean clone = new AllProduceBean();
+    public AllProduceBean() {
+    }
 
-if(this.allProduceQueue != null) {
-ArrayList tmpArrLst = new ArrayList<ProduceBean>();
+    @Override
+    public AllProduceBean clone() {
+        AllProduceBean clone = new AllProduceBean();
 
-for(Object bean : allProduceQueue) {
-ProduceBean tmpBean = (ProduceBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setAllProduceQueue(tmpArrLst);
-}
+        if (this.allProduceQueue != null) {
+            ArrayList tmpArrLst = new ArrayList<ProduceBean>();
 
-if(this.positionId != null) {
-clone.setPositionId(this.positionId);
-}
+            for (Object bean : allProduceQueue) {
+                ProduceBean tmpBean = (ProduceBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setAllProduceQueue(tmpArrLst);
+        }
 
-return clone;
-}
+        if (this.positionId != null) {
+            clone.setPositionId(this.positionId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.allProduceQueue != null) {
-ArrayList al = new ArrayList();
-for(Object obj : allProduceQueue) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("allProduceQueue", al);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.positionId != null) {
-aso.put("positionId", positionId);
-}
+        if (this.allProduceQueue != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : allProduceQueue) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("allProduceQueue", al);
+        }
 
-return aso;
-}
+        if (this.positionId != null) {
+            aso.put("positionId", positionId);
+        }
 
-public ArrayList getAllProduceQueue() {
-return allProduceQueue;
-}
+        return aso;
+    }
 
-public void setAllProduceQueue(ArrayList allProduceQueue) {
-this.allProduceQueue = allProduceQueue;
-}
+    public ArrayList getAllProduceQueue() {
+        return allProduceQueue;
+    }
 
-public Integer getPositionId() {
-return positionId;
-}
+    public void setAllProduceQueue(ArrayList allProduceQueue) {
+        this.allProduceQueue = allProduceQueue;
+    }
 
-public void setPositionId(Integer positionId) {
-this.positionId = positionId;
-}
+    public Integer getPositionId() {
+        return positionId;
+    }
+
+    public void setPositionId(Integer positionId) {
+        this.positionId = positionId;
+    }
 }

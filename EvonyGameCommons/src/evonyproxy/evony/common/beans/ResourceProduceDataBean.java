@@ -7,300 +7,301 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ResourceProduceDataBean implements EvonyPacket {
-private Integer armyPercentage = null;
-private Integer commenceRate = null;
-private Integer productionCapacity = null;
-private Integer typeid = null;
-private Integer totalOutput = null;
-private Integer cimeliaPercentage = null;
-private Integer fieldPercentage = null;
-private Integer commenceDemands = null;
-private Integer heroPercentage = null;
-private Integer maxLabour = null;
-private Integer naturalPercentage = null;
-private Integer basicOutput = null;
-private Integer technologicalPercentage = null;
-
-public ResourceProduceDataBean(ASObject aso) {
-
-if(aso.get("armyPercentage") != null) {
-this.armyPercentage = (Integer) aso.get("armyPercentage");
-}
-
-if(aso.get("commenceRate") != null) {
-this.commenceRate = (Integer) aso.get("commenceRate");
-}
-
-if(aso.get("productionCapacity") != null) {
-this.productionCapacity = (Integer) aso.get("productionCapacity");
-}
-
-if(aso.get("typeid") != null) {
-this.typeid = (Integer) aso.get("typeid");
-}
-
-if(aso.get("totalOutput") != null) {
-this.totalOutput = (Integer) aso.get("totalOutput");
-}
-
-if(aso.get("cimeliaPercentage") != null) {
-this.cimeliaPercentage = (Integer) aso.get("cimeliaPercentage");
-}
-
-if(aso.get("fieldPercentage") != null) {
-this.fieldPercentage = (Integer) aso.get("fieldPercentage");
-}
-
-if(aso.get("commenceDemands") != null) {
-this.commenceDemands = (Integer) aso.get("commenceDemands");
-}
-
-if(aso.get("heroPercentage") != null) {
-this.heroPercentage = (Integer) aso.get("heroPercentage");
-}
-
-if(aso.get("maxLabour") != null) {
-this.maxLabour = (Integer) aso.get("maxLabour");
-}
-
-if(aso.get("naturalPercentage") != null) {
-this.naturalPercentage = (Integer) aso.get("naturalPercentage");
-}
-
-if(aso.get("basicOutput") != null) {
-this.basicOutput = (Integer) aso.get("basicOutput");
-}
-
-if(aso.get("technologicalPercentage") != null) {
-this.technologicalPercentage = (Integer) aso.get("technologicalPercentage");
-}
-}
-
-public ResourceProduceDataBean() {
-}
-
-@Override
-public ResourceProduceDataBean clone() {
-ResourceProduceDataBean clone = new ResourceProduceDataBean();
-
-if(this.armyPercentage != null) {
-clone.setArmyPercentage(this.armyPercentage);
-}
-
-if(this.commenceRate != null) {
-clone.setCommenceRate(this.commenceRate);
-}
-
-if(this.productionCapacity != null) {
-clone.setProductionCapacity(this.productionCapacity);
-}
-
-if(this.typeid != null) {
-clone.setTypeid(this.typeid);
-}
-
-if(this.totalOutput != null) {
-clone.setTotalOutput(this.totalOutput);
-}
-
-if(this.cimeliaPercentage != null) {
-clone.setCimeliaPercentage(this.cimeliaPercentage);
-}
-
-if(this.fieldPercentage != null) {
-clone.setFieldPercentage(this.fieldPercentage);
-}
 
-if(this.commenceDemands != null) {
-clone.setCommenceDemands(this.commenceDemands);
-}
+    private Integer armyPercentage = null;
+    private Integer commenceRate = null;
+    private Integer productionCapacity = null;
+    private Integer typeid = null;
+    private Integer totalOutput = null;
+    private Integer cimeliaPercentage = null;
+    private Integer fieldPercentage = null;
+    private Integer commenceDemands = null;
+    private Integer heroPercentage = null;
+    private Integer maxLabour = null;
+    private Integer naturalPercentage = null;
+    private Integer basicOutput = null;
+    private Integer technologicalPercentage = null;
+
+    public ResourceProduceDataBean(ASObject aso) {
+
+        if (aso.get("armyPercentage") != null) {
+            this.armyPercentage = (Integer) aso.get("armyPercentage");
+        }
+
+        if (aso.get("commenceRate") != null) {
+            this.commenceRate = (Integer) aso.get("commenceRate");
+        }
+
+        if (aso.get("productionCapacity") != null) {
+            this.productionCapacity = (Integer) aso.get("productionCapacity");
+        }
+
+        if (aso.get("typeid") != null) {
+            this.typeid = (Integer) aso.get("typeid");
+        }
+
+        if (aso.get("totalOutput") != null) {
+            this.totalOutput = (Integer) aso.get("totalOutput");
+        }
+
+        if (aso.get("cimeliaPercentage") != null) {
+            this.cimeliaPercentage = (Integer) aso.get("cimeliaPercentage");
+        }
+
+        if (aso.get("fieldPercentage") != null) {
+            this.fieldPercentage = (Integer) aso.get("fieldPercentage");
+        }
+
+        if (aso.get("commenceDemands") != null) {
+            this.commenceDemands = (Integer) aso.get("commenceDemands");
+        }
+
+        if (aso.get("heroPercentage") != null) {
+            this.heroPercentage = (Integer) aso.get("heroPercentage");
+        }
+
+        if (aso.get("maxLabour") != null) {
+            this.maxLabour = (Integer) aso.get("maxLabour");
+        }
+
+        if (aso.get("naturalPercentage") != null) {
+            this.naturalPercentage = (Integer) aso.get("naturalPercentage");
+        }
+
+        if (aso.get("basicOutput") != null) {
+            this.basicOutput = (Integer) aso.get("basicOutput");
+        }
+
+        if (aso.get("technologicalPercentage") != null) {
+            this.technologicalPercentage = (Integer) aso.get("technologicalPercentage");
+        }
+    }
+
+    public ResourceProduceDataBean() {
+    }
+
+    @Override
+    public ResourceProduceDataBean clone() {
+        ResourceProduceDataBean clone = new ResourceProduceDataBean();
+
+        if (this.armyPercentage != null) {
+            clone.setArmyPercentage(this.armyPercentage);
+        }
+
+        if (this.commenceRate != null) {
+            clone.setCommenceRate(this.commenceRate);
+        }
+
+        if (this.productionCapacity != null) {
+            clone.setProductionCapacity(this.productionCapacity);
+        }
+
+        if (this.typeid != null) {
+            clone.setTypeid(this.typeid);
+        }
+
+        if (this.totalOutput != null) {
+            clone.setTotalOutput(this.totalOutput);
+        }
+
+        if (this.cimeliaPercentage != null) {
+            clone.setCimeliaPercentage(this.cimeliaPercentage);
+        }
+
+        if (this.fieldPercentage != null) {
+            clone.setFieldPercentage(this.fieldPercentage);
+        }
 
-if(this.heroPercentage != null) {
-clone.setHeroPercentage(this.heroPercentage);
-}
+        if (this.commenceDemands != null) {
+            clone.setCommenceDemands(this.commenceDemands);
+        }
 
-if(this.maxLabour != null) {
-clone.setMaxLabour(this.maxLabour);
-}
+        if (this.heroPercentage != null) {
+            clone.setHeroPercentage(this.heroPercentage);
+        }
 
-if(this.naturalPercentage != null) {
-clone.setNaturalPercentage(this.naturalPercentage);
-}
+        if (this.maxLabour != null) {
+            clone.setMaxLabour(this.maxLabour);
+        }
 
-if(this.basicOutput != null) {
-clone.setBasicOutput(this.basicOutput);
-}
+        if (this.naturalPercentage != null) {
+            clone.setNaturalPercentage(this.naturalPercentage);
+        }
 
-if(this.technologicalPercentage != null) {
-clone.setTechnologicalPercentage(this.technologicalPercentage);
-}
+        if (this.basicOutput != null) {
+            clone.setBasicOutput(this.basicOutput);
+        }
 
-return clone;
-}
+        if (this.technologicalPercentage != null) {
+            clone.setTechnologicalPercentage(this.technologicalPercentage);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.armyPercentage != null) {
-aso.put("armyPercentage", armyPercentage);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.commenceRate != null) {
-aso.put("commenceRate", commenceRate);
-}
+        if (this.armyPercentage != null) {
+            aso.put("armyPercentage", armyPercentage);
+        }
 
-if(this.productionCapacity != null) {
-aso.put("productionCapacity", productionCapacity);
-}
+        if (this.commenceRate != null) {
+            aso.put("commenceRate", commenceRate);
+        }
 
-if(this.typeid != null) {
-aso.put("typeid", typeid);
-}
+        if (this.productionCapacity != null) {
+            aso.put("productionCapacity", productionCapacity);
+        }
 
-if(this.totalOutput != null) {
-aso.put("totalOutput", totalOutput);
-}
+        if (this.typeid != null) {
+            aso.put("typeid", typeid);
+        }
 
-if(this.cimeliaPercentage != null) {
-aso.put("cimeliaPercentage", cimeliaPercentage);
-}
+        if (this.totalOutput != null) {
+            aso.put("totalOutput", totalOutput);
+        }
 
-if(this.fieldPercentage != null) {
-aso.put("fieldPercentage", fieldPercentage);
-}
+        if (this.cimeliaPercentage != null) {
+            aso.put("cimeliaPercentage", cimeliaPercentage);
+        }
 
-if(this.commenceDemands != null) {
-aso.put("commenceDemands", commenceDemands);
-}
+        if (this.fieldPercentage != null) {
+            aso.put("fieldPercentage", fieldPercentage);
+        }
 
-if(this.heroPercentage != null) {
-aso.put("heroPercentage", heroPercentage);
-}
+        if (this.commenceDemands != null) {
+            aso.put("commenceDemands", commenceDemands);
+        }
 
-if(this.maxLabour != null) {
-aso.put("maxLabour", maxLabour);
-}
+        if (this.heroPercentage != null) {
+            aso.put("heroPercentage", heroPercentage);
+        }
 
-if(this.naturalPercentage != null) {
-aso.put("naturalPercentage", naturalPercentage);
-}
+        if (this.maxLabour != null) {
+            aso.put("maxLabour", maxLabour);
+        }
 
-if(this.basicOutput != null) {
-aso.put("basicOutput", basicOutput);
-}
+        if (this.naturalPercentage != null) {
+            aso.put("naturalPercentage", naturalPercentage);
+        }
 
-if(this.technologicalPercentage != null) {
-aso.put("technologicalPercentage", technologicalPercentage);
-}
+        if (this.basicOutput != null) {
+            aso.put("basicOutput", basicOutput);
+        }
 
-return aso;
-}
+        if (this.technologicalPercentage != null) {
+            aso.put("technologicalPercentage", technologicalPercentage);
+        }
 
-public Integer getArmyPercentage() {
-return armyPercentage;
-}
+        return aso;
+    }
 
-public void setArmyPercentage(Integer armyPercentage) {
-this.armyPercentage = armyPercentage;
-}
+    public Integer getArmyPercentage() {
+        return armyPercentage;
+    }
 
-public Integer getCommenceRate() {
-return commenceRate;
-}
+    public void setArmyPercentage(Integer armyPercentage) {
+        this.armyPercentage = armyPercentage;
+    }
 
-public void setCommenceRate(Integer commenceRate) {
-this.commenceRate = commenceRate;
-}
+    public Integer getCommenceRate() {
+        return commenceRate;
+    }
 
-public Integer getProductionCapacity() {
-return productionCapacity;
-}
+    public void setCommenceRate(Integer commenceRate) {
+        this.commenceRate = commenceRate;
+    }
 
-public void setProductionCapacity(Integer productionCapacity) {
-this.productionCapacity = productionCapacity;
-}
+    public Integer getProductionCapacity() {
+        return productionCapacity;
+    }
 
-public Integer getTypeid() {
-return typeid;
-}
+    public void setProductionCapacity(Integer productionCapacity) {
+        this.productionCapacity = productionCapacity;
+    }
 
-public void setTypeid(Integer typeid) {
-this.typeid = typeid;
-}
+    public Integer getTypeid() {
+        return typeid;
+    }
 
-public Integer getTotalOutput() {
-return totalOutput;
-}
+    public void setTypeid(Integer typeid) {
+        this.typeid = typeid;
+    }
 
-public void setTotalOutput(Integer totalOutput) {
-this.totalOutput = totalOutput;
-}
+    public Integer getTotalOutput() {
+        return totalOutput;
+    }
 
-public Integer getCimeliaPercentage() {
-return cimeliaPercentage;
-}
+    public void setTotalOutput(Integer totalOutput) {
+        this.totalOutput = totalOutput;
+    }
 
-public void setCimeliaPercentage(Integer cimeliaPercentage) {
-this.cimeliaPercentage = cimeliaPercentage;
-}
+    public Integer getCimeliaPercentage() {
+        return cimeliaPercentage;
+    }
 
-public Integer getFieldPercentage() {
-return fieldPercentage;
-}
+    public void setCimeliaPercentage(Integer cimeliaPercentage) {
+        this.cimeliaPercentage = cimeliaPercentage;
+    }
 
-public void setFieldPercentage(Integer fieldPercentage) {
-this.fieldPercentage = fieldPercentage;
-}
+    public Integer getFieldPercentage() {
+        return fieldPercentage;
+    }
 
-public Integer getCommenceDemands() {
-return commenceDemands;
-}
+    public void setFieldPercentage(Integer fieldPercentage) {
+        this.fieldPercentage = fieldPercentage;
+    }
 
-public void setCommenceDemands(Integer commenceDemands) {
-this.commenceDemands = commenceDemands;
-}
+    public Integer getCommenceDemands() {
+        return commenceDemands;
+    }
 
-public Integer getHeroPercentage() {
-return heroPercentage;
-}
+    public void setCommenceDemands(Integer commenceDemands) {
+        this.commenceDemands = commenceDemands;
+    }
 
-public void setHeroPercentage(Integer heroPercentage) {
-this.heroPercentage = heroPercentage;
-}
+    public Integer getHeroPercentage() {
+        return heroPercentage;
+    }
 
-public Integer getMaxLabour() {
-return maxLabour;
-}
+    public void setHeroPercentage(Integer heroPercentage) {
+        this.heroPercentage = heroPercentage;
+    }
 
-public void setMaxLabour(Integer maxLabour) {
-this.maxLabour = maxLabour;
-}
+    public Integer getMaxLabour() {
+        return maxLabour;
+    }
 
-public Integer getNaturalPercentage() {
-return naturalPercentage;
-}
+    public void setMaxLabour(Integer maxLabour) {
+        this.maxLabour = maxLabour;
+    }
 
-public void setNaturalPercentage(Integer naturalPercentage) {
-this.naturalPercentage = naturalPercentage;
-}
+    public Integer getNaturalPercentage() {
+        return naturalPercentage;
+    }
 
-public Integer getBasicOutput() {
-return basicOutput;
-}
+    public void setNaturalPercentage(Integer naturalPercentage) {
+        this.naturalPercentage = naturalPercentage;
+    }
 
-public void setBasicOutput(Integer basicOutput) {
-this.basicOutput = basicOutput;
-}
+    public Integer getBasicOutput() {
+        return basicOutput;
+    }
 
-public Integer getTechnologicalPercentage() {
-return technologicalPercentage;
-}
+    public void setBasicOutput(Integer basicOutput) {
+        this.basicOutput = basicOutput;
+    }
 
-public void setTechnologicalPercentage(Integer technologicalPercentage) {
-this.technologicalPercentage = technologicalPercentage;
-}
+    public Integer getTechnologicalPercentage() {
+        return technologicalPercentage;
+    }
+
+    public void setTechnologicalPercentage(Integer technologicalPercentage) {
+        this.technologicalPercentage = technologicalPercentage;
+    }
 }

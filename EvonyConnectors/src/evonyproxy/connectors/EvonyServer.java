@@ -28,15 +28,15 @@ import sun.jkernel.ByteArrayToFromHexDigits;
  */
 public class EvonyServer extends AbstractEvony {
     public static int BUFFER_SIZE = 12288;
-    protected String ip;
+    protected String serverIp;
     protected int port;
     boolean incomingPolicyResponse;
     List<PolicyListener> policyResponseListeners;
 
-   public EvonyServer(Sender io, boolean verbose, int port, String ip) {
+   public EvonyServer(Sender io, boolean verbose, int port, String serverIp) {
         super(io, verbose);
         this.port = port;
-        this.ip = ip;
+        this.serverIp = serverIp;
         bufferSize = BUFFER_SIZE;
         incomingPolicyResponse = false;
 //        policyResponseListeners = new ArrayList<PolicyListener>();
@@ -45,10 +45,10 @@ public class EvonyServer extends AbstractEvony {
         initializeVars();
     }
 
-   public EvonyServer(Sender io, String ip, int port) {
+   public EvonyServer(Sender io, String serverIp, int port) {
         super(io, false);
         this.port = port;
-        this.ip = ip;
+        this.serverIp = serverIp;
         bufferSize = BUFFER_SIZE;
         incomingPolicyResponse = false;
 //        policyResponseListeners = new ArrayList<PolicyListener>();
@@ -137,9 +137,9 @@ public class EvonyServer extends AbstractEvony {
 
     public void connectToServer() {
         try {
-            Inet4Address eS = (Inet4Address) InetAddress.getByName(ip);
+            Inet4Address eS = (Inet4Address) InetAddress.getByName(serverIp);
             socket = new Socket(eS, port);
-            log.info("Connected to server " + ip + ":" + port);
+            log.info("Connected to server " + serverIp + ":" + port);
         } catch(UnknownHostException e) {
             log.log(Level.SEVERE, "Exception thrown, unknown host.", e);
 

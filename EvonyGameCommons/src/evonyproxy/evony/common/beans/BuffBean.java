@@ -7,90 +7,91 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class BuffBean implements EvonyPacket {
-private String descName = null;
-private Double endTime = null;
-private String typeId = null;
 
-public BuffBean(ASObject aso) {
+    private String descName = null;
+    private Double endTime = null;
+    private String typeId = null;
 
-if(aso.get("descName") != null) {
-this.descName = (String) aso.get("descName");
-}
+    public BuffBean(ASObject aso) {
 
-if(aso.get("endTime") != null) {
-this.endTime = (Double) aso.get("endTime");
-}
+        if (aso.get("descName") != null) {
+            this.descName = (String) aso.get("descName");
+        }
 
-if(aso.get("typeId") != null) {
-this.typeId = (String) aso.get("typeId");
-}
-}
+        if (aso.get("endTime") != null) {
+            this.endTime = (Double) aso.get("endTime");
+        }
 
-public BuffBean() {
-}
+        if (aso.get("typeId") != null) {
+            this.typeId = (String) aso.get("typeId");
+        }
+    }
 
-@Override
-public BuffBean clone() {
-BuffBean clone = new BuffBean();
+    public BuffBean() {
+    }
 
-if(this.descName != null) {
-clone.setDescName(this.descName);
-}
+    @Override
+    public BuffBean clone() {
+        BuffBean clone = new BuffBean();
 
-if(this.endTime != null) {
-clone.setEndTime(this.endTime);
-}
+        if (this.descName != null) {
+            clone.setDescName(this.descName);
+        }
 
-if(this.typeId != null) {
-clone.setTypeId(this.typeId);
-}
+        if (this.endTime != null) {
+            clone.setEndTime(this.endTime);
+        }
 
-return clone;
-}
+        if (this.typeId != null) {
+            clone.setTypeId(this.typeId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.descName != null) {
-aso.put("descName", descName);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.endTime != null) {
-aso.put("endTime", endTime);
-}
+        if (this.descName != null) {
+            aso.put("descName", descName);
+        }
 
-if(this.typeId != null) {
-aso.put("typeId", typeId);
-}
+        if (this.endTime != null) {
+            aso.put("endTime", endTime);
+        }
 
-return aso;
-}
+        if (this.typeId != null) {
+            aso.put("typeId", typeId);
+        }
 
-public String getDescName() {
-return descName;
-}
+        return aso;
+    }
 
-public void setDescName(String descName) {
-this.descName = descName;
-}
+    public String getDescName() {
+        return descName;
+    }
 
-public Double getEndTime() {
-return endTime;
-}
+    public void setDescName(String descName) {
+        this.descName = descName;
+    }
 
-public void setEndTime(Double endTime) {
-this.endTime = endTime;
-}
+    public Double getEndTime() {
+        return endTime;
+    }
 
-public String getTypeId() {
-return typeId;
-}
+    public void setEndTime(Double endTime) {
+        this.endTime = endTime;
+    }
 
-public void setTypeId(String typeId) {
-this.typeId = typeId;
-}
+    public String getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
+    }
 }

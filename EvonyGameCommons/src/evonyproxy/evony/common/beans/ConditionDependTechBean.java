@@ -7,111 +7,112 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ConditionDependTechBean implements EvonyPacket {
-private Integer level = null;
-private Integer curLevel = null;
-private Boolean successFlag = null;
-private Integer id = null;
 
-public ConditionDependTechBean(ASObject aso) {
+    private Integer level = null;
+    private Integer curLevel = null;
+    private Boolean successFlag = null;
+    private Integer id = null;
 
-if(aso.get("level") != null) {
-this.level = (Integer) aso.get("level");
-}
+    public ConditionDependTechBean(ASObject aso) {
 
-if(aso.get("curLevel") != null) {
-this.curLevel = (Integer) aso.get("curLevel");
-}
+        if (aso.get("level") != null) {
+            this.level = (Integer) aso.get("level");
+        }
 
-if(aso.get("successFlag") != null) {
-this.successFlag = (Boolean) aso.get("successFlag");
-}
+        if (aso.get("curLevel") != null) {
+            this.curLevel = (Integer) aso.get("curLevel");
+        }
 
-if(aso.get("id") != null) {
-this.id = (Integer) aso.get("id");
-}
-}
+        if (aso.get("successFlag") != null) {
+            this.successFlag = (Boolean) aso.get("successFlag");
+        }
 
-public ConditionDependTechBean() {
-}
+        if (aso.get("id") != null) {
+            this.id = (Integer) aso.get("id");
+        }
+    }
 
-@Override
-public ConditionDependTechBean clone() {
-ConditionDependTechBean clone = new ConditionDependTechBean();
+    public ConditionDependTechBean() {
+    }
 
-if(this.level != null) {
-clone.setLevel(this.level);
-}
+    @Override
+    public ConditionDependTechBean clone() {
+        ConditionDependTechBean clone = new ConditionDependTechBean();
 
-if(this.curLevel != null) {
-clone.setCurLevel(this.curLevel);
-}
+        if (this.level != null) {
+            clone.setLevel(this.level);
+        }
 
-if(this.successFlag != null) {
-clone.setSuccessFlag(this.successFlag);
-}
+        if (this.curLevel != null) {
+            clone.setCurLevel(this.curLevel);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.successFlag != null) {
+            clone.setSuccessFlag(this.successFlag);
+        }
 
-return clone;
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.level != null) {
-aso.put("level", level);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.curLevel != null) {
-aso.put("curLevel", curLevel);
-}
+        if (this.level != null) {
+            aso.put("level", level);
+        }
 
-if(this.successFlag != null) {
-aso.put("successFlag", successFlag);
-}
+        if (this.curLevel != null) {
+            aso.put("curLevel", curLevel);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.successFlag != null) {
+            aso.put("successFlag", successFlag);
+        }
 
-return aso;
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-public Integer getLevel() {
-return level;
-}
+        return aso;
+    }
 
-public void setLevel(Integer level) {
-this.level = level;
-}
+    public Integer getLevel() {
+        return level;
+    }
 
-public Integer getCurLevel() {
-return curLevel;
-}
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
-public void setCurLevel(Integer curLevel) {
-this.curLevel = curLevel;
-}
+    public Integer getCurLevel() {
+        return curLevel;
+    }
 
-public Boolean getSuccessFlag() {
-return successFlag;
-}
+    public void setCurLevel(Integer curLevel) {
+        this.curLevel = curLevel;
+    }
 
-public void setSuccessFlag(Boolean successFlag) {
-this.successFlag = successFlag;
-}
+    public Boolean getSuccessFlag() {
+        return successFlag;
+    }
 
-public Integer getId() {
-return id;
-}
+    public void setSuccessFlag(Boolean successFlag) {
+        this.successFlag = successFlag;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

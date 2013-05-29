@@ -7,216 +7,217 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class TradeBean implements EvonyPacket {
-private String resourceName = null;
-private Double price = null;
-private Integer amount = null;
-private Integer id = null;
-private Integer tradeType = null;
-private String tradeTypeName = null;
-private Integer dealedAmount = null;
-private Double dealedTotal = null;
-private Integer resType = null;
 
-public TradeBean(ASObject aso) {
+    private String resourceName = null;
+    private Double price = null;
+    private Integer amount = null;
+    private Integer id = null;
+    private Integer tradeType = null;
+    private String tradeTypeName = null;
+    private Integer dealedAmount = null;
+    private Double dealedTotal = null;
+    private Integer resType = null;
 
-if(aso.get("resourceName") != null) {
-this.resourceName = (String) aso.get("resourceName");
-}
+    public TradeBean(ASObject aso) {
 
-if(aso.get("price") != null) {
-this.price = (Double) aso.get("price");
-}
+        if (aso.get("resourceName") != null) {
+            this.resourceName = (String) aso.get("resourceName");
+        }
 
-if(aso.get("amount") != null) {
-this.amount = (Integer) aso.get("amount");
-}
+        if (aso.get("price") != null) {
+            this.price = (Double) aso.get("price");
+        }
 
-if(aso.get("id") != null) {
-this.id = (Integer) aso.get("id");
-}
+        if (aso.get("amount") != null) {
+            this.amount = (Integer) aso.get("amount");
+        }
 
-if(aso.get("tradeType") != null) {
-this.tradeType = (Integer) aso.get("tradeType");
-}
+        if (aso.get("id") != null) {
+            this.id = (Integer) aso.get("id");
+        }
 
-if(aso.get("tradeTypeName") != null) {
-this.tradeTypeName = (String) aso.get("tradeTypeName");
-}
+        if (aso.get("tradeType") != null) {
+            this.tradeType = (Integer) aso.get("tradeType");
+        }
 
-if(aso.get("dealedAmount") != null) {
-this.dealedAmount = (Integer) aso.get("dealedAmount");
-}
+        if (aso.get("tradeTypeName") != null) {
+            this.tradeTypeName = (String) aso.get("tradeTypeName");
+        }
 
-if(aso.get("dealedTotal") != null) {
-this.dealedTotal = (Double) aso.get("dealedTotal");
-}
+        if (aso.get("dealedAmount") != null) {
+            this.dealedAmount = (Integer) aso.get("dealedAmount");
+        }
 
-if(aso.get("resType") != null) {
-this.resType = (Integer) aso.get("resType");
-}
-}
+        if (aso.get("dealedTotal") != null) {
+            this.dealedTotal = (Double) aso.get("dealedTotal");
+        }
 
-public TradeBean() {
-}
+        if (aso.get("resType") != null) {
+            this.resType = (Integer) aso.get("resType");
+        }
+    }
 
-@Override
-public TradeBean clone() {
-TradeBean clone = new TradeBean();
+    public TradeBean() {
+    }
 
-if(this.resourceName != null) {
-clone.setResourceName(this.resourceName);
-}
+    @Override
+    public TradeBean clone() {
+        TradeBean clone = new TradeBean();
 
-if(this.price != null) {
-clone.setPrice(this.price);
-}
+        if (this.resourceName != null) {
+            clone.setResourceName(this.resourceName);
+        }
 
-if(this.amount != null) {
-clone.setAmount(this.amount);
-}
+        if (this.price != null) {
+            clone.setPrice(this.price);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.amount != null) {
+            clone.setAmount(this.amount);
+        }
 
-if(this.tradeType != null) {
-clone.setTradeType(this.tradeType);
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-if(this.tradeTypeName != null) {
-clone.setTradeTypeName(this.tradeTypeName);
-}
+        if (this.tradeType != null) {
+            clone.setTradeType(this.tradeType);
+        }
 
-if(this.dealedAmount != null) {
-clone.setDealedAmount(this.dealedAmount);
-}
+        if (this.tradeTypeName != null) {
+            clone.setTradeTypeName(this.tradeTypeName);
+        }
 
-if(this.dealedTotal != null) {
-clone.setDealedTotal(this.dealedTotal);
-}
+        if (this.dealedAmount != null) {
+            clone.setDealedAmount(this.dealedAmount);
+        }
 
-if(this.resType != null) {
-clone.setResType(this.resType);
-}
+        if (this.dealedTotal != null) {
+            clone.setDealedTotal(this.dealedTotal);
+        }
 
-return clone;
-}
+        if (this.resType != null) {
+            clone.setResType(this.resType);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.resourceName != null) {
-aso.put("resourceName", resourceName);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.price != null) {
-aso.put("price", price);
-}
+        if (this.resourceName != null) {
+            aso.put("resourceName", resourceName);
+        }
 
-if(this.amount != null) {
-aso.put("amount", amount);
-}
+        if (this.price != null) {
+            aso.put("price", price);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.amount != null) {
+            aso.put("amount", amount);
+        }
 
-if(this.tradeType != null) {
-aso.put("tradeType", tradeType);
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-if(this.tradeTypeName != null) {
-aso.put("tradeTypeName", tradeTypeName);
-}
+        if (this.tradeType != null) {
+            aso.put("tradeType", tradeType);
+        }
 
-if(this.dealedAmount != null) {
-aso.put("dealedAmount", dealedAmount);
-}
+        if (this.tradeTypeName != null) {
+            aso.put("tradeTypeName", tradeTypeName);
+        }
 
-if(this.dealedTotal != null) {
-aso.put("dealedTotal", dealedTotal);
-}
+        if (this.dealedAmount != null) {
+            aso.put("dealedAmount", dealedAmount);
+        }
 
-if(this.resType != null) {
-aso.put("resType", resType);
-}
+        if (this.dealedTotal != null) {
+            aso.put("dealedTotal", dealedTotal);
+        }
 
-return aso;
-}
+        if (this.resType != null) {
+            aso.put("resType", resType);
+        }
 
-public String getResourceName() {
-return resourceName;
-}
+        return aso;
+    }
 
-public void setResourceName(String resourceName) {
-this.resourceName = resourceName;
-}
+    public String getResourceName() {
+        return resourceName;
+    }
 
-public Double getPrice() {
-return price;
-}
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
 
-public void setPrice(Double price) {
-this.price = price;
-}
+    public Double getPrice() {
+        return price;
+    }
 
-public Integer getAmount() {
-return amount;
-}
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
-public void setAmount(Integer amount) {
-this.amount = amount;
-}
+    public Integer getAmount() {
+        return amount;
+    }
 
-public Integer getId() {
-return id;
-}
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
 
-public Integer getTradeType() {
-return tradeType;
-}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-public void setTradeType(Integer tradeType) {
-this.tradeType = tradeType;
-}
+    public Integer getTradeType() {
+        return tradeType;
+    }
 
-public String getTradeTypeName() {
-return tradeTypeName;
-}
+    public void setTradeType(Integer tradeType) {
+        this.tradeType = tradeType;
+    }
 
-public void setTradeTypeName(String tradeTypeName) {
-this.tradeTypeName = tradeTypeName;
-}
+    public String getTradeTypeName() {
+        return tradeTypeName;
+    }
 
-public Integer getDealedAmount() {
-return dealedAmount;
-}
+    public void setTradeTypeName(String tradeTypeName) {
+        this.tradeTypeName = tradeTypeName;
+    }
 
-public void setDealedAmount(Integer dealedAmount) {
-this.dealedAmount = dealedAmount;
-}
+    public Integer getDealedAmount() {
+        return dealedAmount;
+    }
 
-public Double getDealedTotal() {
-return dealedTotal;
-}
+    public void setDealedAmount(Integer dealedAmount) {
+        this.dealedAmount = dealedAmount;
+    }
 
-public void setDealedTotal(Double dealedTotal) {
-this.dealedTotal = dealedTotal;
-}
+    public Double getDealedTotal() {
+        return dealedTotal;
+    }
 
-public Integer getResType() {
-return resType;
-}
+    public void setDealedTotal(Double dealedTotal) {
+        this.dealedTotal = dealedTotal;
+    }
 
-public void setResType(Integer resType) {
-this.resType = resType;
-}
+    public Integer getResType() {
+        return resType;
+    }
+
+    public void setResType(Integer resType) {
+        this.resType = resType;
+    }
 }

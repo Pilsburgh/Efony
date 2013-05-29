@@ -7,90 +7,91 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class GamblingItemBean implements EvonyPacket {
-private Integer kind = null;
-private Integer count = null;
-private String id = null;
 
-public GamblingItemBean(ASObject aso) {
+    private Integer kind = null;
+    private Integer count = null;
+    private String id = null;
 
-if(aso.get("kind") != null) {
-this.kind = (Integer) aso.get("kind");
-}
+    public GamblingItemBean(ASObject aso) {
 
-if(aso.get("count") != null) {
-this.count = (Integer) aso.get("count");
-}
+        if (aso.get("kind") != null) {
+            this.kind = (Integer) aso.get("kind");
+        }
 
-if(aso.get("id") != null) {
-this.id = (String) aso.get("id");
-}
-}
+        if (aso.get("count") != null) {
+            this.count = (Integer) aso.get("count");
+        }
 
-public GamblingItemBean() {
-}
+        if (aso.get("id") != null) {
+            this.id = (String) aso.get("id");
+        }
+    }
 
-@Override
-public GamblingItemBean clone() {
-GamblingItemBean clone = new GamblingItemBean();
+    public GamblingItemBean() {
+    }
 
-if(this.kind != null) {
-clone.setKind(this.kind);
-}
+    @Override
+    public GamblingItemBean clone() {
+        GamblingItemBean clone = new GamblingItemBean();
 
-if(this.count != null) {
-clone.setCount(this.count);
-}
+        if (this.kind != null) {
+            clone.setKind(this.kind);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.count != null) {
+            clone.setCount(this.count);
+        }
 
-return clone;
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.kind != null) {
-aso.put("kind", kind);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.count != null) {
-aso.put("count", count);
-}
+        if (this.kind != null) {
+            aso.put("kind", kind);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.count != null) {
+            aso.put("count", count);
+        }
 
-return aso;
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-public Integer getKind() {
-return kind;
-}
+        return aso;
+    }
 
-public void setKind(Integer kind) {
-this.kind = kind;
-}
+    public Integer getKind() {
+        return kind;
+    }
 
-public Integer getCount() {
-return count;
-}
+    public void setKind(Integer kind) {
+        this.kind = kind;
+    }
 
-public void setCount(Integer count) {
-this.count = count;
-}
+    public Integer getCount() {
+        return count;
+    }
 
-public String getId() {
-return id;
-}
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
-public void setId(String id) {
-this.id = id;
-}
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

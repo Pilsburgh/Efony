@@ -24,18 +24,28 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Abstract containing all commonalites between Evony server, client, and policy listeners
  * @version .01
- * @author HP_Administrator
+ * @author Michael Archibald
  */
 public abstract class AbstractEvony implements Runnable {
+    /**
+     * The data buffer size
+     */
     protected int bufferSize;
     protected Logger log;
+    /**
+     * Reference to a communication channel to connect to
+     */
     protected Sender io;
     protected Socket socket;
     protected BufferedInputStream in;
     protected BufferedOutputStream out;
     protected boolean verbose, debug;
     protected byte[] buffer;
+    /**
+     * If true, then the receive data loop quits.
+     */
     protected boolean terminated;
     protected int recievedCount, sentCount;
     protected List<AmfListener> amfListeners;

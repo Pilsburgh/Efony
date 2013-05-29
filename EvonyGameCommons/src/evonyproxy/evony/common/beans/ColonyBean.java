@@ -7,237 +7,238 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ColonyBean implements EvonyPacket {
-private Double endTime = null;
-private String lordName = null;
-private Integer status = null;
-private Integer relation = null;
-private Boolean isCanLevy = null;
-private String cityName = null;
-private String position = null;
-private String time = null;
-private Integer castleId = null;
-private Boolean isCanOverview = null;
 
-public ColonyBean(ASObject aso) {
+    private Double endTime = null;
+    private String lordName = null;
+    private Integer status = null;
+    private Integer relation = null;
+    private Boolean isCanLevy = null;
+    private String cityName = null;
+    private String position = null;
+    private String time = null;
+    private Integer castleId = null;
+    private Boolean isCanOverview = null;
 
-if(aso.get("endTime") != null) {
-this.endTime = (Double) aso.get("endTime");
-}
+    public ColonyBean(ASObject aso) {
 
-if(aso.get("lordName") != null) {
-this.lordName = (String) aso.get("lordName");
-}
+        if (aso.get("endTime") != null) {
+            this.endTime = (Double) aso.get("endTime");
+        }
 
-if(aso.get("status") != null) {
-this.status = (Integer) aso.get("status");
-}
+        if (aso.get("lordName") != null) {
+            this.lordName = (String) aso.get("lordName");
+        }
 
-if(aso.get("relation") != null) {
-this.relation = (Integer) aso.get("relation");
-}
+        if (aso.get("status") != null) {
+            this.status = (Integer) aso.get("status");
+        }
 
-if(aso.get("isCanLevy") != null) {
-this.isCanLevy = (Boolean) aso.get("isCanLevy");
-}
+        if (aso.get("relation") != null) {
+            this.relation = (Integer) aso.get("relation");
+        }
 
-if(aso.get("cityName") != null) {
-this.cityName = (String) aso.get("cityName");
-}
+        if (aso.get("isCanLevy") != null) {
+            this.isCanLevy = (Boolean) aso.get("isCanLevy");
+        }
 
-if(aso.get("position") != null) {
-this.position = (String) aso.get("position");
-}
+        if (aso.get("cityName") != null) {
+            this.cityName = (String) aso.get("cityName");
+        }
 
-if(aso.get("time") != null) {
-this.time = (String) aso.get("time");
-}
+        if (aso.get("position") != null) {
+            this.position = (String) aso.get("position");
+        }
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
+        if (aso.get("time") != null) {
+            this.time = (String) aso.get("time");
+        }
 
-if(aso.get("isCanOverview") != null) {
-this.isCanOverview = (Boolean) aso.get("isCanOverview");
-}
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
 
-public ColonyBean() {
-}
+        if (aso.get("isCanOverview") != null) {
+            this.isCanOverview = (Boolean) aso.get("isCanOverview");
+        }
+    }
 
-@Override
-public ColonyBean clone() {
-ColonyBean clone = new ColonyBean();
+    public ColonyBean() {
+    }
 
-if(this.endTime != null) {
-clone.setEndTime(this.endTime);
-}
+    @Override
+    public ColonyBean clone() {
+        ColonyBean clone = new ColonyBean();
 
-if(this.lordName != null) {
-clone.setLordName(this.lordName);
-}
+        if (this.endTime != null) {
+            clone.setEndTime(this.endTime);
+        }
 
-if(this.status != null) {
-clone.setStatus(this.status);
-}
+        if (this.lordName != null) {
+            clone.setLordName(this.lordName);
+        }
 
-if(this.relation != null) {
-clone.setRelation(this.relation);
-}
+        if (this.status != null) {
+            clone.setStatus(this.status);
+        }
 
-if(this.isCanLevy != null) {
-clone.setIsCanLevy(this.isCanLevy);
-}
+        if (this.relation != null) {
+            clone.setRelation(this.relation);
+        }
 
-if(this.cityName != null) {
-clone.setCityName(this.cityName);
-}
+        if (this.isCanLevy != null) {
+            clone.setIsCanLevy(this.isCanLevy);
+        }
 
-if(this.position != null) {
-clone.setPosition(this.position);
-}
+        if (this.cityName != null) {
+            clone.setCityName(this.cityName);
+        }
 
-if(this.time != null) {
-clone.setTime(this.time);
-}
+        if (this.position != null) {
+            clone.setPosition(this.position);
+        }
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+        if (this.time != null) {
+            clone.setTime(this.time);
+        }
 
-if(this.isCanOverview != null) {
-clone.setIsCanOverview(this.isCanOverview);
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-return clone;
-}
+        if (this.isCanOverview != null) {
+            clone.setIsCanOverview(this.isCanOverview);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.endTime != null) {
-aso.put("endTime", endTime);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.lordName != null) {
-aso.put("lordName", lordName);
-}
+        if (this.endTime != null) {
+            aso.put("endTime", endTime);
+        }
 
-if(this.status != null) {
-aso.put("status", status);
-}
+        if (this.lordName != null) {
+            aso.put("lordName", lordName);
+        }
 
-if(this.relation != null) {
-aso.put("relation", relation);
-}
+        if (this.status != null) {
+            aso.put("status", status);
+        }
 
-if(this.isCanLevy != null) {
-aso.put("isCanLevy", isCanLevy);
-}
+        if (this.relation != null) {
+            aso.put("relation", relation);
+        }
 
-if(this.cityName != null) {
-aso.put("cityName", cityName);
-}
+        if (this.isCanLevy != null) {
+            aso.put("isCanLevy", isCanLevy);
+        }
 
-if(this.position != null) {
-aso.put("position", position);
-}
+        if (this.cityName != null) {
+            aso.put("cityName", cityName);
+        }
 
-if(this.time != null) {
-aso.put("time", time);
-}
+        if (this.position != null) {
+            aso.put("position", position);
+        }
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+        if (this.time != null) {
+            aso.put("time", time);
+        }
 
-if(this.isCanOverview != null) {
-aso.put("isCanOverview", isCanOverview);
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-return aso;
-}
+        if (this.isCanOverview != null) {
+            aso.put("isCanOverview", isCanOverview);
+        }
 
-public Double getEndTime() {
-return endTime;
-}
+        return aso;
+    }
 
-public void setEndTime(Double endTime) {
-this.endTime = endTime;
-}
+    public Double getEndTime() {
+        return endTime;
+    }
 
-public String getLordName() {
-return lordName;
-}
+    public void setEndTime(Double endTime) {
+        this.endTime = endTime;
+    }
 
-public void setLordName(String lordName) {
-this.lordName = lordName;
-}
+    public String getLordName() {
+        return lordName;
+    }
 
-public Integer getStatus() {
-return status;
-}
+    public void setLordName(String lordName) {
+        this.lordName = lordName;
+    }
 
-public void setStatus(Integer status) {
-this.status = status;
-}
+    public Integer getStatus() {
+        return status;
+    }
 
-public Integer getRelation() {
-return relation;
-}
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-public void setRelation(Integer relation) {
-this.relation = relation;
-}
+    public Integer getRelation() {
+        return relation;
+    }
 
-public Boolean getIsCanLevy() {
-return isCanLevy;
-}
+    public void setRelation(Integer relation) {
+        this.relation = relation;
+    }
 
-public void setIsCanLevy(Boolean isCanLevy) {
-this.isCanLevy = isCanLevy;
-}
+    public Boolean getIsCanLevy() {
+        return isCanLevy;
+    }
 
-public String getCityName() {
-return cityName;
-}
+    public void setIsCanLevy(Boolean isCanLevy) {
+        this.isCanLevy = isCanLevy;
+    }
 
-public void setCityName(String cityName) {
-this.cityName = cityName;
-}
+    public String getCityName() {
+        return cityName;
+    }
 
-public String getPosition() {
-return position;
-}
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
 
-public void setPosition(String position) {
-this.position = position;
-}
+    public String getPosition() {
+        return position;
+    }
 
-public String getTime() {
-return time;
-}
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
-public void setTime(String time) {
-this.time = time;
-}
+    public String getTime() {
+        return time;
+    }
 
-public Integer getCastleId() {
-return castleId;
-}
+    public void setTime(String time) {
+        this.time = time;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
 
-public Boolean getIsCanOverview() {
-return isCanOverview;
-}
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 
-public void setIsCanOverview(Boolean isCanOverview) {
-this.isCanOverview = isCanOverview;
-}
+    public Boolean getIsCanOverview() {
+        return isCanOverview;
+    }
+
+    public void setIsCanOverview(Boolean isCanOverview) {
+        this.isCanOverview = isCanOverview;
+    }
 }

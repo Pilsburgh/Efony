@@ -7,251 +7,252 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class QuestBean implements EvonyPacket {
-private String manual = null;
-private Boolean isFinish = null;
-private String name = null;
-private Integer version = null;
-private Boolean islast = null;
-private Integer questId = null;
-private Boolean isCard = null;
-private ArrayList<QuestTargetBean> targets = null;
-private String award = null;
-private String description = null;
 
-public QuestBean(ASObject aso) {
-targets = new ArrayList<QuestTargetBean>();
+    private String manual = null;
+    private Boolean isFinish = null;
+    private String name = null;
+    private Integer version = null;
+    private Boolean islast = null;
+    private Integer questId = null;
+    private Boolean isCard = null;
+    private ArrayList<QuestTargetBean> targets = null;
+    private String award = null;
+    private String description = null;
 
-if(aso.get("manual") != null) {
-this.manual = (String) aso.get("manual");
-}
+    public QuestBean(ASObject aso) {
+        targets = new ArrayList<QuestTargetBean>();
 
-if(aso.get("isFinish") != null) {
-this.isFinish = (Boolean) aso.get("isFinish");
-}
+        if (aso.get("manual") != null) {
+            this.manual = (String) aso.get("manual");
+        }
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("isFinish") != null) {
+            this.isFinish = (Boolean) aso.get("isFinish");
+        }
 
-if(aso.get("version") != null) {
-this.version = (Integer) aso.get("version");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("islast") != null) {
-this.islast = (Boolean) aso.get("islast");
-}
+        if (aso.get("version") != null) {
+            this.version = (Integer) aso.get("version");
+        }
 
-if(aso.get("questId") != null) {
-this.questId = (Integer) aso.get("questId");
-}
+        if (aso.get("islast") != null) {
+            this.islast = (Boolean) aso.get("islast");
+        }
 
-if(aso.get("isCard") != null) {
-this.isCard = (Boolean) aso.get("isCard");
-}
+        if (aso.get("questId") != null) {
+            this.questId = (Integer) aso.get("questId");
+        }
 
-if(aso.get("targets") != null) {
-Object[] objArr = (Object[]) aso.get("targets");
-for(int j = 0; j < objArr.length; j++) {
-targets.add(new QuestTargetBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("isCard") != null) {
+            this.isCard = (Boolean) aso.get("isCard");
+        }
 
-if(aso.get("award") != null) {
-this.award = (String) aso.get("award");
-}
+        if (aso.get("targets") != null) {
+            Object[] objArr = (Object[]) aso.get("targets");
+            for (int j = 0; j < objArr.length; j++) {
+                targets.add(new QuestTargetBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("description") != null) {
-this.description = (String) aso.get("description");
-}
-}
+        if (aso.get("award") != null) {
+            this.award = (String) aso.get("award");
+        }
 
-public QuestBean() {
-}
+        if (aso.get("description") != null) {
+            this.description = (String) aso.get("description");
+        }
+    }
 
-@Override
-public QuestBean clone() {
-QuestBean clone = new QuestBean();
+    public QuestBean() {
+    }
 
-if(this.manual != null) {
-clone.setManual(this.manual);
-}
+    @Override
+    public QuestBean clone() {
+        QuestBean clone = new QuestBean();
 
-if(this.isFinish != null) {
-clone.setIsFinish(this.isFinish);
-}
+        if (this.manual != null) {
+            clone.setManual(this.manual);
+        }
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.isFinish != null) {
+            clone.setIsFinish(this.isFinish);
+        }
 
-if(this.version != null) {
-clone.setVersion(this.version);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.islast != null) {
-clone.setIslast(this.islast);
-}
+        if (this.version != null) {
+            clone.setVersion(this.version);
+        }
 
-if(this.questId != null) {
-clone.setQuestId(this.questId);
-}
+        if (this.islast != null) {
+            clone.setIslast(this.islast);
+        }
 
-if(this.isCard != null) {
-clone.setIsCard(this.isCard);
-}
+        if (this.questId != null) {
+            clone.setQuestId(this.questId);
+        }
 
-if(this.targets != null) {
-ArrayList tmpArrLst = new ArrayList<QuestTargetBean>();
+        if (this.isCard != null) {
+            clone.setIsCard(this.isCard);
+        }
 
-for(Object bean : targets) {
-QuestTargetBean tmpBean = (QuestTargetBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setTargets(tmpArrLst);
-}
+        if (this.targets != null) {
+            ArrayList tmpArrLst = new ArrayList<QuestTargetBean>();
 
-if(this.award != null) {
-clone.setAward(this.award);
-}
+            for (Object bean : targets) {
+                QuestTargetBean tmpBean = (QuestTargetBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setTargets(tmpArrLst);
+        }
 
-if(this.description != null) {
-clone.setDescription(this.description);
-}
+        if (this.award != null) {
+            clone.setAward(this.award);
+        }
 
-return clone;
-}
+        if (this.description != null) {
+            clone.setDescription(this.description);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.manual != null) {
-aso.put("manual", manual);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.isFinish != null) {
-aso.put("isFinish", isFinish);
-}
+        if (this.manual != null) {
+            aso.put("manual", manual);
+        }
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.isFinish != null) {
+            aso.put("isFinish", isFinish);
+        }
 
-if(this.version != null) {
-aso.put("version", version);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.islast != null) {
-aso.put("islast", islast);
-}
+        if (this.version != null) {
+            aso.put("version", version);
+        }
 
-if(this.questId != null) {
-aso.put("questId", questId);
-}
+        if (this.islast != null) {
+            aso.put("islast", islast);
+        }
 
-if(this.isCard != null) {
-aso.put("isCard", isCard);
-}
+        if (this.questId != null) {
+            aso.put("questId", questId);
+        }
 
-if(this.targets != null) {
-ArrayList al = new ArrayList();
-for(Object obj : targets) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-}
+        if (this.isCard != null) {
+            aso.put("isCard", isCard);
+        }
 
-if(this.award != null) {
-aso.put("award", award);
-}
+        if (this.targets != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : targets) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+        }
 
-if(this.description != null) {
-aso.put("description", description);
-}
+        if (this.award != null) {
+            aso.put("award", award);
+        }
 
-return aso;
-}
+        if (this.description != null) {
+            aso.put("description", description);
+        }
 
-public String getManual() {
-return manual;
-}
+        return aso;
+    }
 
-public void setManual(String manual) {
-this.manual = manual;
-}
+    public String getManual() {
+        return manual;
+    }
 
-public Boolean getIsFinish() {
-return isFinish;
-}
+    public void setManual(String manual) {
+        this.manual = manual;
+    }
 
-public void setIsFinish(Boolean isFinish) {
-this.isFinish = isFinish;
-}
+    public Boolean getIsFinish() {
+        return isFinish;
+    }
 
-public String getName() {
-return name;
-}
+    public void setIsFinish(Boolean isFinish) {
+        this.isFinish = isFinish;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Integer getVersion() {
-return version;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setVersion(Integer version) {
-this.version = version;
-}
+    public Integer getVersion() {
+        return version;
+    }
 
-public Boolean getIslast() {
-return islast;
-}
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 
-public void setIslast(Boolean islast) {
-this.islast = islast;
-}
+    public Boolean getIslast() {
+        return islast;
+    }
 
-public Integer getQuestId() {
-return questId;
-}
+    public void setIslast(Boolean islast) {
+        this.islast = islast;
+    }
 
-public void setQuestId(Integer questId) {
-this.questId = questId;
-}
+    public Integer getQuestId() {
+        return questId;
+    }
 
-public Boolean getIsCard() {
-return isCard;
-}
+    public void setQuestId(Integer questId) {
+        this.questId = questId;
+    }
 
-public void setIsCard(Boolean isCard) {
-this.isCard = isCard;
-}
+    public Boolean getIsCard() {
+        return isCard;
+    }
 
-public ArrayList getTargets() {
-return targets;
-}
+    public void setIsCard(Boolean isCard) {
+        this.isCard = isCard;
+    }
 
-public void setTargets(ArrayList targets) {
-this.targets = targets;
-}
+    public ArrayList getTargets() {
+        return targets;
+    }
 
-public String getAward() {
-return award;
-}
+    public void setTargets(ArrayList targets) {
+        this.targets = targets;
+    }
 
-public void setAward(String award) {
-this.award = award;
-}
+    public String getAward() {
+        return award;
+    }
 
-public String getDescription() {
-return description;
-}
+    public void setAward(String award) {
+        this.award = award;
+    }
 
-public void setDescription(String description) {
-this.description = description;
-}
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

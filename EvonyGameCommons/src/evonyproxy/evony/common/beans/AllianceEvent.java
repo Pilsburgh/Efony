@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class AllianceEvent implements EvonyPacket {
-private Double time = null;
-private String eventName = null;
 
-public AllianceEvent(ASObject aso) {
+    private Double time = null;
+    private String eventName = null;
 
-if(aso.get("time") != null) {
-this.time = (Double) aso.get("time");
-}
+    public AllianceEvent(ASObject aso) {
 
-if(aso.get("eventName") != null) {
-this.eventName = (String) aso.get("eventName");
-}
-}
+        if (aso.get("time") != null) {
+            this.time = (Double) aso.get("time");
+        }
 
-public AllianceEvent() {
-}
+        if (aso.get("eventName") != null) {
+            this.eventName = (String) aso.get("eventName");
+        }
+    }
 
-@Override
-public AllianceEvent clone() {
-AllianceEvent clone = new AllianceEvent();
+    public AllianceEvent() {
+    }
 
-if(this.time != null) {
-clone.setTime(this.time);
-}
+    @Override
+    public AllianceEvent clone() {
+        AllianceEvent clone = new AllianceEvent();
 
-if(this.eventName != null) {
-clone.setEventName(this.eventName);
-}
+        if (this.time != null) {
+            clone.setTime(this.time);
+        }
 
-return clone;
-}
+        if (this.eventName != null) {
+            clone.setEventName(this.eventName);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.time != null) {
-aso.put("time", time);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.eventName != null) {
-aso.put("eventName", eventName);
-}
+        if (this.time != null) {
+            aso.put("time", time);
+        }
 
-return aso;
-}
+        if (this.eventName != null) {
+            aso.put("eventName", eventName);
+        }
 
-public Double getTime() {
-return time;
-}
+        return aso;
+    }
 
-public void setTime(Double time) {
-this.time = time;
-}
+    public Double getTime() {
+        return time;
+    }
 
-public String getEventName() {
-return eventName;
-}
+    public void setTime(Double time) {
+        this.time = time;
+    }
 
-public void setEventName(String eventName) {
-this.eventName = eventName;
-}
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
 }

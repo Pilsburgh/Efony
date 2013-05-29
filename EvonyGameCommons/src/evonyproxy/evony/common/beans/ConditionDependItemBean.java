@@ -7,111 +7,112 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ConditionDependItemBean implements EvonyPacket {
-private Integer num = null;
-private Integer curNum = null;
-private Boolean successFlag = null;
-private String id = null;
 
-public ConditionDependItemBean(ASObject aso) {
+    private Integer num = null;
+    private Integer curNum = null;
+    private Boolean successFlag = null;
+    private String id = null;
 
-if(aso.get("num") != null) {
-this.num = (Integer) aso.get("num");
-}
+    public ConditionDependItemBean(ASObject aso) {
 
-if(aso.get("curNum") != null) {
-this.curNum = (Integer) aso.get("curNum");
-}
+        if (aso.get("num") != null) {
+            this.num = (Integer) aso.get("num");
+        }
 
-if(aso.get("successFlag") != null) {
-this.successFlag = (Boolean) aso.get("successFlag");
-}
+        if (aso.get("curNum") != null) {
+            this.curNum = (Integer) aso.get("curNum");
+        }
 
-if(aso.get("id") != null) {
-this.id = (String) aso.get("id");
-}
-}
+        if (aso.get("successFlag") != null) {
+            this.successFlag = (Boolean) aso.get("successFlag");
+        }
 
-public ConditionDependItemBean() {
-}
+        if (aso.get("id") != null) {
+            this.id = (String) aso.get("id");
+        }
+    }
 
-@Override
-public ConditionDependItemBean clone() {
-ConditionDependItemBean clone = new ConditionDependItemBean();
+    public ConditionDependItemBean() {
+    }
 
-if(this.num != null) {
-clone.setNum(this.num);
-}
+    @Override
+    public ConditionDependItemBean clone() {
+        ConditionDependItemBean clone = new ConditionDependItemBean();
 
-if(this.curNum != null) {
-clone.setCurNum(this.curNum);
-}
+        if (this.num != null) {
+            clone.setNum(this.num);
+        }
 
-if(this.successFlag != null) {
-clone.setSuccessFlag(this.successFlag);
-}
+        if (this.curNum != null) {
+            clone.setCurNum(this.curNum);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.successFlag != null) {
+            clone.setSuccessFlag(this.successFlag);
+        }
 
-return clone;
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.num != null) {
-aso.put("num", num);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.curNum != null) {
-aso.put("curNum", curNum);
-}
+        if (this.num != null) {
+            aso.put("num", num);
+        }
 
-if(this.successFlag != null) {
-aso.put("successFlag", successFlag);
-}
+        if (this.curNum != null) {
+            aso.put("curNum", curNum);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.successFlag != null) {
+            aso.put("successFlag", successFlag);
+        }
 
-return aso;
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-public Integer getNum() {
-return num;
-}
+        return aso;
+    }
 
-public void setNum(Integer num) {
-this.num = num;
-}
+    public Integer getNum() {
+        return num;
+    }
 
-public Integer getCurNum() {
-return curNum;
-}
+    public void setNum(Integer num) {
+        this.num = num;
+    }
 
-public void setCurNum(Integer curNum) {
-this.curNum = curNum;
-}
+    public Integer getCurNum() {
+        return curNum;
+    }
 
-public Boolean getSuccessFlag() {
-return successFlag;
-}
+    public void setCurNum(Integer curNum) {
+        this.curNum = curNum;
+    }
 
-public void setSuccessFlag(Boolean successFlag) {
-this.successFlag = successFlag;
-}
+    public Boolean getSuccessFlag() {
+        return successFlag;
+    }
 
-public String getId() {
-return id;
-}
+    public void setSuccessFlag(Boolean successFlag) {
+        this.successFlag = successFlag;
+    }
 
-public void setId(String id) {
-this.id = id;
-}
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }

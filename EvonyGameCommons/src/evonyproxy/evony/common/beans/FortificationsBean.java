@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class FortificationsBean implements EvonyPacket {
-private Integer trap = null;
-private Integer arrowTower = null;
-private Integer rockfall = null;
-private Integer rollingLogs = null;
-private Integer abatis = null;
 
-public FortificationsBean(ASObject aso) {
+    private Integer trap = null;
+    private Integer arrowTower = null;
+    private Integer rockfall = null;
+    private Integer rollingLogs = null;
+    private Integer abatis = null;
 
-if(aso.get("trap") != null) {
-this.trap = (Integer) aso.get("trap");
-}
+    public FortificationsBean(ASObject aso) {
 
-if(aso.get("arrowTower") != null) {
-this.arrowTower = (Integer) aso.get("arrowTower");
-}
+        if (aso.get("trap") != null) {
+            this.trap = (Integer) aso.get("trap");
+        }
 
-if(aso.get("rockfall") != null) {
-this.rockfall = (Integer) aso.get("rockfall");
-}
+        if (aso.get("arrowTower") != null) {
+            this.arrowTower = (Integer) aso.get("arrowTower");
+        }
 
-if(aso.get("rollingLogs") != null) {
-this.rollingLogs = (Integer) aso.get("rollingLogs");
-}
+        if (aso.get("rockfall") != null) {
+            this.rockfall = (Integer) aso.get("rockfall");
+        }
 
-if(aso.get("abatis") != null) {
-this.abatis = (Integer) aso.get("abatis");
-}
-}
+        if (aso.get("rollingLogs") != null) {
+            this.rollingLogs = (Integer) aso.get("rollingLogs");
+        }
 
-public FortificationsBean() {
-}
+        if (aso.get("abatis") != null) {
+            this.abatis = (Integer) aso.get("abatis");
+        }
+    }
 
-@Override
-public FortificationsBean clone() {
-FortificationsBean clone = new FortificationsBean();
+    public FortificationsBean() {
+    }
 
-if(this.trap != null) {
-clone.setTrap(this.trap);
-}
+    @Override
+    public FortificationsBean clone() {
+        FortificationsBean clone = new FortificationsBean();
 
-if(this.arrowTower != null) {
-clone.setArrowTower(this.arrowTower);
-}
+        if (this.trap != null) {
+            clone.setTrap(this.trap);
+        }
 
-if(this.rockfall != null) {
-clone.setRockfall(this.rockfall);
-}
+        if (this.arrowTower != null) {
+            clone.setArrowTower(this.arrowTower);
+        }
 
-if(this.rollingLogs != null) {
-clone.setRollingLogs(this.rollingLogs);
-}
+        if (this.rockfall != null) {
+            clone.setRockfall(this.rockfall);
+        }
 
-if(this.abatis != null) {
-clone.setAbatis(this.abatis);
-}
+        if (this.rollingLogs != null) {
+            clone.setRollingLogs(this.rollingLogs);
+        }
 
-return clone;
-}
+        if (this.abatis != null) {
+            clone.setAbatis(this.abatis);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.trap != null) {
-aso.put("trap", trap);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.arrowTower != null) {
-aso.put("arrowTower", arrowTower);
-}
+        if (this.trap != null) {
+            aso.put("trap", trap);
+        }
 
-if(this.rockfall != null) {
-aso.put("rockfall", rockfall);
-}
+        if (this.arrowTower != null) {
+            aso.put("arrowTower", arrowTower);
+        }
 
-if(this.rollingLogs != null) {
-aso.put("rollingLogs", rollingLogs);
-}
+        if (this.rockfall != null) {
+            aso.put("rockfall", rockfall);
+        }
 
-if(this.abatis != null) {
-aso.put("abatis", abatis);
-}
+        if (this.rollingLogs != null) {
+            aso.put("rollingLogs", rollingLogs);
+        }
 
-return aso;
-}
+        if (this.abatis != null) {
+            aso.put("abatis", abatis);
+        }
 
-public Integer getTrap() {
-return trap;
-}
+        return aso;
+    }
 
-public void setTrap(Integer trap) {
-this.trap = trap;
-}
+    public Integer getTrap() {
+        return trap;
+    }
 
-public Integer getArrowTower() {
-return arrowTower;
-}
+    public void setTrap(Integer trap) {
+        this.trap = trap;
+    }
 
-public void setArrowTower(Integer arrowTower) {
-this.arrowTower = arrowTower;
-}
+    public Integer getArrowTower() {
+        return arrowTower;
+    }
 
-public Integer getRockfall() {
-return rockfall;
-}
+    public void setArrowTower(Integer arrowTower) {
+        this.arrowTower = arrowTower;
+    }
 
-public void setRockfall(Integer rockfall) {
-this.rockfall = rockfall;
-}
+    public Integer getRockfall() {
+        return rockfall;
+    }
 
-public Integer getRollingLogs() {
-return rollingLogs;
-}
+    public void setRockfall(Integer rockfall) {
+        this.rockfall = rockfall;
+    }
 
-public void setRollingLogs(Integer rollingLogs) {
-this.rollingLogs = rollingLogs;
-}
+    public Integer getRollingLogs() {
+        return rollingLogs;
+    }
 
-public Integer getAbatis() {
-return abatis;
-}
+    public void setRollingLogs(Integer rollingLogs) {
+        this.rollingLogs = rollingLogs;
+    }
 
-public void setAbatis(Integer abatis) {
-this.abatis = abatis;
-}
+    public Integer getAbatis() {
+        return abatis;
+    }
+
+    public void setAbatis(Integer abatis) {
+        this.abatis = abatis;
+    }
 }

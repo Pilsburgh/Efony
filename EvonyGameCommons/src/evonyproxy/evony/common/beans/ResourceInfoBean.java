@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ResourceInfoBean implements EvonyPacket {
-private Integer workPeople = null;
-private Double increaseRate = null;
-private Integer max = null;
-private Integer storeRercent = null;
-private Double amount = null;
 
-public ResourceInfoBean(ASObject aso) {
+    private Integer workPeople = null;
+    private Double increaseRate = null;
+    private Integer max = null;
+    private Integer storeRercent = null;
+    private Double amount = null;
 
-if(aso.get("workPeople") != null) {
-this.workPeople = (Integer) aso.get("workPeople");
-}
+    public ResourceInfoBean(ASObject aso) {
 
-if(aso.get("increaseRate") != null) {
-this.increaseRate = (Double) aso.get("increaseRate");
-}
+        if (aso.get("workPeople") != null) {
+            this.workPeople = (Integer) aso.get("workPeople");
+        }
 
-if(aso.get("max") != null) {
-this.max = (Integer) aso.get("max");
-}
+        if (aso.get("increaseRate") != null) {
+            this.increaseRate = (Double) aso.get("increaseRate");
+        }
 
-if(aso.get("storeRercent") != null) {
-this.storeRercent = (Integer) aso.get("storeRercent");
-}
+        if (aso.get("max") != null) {
+            this.max = (Integer) aso.get("max");
+        }
 
-if(aso.get("amount") != null) {
-this.amount = (Double) aso.get("amount");
-}
-}
+        if (aso.get("storeRercent") != null) {
+            this.storeRercent = (Integer) aso.get("storeRercent");
+        }
 
-public ResourceInfoBean() {
-}
+        if (aso.get("amount") != null) {
+            this.amount = (Double) aso.get("amount");
+        }
+    }
 
-@Override
-public ResourceInfoBean clone() {
-ResourceInfoBean clone = new ResourceInfoBean();
+    public ResourceInfoBean() {
+    }
 
-if(this.workPeople != null) {
-clone.setWorkPeople(this.workPeople);
-}
+    @Override
+    public ResourceInfoBean clone() {
+        ResourceInfoBean clone = new ResourceInfoBean();
 
-if(this.increaseRate != null) {
-clone.setIncreaseRate(this.increaseRate);
-}
+        if (this.workPeople != null) {
+            clone.setWorkPeople(this.workPeople);
+        }
 
-if(this.max != null) {
-clone.setMax(this.max);
-}
+        if (this.increaseRate != null) {
+            clone.setIncreaseRate(this.increaseRate);
+        }
 
-if(this.storeRercent != null) {
-clone.setStoreRercent(this.storeRercent);
-}
+        if (this.max != null) {
+            clone.setMax(this.max);
+        }
 
-if(this.amount != null) {
-clone.setAmount(this.amount);
-}
+        if (this.storeRercent != null) {
+            clone.setStoreRercent(this.storeRercent);
+        }
 
-return clone;
-}
+        if (this.amount != null) {
+            clone.setAmount(this.amount);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.workPeople != null) {
-aso.put("workPeople", workPeople);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.increaseRate != null) {
-aso.put("increaseRate", increaseRate);
-}
+        if (this.workPeople != null) {
+            aso.put("workPeople", workPeople);
+        }
 
-if(this.max != null) {
-aso.put("max", max);
-}
+        if (this.increaseRate != null) {
+            aso.put("increaseRate", increaseRate);
+        }
 
-if(this.storeRercent != null) {
-aso.put("storeRercent", storeRercent);
-}
+        if (this.max != null) {
+            aso.put("max", max);
+        }
 
-if(this.amount != null) {
-aso.put("amount", amount);
-}
+        if (this.storeRercent != null) {
+            aso.put("storeRercent", storeRercent);
+        }
 
-return aso;
-}
+        if (this.amount != null) {
+            aso.put("amount", amount);
+        }
 
-public Integer getWorkPeople() {
-return workPeople;
-}
+        return aso;
+    }
 
-public void setWorkPeople(Integer workPeople) {
-this.workPeople = workPeople;
-}
+    public Integer getWorkPeople() {
+        return workPeople;
+    }
 
-public Double getIncreaseRate() {
-return increaseRate;
-}
+    public void setWorkPeople(Integer workPeople) {
+        this.workPeople = workPeople;
+    }
 
-public void setIncreaseRate(Double increaseRate) {
-this.increaseRate = increaseRate;
-}
+    public Double getIncreaseRate() {
+        return increaseRate;
+    }
 
-public Integer getMax() {
-return max;
-}
+    public void setIncreaseRate(Double increaseRate) {
+        this.increaseRate = increaseRate;
+    }
 
-public void setMax(Integer max) {
-this.max = max;
-}
+    public Integer getMax() {
+        return max;
+    }
 
-public Integer getStoreRercent() {
-return storeRercent;
-}
+    public void setMax(Integer max) {
+        this.max = max;
+    }
 
-public void setStoreRercent(Integer storeRercent) {
-this.storeRercent = storeRercent;
-}
+    public Integer getStoreRercent() {
+        return storeRercent;
+    }
 
-public Double getAmount() {
-return amount;
-}
+    public void setStoreRercent(Integer storeRercent) {
+        this.storeRercent = storeRercent;
+    }
 
-public void setAmount(Double amount) {
-this.amount = amount;
-}
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 }

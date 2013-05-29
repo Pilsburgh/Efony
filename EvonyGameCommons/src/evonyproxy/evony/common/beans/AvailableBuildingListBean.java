@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class AvailableBuildingListBean implements EvonyPacket {
-private ConditionBean conditionBean = null;
-private Integer typeId = null;
 
-public AvailableBuildingListBean(ASObject aso) {
+    private ConditionBean conditionBean = null;
+    private Integer typeId = null;
 
-if(aso.get("conditionBean") != null) {
-this.conditionBean = new ConditionBean((ASObject) aso.get("conditionBean"));
-}
+    public AvailableBuildingListBean(ASObject aso) {
 
-if(aso.get("typeId") != null) {
-this.typeId = (Integer) aso.get("typeId");
-}
-}
+        if (aso.get("conditionBean") != null) {
+            this.conditionBean = new ConditionBean((ASObject) aso.get("conditionBean"));
+        }
 
-public AvailableBuildingListBean() {
-}
+        if (aso.get("typeId") != null) {
+            this.typeId = (Integer) aso.get("typeId");
+        }
+    }
 
-@Override
-public AvailableBuildingListBean clone() {
-AvailableBuildingListBean clone = new AvailableBuildingListBean();
+    public AvailableBuildingListBean() {
+    }
 
-if(this.conditionBean != null) {
-clone.setConditionBean(this.conditionBean);
-}
+    @Override
+    public AvailableBuildingListBean clone() {
+        AvailableBuildingListBean clone = new AvailableBuildingListBean();
 
-if(this.typeId != null) {
-clone.setTypeId(this.typeId);
-}
+        if (this.conditionBean != null) {
+            clone.setConditionBean(this.conditionBean);
+        }
 
-return clone;
-}
+        if (this.typeId != null) {
+            clone.setTypeId(this.typeId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.conditionBean != null) {
-aso.put("conditionBean", conditionBean.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.typeId != null) {
-aso.put("typeId", typeId);
-}
+        if (this.conditionBean != null) {
+            aso.put("conditionBean", conditionBean.toASObject());
+        }
 
-return aso;
-}
+        if (this.typeId != null) {
+            aso.put("typeId", typeId);
+        }
 
-public ConditionBean getConditionBean() {
-return conditionBean;
-}
+        return aso;
+    }
 
-public void setConditionBean(ConditionBean conditionBean) {
-this.conditionBean = conditionBean;
-}
+    public ConditionBean getConditionBean() {
+        return conditionBean;
+    }
 
-public Integer getTypeId() {
-return typeId;
-}
+    public void setConditionBean(ConditionBean conditionBean) {
+        this.conditionBean = conditionBean;
+    }
 
-public void setTypeId(Integer typeId) {
-this.typeId = typeId;
-}
+    public Integer getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
 }

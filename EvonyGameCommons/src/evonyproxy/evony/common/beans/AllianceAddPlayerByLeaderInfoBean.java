@@ -7,111 +7,112 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class AllianceAddPlayerByLeaderInfoBean implements EvonyPacket {
-private Integer memberCount = null;
-private Integer prestige = null;
-private String allianceName = null;
-private Integer rank = null;
 
-public AllianceAddPlayerByLeaderInfoBean(ASObject aso) {
+    private Integer memberCount = null;
+    private Integer prestige = null;
+    private String allianceName = null;
+    private Integer rank = null;
 
-if(aso.get("memberCount") != null) {
-this.memberCount = (Integer) aso.get("memberCount");
-}
+    public AllianceAddPlayerByLeaderInfoBean(ASObject aso) {
 
-if(aso.get("prestige") != null) {
-this.prestige = (Integer) aso.get("prestige");
-}
+        if (aso.get("memberCount") != null) {
+            this.memberCount = (Integer) aso.get("memberCount");
+        }
 
-if(aso.get("allianceName") != null) {
-this.allianceName = (String) aso.get("allianceName");
-}
+        if (aso.get("prestige") != null) {
+            this.prestige = (Integer) aso.get("prestige");
+        }
 
-if(aso.get("rank") != null) {
-this.rank = (Integer) aso.get("rank");
-}
-}
+        if (aso.get("allianceName") != null) {
+            this.allianceName = (String) aso.get("allianceName");
+        }
 
-public AllianceAddPlayerByLeaderInfoBean() {
-}
+        if (aso.get("rank") != null) {
+            this.rank = (Integer) aso.get("rank");
+        }
+    }
 
-@Override
-public AllianceAddPlayerByLeaderInfoBean clone() {
-AllianceAddPlayerByLeaderInfoBean clone = new AllianceAddPlayerByLeaderInfoBean();
+    public AllianceAddPlayerByLeaderInfoBean() {
+    }
 
-if(this.memberCount != null) {
-clone.setMemberCount(this.memberCount);
-}
+    @Override
+    public AllianceAddPlayerByLeaderInfoBean clone() {
+        AllianceAddPlayerByLeaderInfoBean clone = new AllianceAddPlayerByLeaderInfoBean();
 
-if(this.prestige != null) {
-clone.setPrestige(this.prestige);
-}
+        if (this.memberCount != null) {
+            clone.setMemberCount(this.memberCount);
+        }
 
-if(this.allianceName != null) {
-clone.setAllianceName(this.allianceName);
-}
+        if (this.prestige != null) {
+            clone.setPrestige(this.prestige);
+        }
 
-if(this.rank != null) {
-clone.setRank(this.rank);
-}
+        if (this.allianceName != null) {
+            clone.setAllianceName(this.allianceName);
+        }
 
-return clone;
-}
+        if (this.rank != null) {
+            clone.setRank(this.rank);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.memberCount != null) {
-aso.put("memberCount", memberCount);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.prestige != null) {
-aso.put("prestige", prestige);
-}
+        if (this.memberCount != null) {
+            aso.put("memberCount", memberCount);
+        }
 
-if(this.allianceName != null) {
-aso.put("allianceName", allianceName);
-}
+        if (this.prestige != null) {
+            aso.put("prestige", prestige);
+        }
 
-if(this.rank != null) {
-aso.put("rank", rank);
-}
+        if (this.allianceName != null) {
+            aso.put("allianceName", allianceName);
+        }
 
-return aso;
-}
+        if (this.rank != null) {
+            aso.put("rank", rank);
+        }
 
-public Integer getMemberCount() {
-return memberCount;
-}
+        return aso;
+    }
 
-public void setMemberCount(Integer memberCount) {
-this.memberCount = memberCount;
-}
+    public Integer getMemberCount() {
+        return memberCount;
+    }
 
-public Integer getPrestige() {
-return prestige;
-}
+    public void setMemberCount(Integer memberCount) {
+        this.memberCount = memberCount;
+    }
 
-public void setPrestige(Integer prestige) {
-this.prestige = prestige;
-}
+    public Integer getPrestige() {
+        return prestige;
+    }
 
-public String getAllianceName() {
-return allianceName;
-}
+    public void setPrestige(Integer prestige) {
+        this.prestige = prestige;
+    }
 
-public void setAllianceName(String allianceName) {
-this.allianceName = allianceName;
-}
+    public String getAllianceName() {
+        return allianceName;
+    }
 
-public Integer getRank() {
-return rank;
-}
+    public void setAllianceName(String allianceName) {
+        this.allianceName = allianceName;
+    }
 
-public void setRank(Integer rank) {
-this.rank = rank;
-}
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 }

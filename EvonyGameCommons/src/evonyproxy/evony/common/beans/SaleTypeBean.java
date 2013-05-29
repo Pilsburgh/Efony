@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class SaleTypeBean implements EvonyPacket {
-private String items = null;
-private String typeName = null;
 
-public SaleTypeBean(ASObject aso) {
+    private String items = null;
+    private String typeName = null;
 
-if(aso.get("items") != null) {
-this.items = (String) aso.get("items");
-}
+    public SaleTypeBean(ASObject aso) {
 
-if(aso.get("typeName") != null) {
-this.typeName = (String) aso.get("typeName");
-}
-}
+        if (aso.get("items") != null) {
+            this.items = (String) aso.get("items");
+        }
 
-public SaleTypeBean() {
-}
+        if (aso.get("typeName") != null) {
+            this.typeName = (String) aso.get("typeName");
+        }
+    }
 
-@Override
-public SaleTypeBean clone() {
-SaleTypeBean clone = new SaleTypeBean();
+    public SaleTypeBean() {
+    }
 
-if(this.items != null) {
-clone.setItems(this.items);
-}
+    @Override
+    public SaleTypeBean clone() {
+        SaleTypeBean clone = new SaleTypeBean();
 
-if(this.typeName != null) {
-clone.setTypeName(this.typeName);
-}
+        if (this.items != null) {
+            clone.setItems(this.items);
+        }
 
-return clone;
-}
+        if (this.typeName != null) {
+            clone.setTypeName(this.typeName);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.items != null) {
-aso.put("items", items);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.typeName != null) {
-aso.put("typeName", typeName);
-}
+        if (this.items != null) {
+            aso.put("items", items);
+        }
 
-return aso;
-}
+        if (this.typeName != null) {
+            aso.put("typeName", typeName);
+        }
 
-public String getItems() {
-return items;
-}
+        return aso;
+    }
 
-public void setItems(String items) {
-this.items = items;
-}
+    public String getItems() {
+        return items;
+    }
 
-public String getTypeName() {
-return typeName;
-}
+    public void setItems(String items) {
+        this.items = items;
+    }
 
-public void setTypeName(String typeName) {
-this.typeName = typeName;
-}
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
 }

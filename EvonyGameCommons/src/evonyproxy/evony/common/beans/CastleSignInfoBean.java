@@ -7,111 +7,112 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CastleSignInfoBean implements EvonyPacket {
-private Integer x = null;
-private String name = null;
-private Integer y = null;
-private Integer id = null;
 
-public CastleSignInfoBean(ASObject aso) {
+    private Integer x = null;
+    private String name = null;
+    private Integer y = null;
+    private Integer id = null;
 
-if(aso.get("x") != null) {
-this.x = (Integer) aso.get("x");
-}
+    public CastleSignInfoBean(ASObject aso) {
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("x") != null) {
+            this.x = (Integer) aso.get("x");
+        }
 
-if(aso.get("y") != null) {
-this.y = (Integer) aso.get("y");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("id") != null) {
-this.id = (Integer) aso.get("id");
-}
-}
+        if (aso.get("y") != null) {
+            this.y = (Integer) aso.get("y");
+        }
 
-public CastleSignInfoBean() {
-}
+        if (aso.get("id") != null) {
+            this.id = (Integer) aso.get("id");
+        }
+    }
 
-@Override
-public CastleSignInfoBean clone() {
-CastleSignInfoBean clone = new CastleSignInfoBean();
+    public CastleSignInfoBean() {
+    }
 
-if(this.x != null) {
-clone.setX(this.x);
-}
+    @Override
+    public CastleSignInfoBean clone() {
+        CastleSignInfoBean clone = new CastleSignInfoBean();
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.x != null) {
+            clone.setX(this.x);
+        }
 
-if(this.y != null) {
-clone.setY(this.y);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.y != null) {
+            clone.setY(this.y);
+        }
 
-return clone;
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.x != null) {
-aso.put("x", x);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.x != null) {
+            aso.put("x", x);
+        }
 
-if(this.y != null) {
-aso.put("y", y);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.y != null) {
+            aso.put("y", y);
+        }
 
-return aso;
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-public Integer getX() {
-return x;
-}
+        return aso;
+    }
 
-public void setX(Integer x) {
-this.x = x;
-}
+    public Integer getX() {
+        return x;
+    }
 
-public String getName() {
-return name;
-}
+    public void setX(Integer x) {
+        this.x = x;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Integer getY() {
-return y;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setY(Integer y) {
-this.y = y;
-}
+    public Integer getY() {
+        return y;
+    }
 
-public Integer getId() {
-return id;
-}
+    public void setY(Integer y) {
+        this.y = y;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

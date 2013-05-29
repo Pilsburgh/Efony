@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class QuestTargetBean implements EvonyPacket {
-private String name = null;
-private Boolean finished = null;
 
-public QuestTargetBean(ASObject aso) {
+    private String name = null;
+    private Boolean finished = null;
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+    public QuestTargetBean(ASObject aso) {
 
-if(aso.get("finished") != null) {
-this.finished = (Boolean) aso.get("finished");
-}
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-public QuestTargetBean() {
-}
+        if (aso.get("finished") != null) {
+            this.finished = (Boolean) aso.get("finished");
+        }
+    }
 
-@Override
-public QuestTargetBean clone() {
-QuestTargetBean clone = new QuestTargetBean();
+    public QuestTargetBean() {
+    }
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+    @Override
+    public QuestTargetBean clone() {
+        QuestTargetBean clone = new QuestTargetBean();
 
-if(this.finished != null) {
-clone.setFinished(this.finished);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-return clone;
-}
+        if (this.finished != null) {
+            clone.setFinished(this.finished);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.name != null) {
-aso.put("name", name);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.finished != null) {
-aso.put("finished", finished);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-return aso;
-}
+        if (this.finished != null) {
+            aso.put("finished", finished);
+        }
 
-public String getName() {
-return name;
-}
+        return aso;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Boolean getFinished() {
-return finished;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setFinished(Boolean finished) {
-this.finished = finished;
-}
+    public Boolean getFinished() {
+        return finished;
+    }
+
+    public void setFinished(Boolean finished) {
+        this.finished = finished;
+    }
 }

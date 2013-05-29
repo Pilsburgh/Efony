@@ -7,90 +7,91 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class TroopConfigBean implements EvonyPacket {
-private String name = null;
-private Double time = null;
-private TroopBean troop = null;
 
-public TroopConfigBean(ASObject aso) {
+    private String name = null;
+    private Double time = null;
+    private TroopBean troop = null;
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+    public TroopConfigBean(ASObject aso) {
 
-if(aso.get("time") != null) {
-this.time = (Double) aso.get("time");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("troop") != null) {
-this.troop = new TroopBean((ASObject) aso.get("troop"));
-}
-}
+        if (aso.get("time") != null) {
+            this.time = (Double) aso.get("time");
+        }
 
-public TroopConfigBean() {
-}
+        if (aso.get("troop") != null) {
+            this.troop = new TroopBean((ASObject) aso.get("troop"));
+        }
+    }
 
-@Override
-public TroopConfigBean clone() {
-TroopConfigBean clone = new TroopConfigBean();
+    public TroopConfigBean() {
+    }
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+    @Override
+    public TroopConfigBean clone() {
+        TroopConfigBean clone = new TroopConfigBean();
 
-if(this.time != null) {
-clone.setTime(this.time);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.troop != null) {
-clone.setTroop(this.troop);
-}
+        if (this.time != null) {
+            clone.setTime(this.time);
+        }
 
-return clone;
-}
+        if (this.troop != null) {
+            clone.setTroop(this.troop);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.name != null) {
-aso.put("name", name);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.time != null) {
-aso.put("time", time);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.troop != null) {
-aso.put("troop", troop.toASObject());
-}
+        if (this.time != null) {
+            aso.put("time", time);
+        }
 
-return aso;
-}
+        if (this.troop != null) {
+            aso.put("troop", troop.toASObject());
+        }
 
-public String getName() {
-return name;
-}
+        return aso;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Double getTime() {
-return time;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setTime(Double time) {
-this.time = time;
-}
+    public Double getTime() {
+        return time;
+    }
 
-public TroopBean getTroop() {
-return troop;
-}
+    public void setTime(Double time) {
+        this.time = time;
+    }
 
-public void setTroop(TroopBean troop) {
-this.troop = troop;
-}
+    public TroopBean getTroop() {
+        return troop;
+    }
+
+    public void setTroop(TroopBean troop) {
+        this.troop = troop;
+    }
 }

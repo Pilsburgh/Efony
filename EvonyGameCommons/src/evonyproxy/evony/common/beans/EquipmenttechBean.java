@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class EquipmenttechBean implements EvonyPacket {
-private Integer lv = null;
-private Integer equipmenttechid = null;
 
-public EquipmenttechBean(ASObject aso) {
+    private Integer lv = null;
+    private Integer equipmenttechid = null;
 
-if(aso.get("lv") != null) {
-this.lv = (Integer) aso.get("lv");
-}
+    public EquipmenttechBean(ASObject aso) {
 
-if(aso.get("equipmenttechid") != null) {
-this.equipmenttechid = (Integer) aso.get("equipmenttechid");
-}
-}
+        if (aso.get("lv") != null) {
+            this.lv = (Integer) aso.get("lv");
+        }
 
-public EquipmenttechBean() {
-}
+        if (aso.get("equipmenttechid") != null) {
+            this.equipmenttechid = (Integer) aso.get("equipmenttechid");
+        }
+    }
 
-@Override
-public EquipmenttechBean clone() {
-EquipmenttechBean clone = new EquipmenttechBean();
+    public EquipmenttechBean() {
+    }
 
-if(this.lv != null) {
-clone.setLv(this.lv);
-}
+    @Override
+    public EquipmenttechBean clone() {
+        EquipmenttechBean clone = new EquipmenttechBean();
 
-if(this.equipmenttechid != null) {
-clone.setEquipmenttechid(this.equipmenttechid);
-}
+        if (this.lv != null) {
+            clone.setLv(this.lv);
+        }
 
-return clone;
-}
+        if (this.equipmenttechid != null) {
+            clone.setEquipmenttechid(this.equipmenttechid);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.lv != null) {
-aso.put("lv", lv);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.equipmenttechid != null) {
-aso.put("equipmenttechid", equipmenttechid);
-}
+        if (this.lv != null) {
+            aso.put("lv", lv);
+        }
 
-return aso;
-}
+        if (this.equipmenttechid != null) {
+            aso.put("equipmenttechid", equipmenttechid);
+        }
 
-public Integer getLv() {
-return lv;
-}
+        return aso;
+    }
 
-public void setLv(Integer lv) {
-this.lv = lv;
-}
+    public Integer getLv() {
+        return lv;
+    }
 
-public Integer getEquipmenttechid() {
-return equipmenttechid;
-}
+    public void setLv(Integer lv) {
+        this.lv = lv;
+    }
 
-public void setEquipmenttechid(Integer equipmenttechid) {
-this.equipmenttechid = equipmenttechid;
-}
+    public Integer getEquipmenttechid() {
+        return equipmenttechid;
+    }
+
+    public void setEquipmenttechid(Integer equipmenttechid) {
+        this.equipmenttechid = equipmenttechid;
+    }
 }

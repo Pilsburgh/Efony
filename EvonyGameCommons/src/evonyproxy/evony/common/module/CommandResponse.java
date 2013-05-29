@@ -11,6 +11,7 @@ import flex.messaging.io.ArrayCollection;
  * @author Michael Archibald
  */
 public class CommandResponse implements ASObjectable {
+
     public static final int OK_INVALID_REQUEST = -99;
     public static final int OK_DEFAULT = 1;
     public Double packageId = null;
@@ -20,19 +21,19 @@ public class CommandResponse implements ASObjectable {
 
     public CommandResponse(ASObject aso) {
 
-        if(aso.get("packageId") != null) {
+        if (aso.get("packageId") != null) {
             this.packageId = (Double) aso.get("packageId");
         }
 
-        if(aso.get("msg") != null) {
+        if (aso.get("msg") != null) {
             this.msg = (String) aso.get("msg");
         }
 
-        if(aso.get("errorMsg") != null) {
+        if (aso.get("errorMsg") != null) {
             this.errorMsg = (String) aso.get("errorMsg");
         }
 
-        if(aso.get("ok") != null) {
+        if (aso.get("ok") != null) {
             this.ok = (Integer) aso.get("ok");
         }
     }
@@ -44,19 +45,19 @@ public class CommandResponse implements ASObjectable {
     public CommandResponse clone() {
         CommandResponse clone = new CommandResponse();
 
-        if(this.packageId != null) {
+        if (this.packageId != null) {
             clone.setPackageId(this.packageId);
         }
 
-        if(this.msg != null) {
+        if (this.msg != null) {
             clone.setMsg(this.msg);
         }
 
-        if(this.errorMsg != null) {
+        if (this.errorMsg != null) {
             clone.setErrorMsg(this.errorMsg);
         }
 
-        if(this.ok != null) {
+        if (this.ok != null) {
             clone.setOk(this.ok);
         }
 
@@ -66,19 +67,19 @@ public class CommandResponse implements ASObjectable {
     public ASObject toASObject() {
         ASObject aso = new ASObject();
 
-        if(this.packageId != null) {
+        if (this.packageId != null) {
             aso.put("packageId", packageId);
         }
 
-        if(this.msg != null) {
+        if (this.msg != null) {
             aso.put("msg", msg);
         }
 
-        if(this.errorMsg != null) {
+        if (this.errorMsg != null) {
             aso.put("errorMsg", errorMsg);
         }
 
-        if(this.ok != null) {
+        if (this.ok != null) {
             aso.put("ok", ok);
         }
 

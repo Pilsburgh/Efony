@@ -7,195 +7,196 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class BuyResourceBean implements EvonyPacket {
-private Integer forFood = null;
-private Integer foodRemain = null;
-private Integer woodRemain = null;
-private Integer forStone = null;
-private Integer ironRemain = null;
-private Integer stoneRemain = null;
-private Integer forWood = null;
-private Integer forIron = null;
 
-public BuyResourceBean(ASObject aso) {
+    private Integer forFood = null;
+    private Integer foodRemain = null;
+    private Integer woodRemain = null;
+    private Integer forStone = null;
+    private Integer ironRemain = null;
+    private Integer stoneRemain = null;
+    private Integer forWood = null;
+    private Integer forIron = null;
 
-if(aso.get("forFood") != null) {
-this.forFood = (Integer) aso.get("forFood");
-}
+    public BuyResourceBean(ASObject aso) {
 
-if(aso.get("foodRemain") != null) {
-this.foodRemain = (Integer) aso.get("foodRemain");
-}
+        if (aso.get("forFood") != null) {
+            this.forFood = (Integer) aso.get("forFood");
+        }
 
-if(aso.get("woodRemain") != null) {
-this.woodRemain = (Integer) aso.get("woodRemain");
-}
+        if (aso.get("foodRemain") != null) {
+            this.foodRemain = (Integer) aso.get("foodRemain");
+        }
 
-if(aso.get("forStone") != null) {
-this.forStone = (Integer) aso.get("forStone");
-}
+        if (aso.get("woodRemain") != null) {
+            this.woodRemain = (Integer) aso.get("woodRemain");
+        }
 
-if(aso.get("ironRemain") != null) {
-this.ironRemain = (Integer) aso.get("ironRemain");
-}
+        if (aso.get("forStone") != null) {
+            this.forStone = (Integer) aso.get("forStone");
+        }
 
-if(aso.get("stoneRemain") != null) {
-this.stoneRemain = (Integer) aso.get("stoneRemain");
-}
+        if (aso.get("ironRemain") != null) {
+            this.ironRemain = (Integer) aso.get("ironRemain");
+        }
 
-if(aso.get("forWood") != null) {
-this.forWood = (Integer) aso.get("forWood");
-}
+        if (aso.get("stoneRemain") != null) {
+            this.stoneRemain = (Integer) aso.get("stoneRemain");
+        }
 
-if(aso.get("forIron") != null) {
-this.forIron = (Integer) aso.get("forIron");
-}
-}
+        if (aso.get("forWood") != null) {
+            this.forWood = (Integer) aso.get("forWood");
+        }
 
-public BuyResourceBean() {
-}
+        if (aso.get("forIron") != null) {
+            this.forIron = (Integer) aso.get("forIron");
+        }
+    }
 
-@Override
-public BuyResourceBean clone() {
-BuyResourceBean clone = new BuyResourceBean();
+    public BuyResourceBean() {
+    }
 
-if(this.forFood != null) {
-clone.setForFood(this.forFood);
-}
+    @Override
+    public BuyResourceBean clone() {
+        BuyResourceBean clone = new BuyResourceBean();
 
-if(this.foodRemain != null) {
-clone.setFoodRemain(this.foodRemain);
-}
+        if (this.forFood != null) {
+            clone.setForFood(this.forFood);
+        }
 
-if(this.woodRemain != null) {
-clone.setWoodRemain(this.woodRemain);
-}
+        if (this.foodRemain != null) {
+            clone.setFoodRemain(this.foodRemain);
+        }
 
-if(this.forStone != null) {
-clone.setForStone(this.forStone);
-}
+        if (this.woodRemain != null) {
+            clone.setWoodRemain(this.woodRemain);
+        }
 
-if(this.ironRemain != null) {
-clone.setIronRemain(this.ironRemain);
-}
+        if (this.forStone != null) {
+            clone.setForStone(this.forStone);
+        }
 
-if(this.stoneRemain != null) {
-clone.setStoneRemain(this.stoneRemain);
-}
+        if (this.ironRemain != null) {
+            clone.setIronRemain(this.ironRemain);
+        }
 
-if(this.forWood != null) {
-clone.setForWood(this.forWood);
-}
+        if (this.stoneRemain != null) {
+            clone.setStoneRemain(this.stoneRemain);
+        }
 
-if(this.forIron != null) {
-clone.setForIron(this.forIron);
-}
+        if (this.forWood != null) {
+            clone.setForWood(this.forWood);
+        }
 
-return clone;
-}
+        if (this.forIron != null) {
+            clone.setForIron(this.forIron);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.forFood != null) {
-aso.put("forFood", forFood);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.foodRemain != null) {
-aso.put("foodRemain", foodRemain);
-}
+        if (this.forFood != null) {
+            aso.put("forFood", forFood);
+        }
 
-if(this.woodRemain != null) {
-aso.put("woodRemain", woodRemain);
-}
+        if (this.foodRemain != null) {
+            aso.put("foodRemain", foodRemain);
+        }
 
-if(this.forStone != null) {
-aso.put("forStone", forStone);
-}
+        if (this.woodRemain != null) {
+            aso.put("woodRemain", woodRemain);
+        }
 
-if(this.ironRemain != null) {
-aso.put("ironRemain", ironRemain);
-}
+        if (this.forStone != null) {
+            aso.put("forStone", forStone);
+        }
 
-if(this.stoneRemain != null) {
-aso.put("stoneRemain", stoneRemain);
-}
+        if (this.ironRemain != null) {
+            aso.put("ironRemain", ironRemain);
+        }
 
-if(this.forWood != null) {
-aso.put("forWood", forWood);
-}
+        if (this.stoneRemain != null) {
+            aso.put("stoneRemain", stoneRemain);
+        }
 
-if(this.forIron != null) {
-aso.put("forIron", forIron);
-}
+        if (this.forWood != null) {
+            aso.put("forWood", forWood);
+        }
 
-return aso;
-}
+        if (this.forIron != null) {
+            aso.put("forIron", forIron);
+        }
 
-public Integer getForFood() {
-return forFood;
-}
+        return aso;
+    }
 
-public void setForFood(Integer forFood) {
-this.forFood = forFood;
-}
+    public Integer getForFood() {
+        return forFood;
+    }
 
-public Integer getFoodRemain() {
-return foodRemain;
-}
+    public void setForFood(Integer forFood) {
+        this.forFood = forFood;
+    }
 
-public void setFoodRemain(Integer foodRemain) {
-this.foodRemain = foodRemain;
-}
+    public Integer getFoodRemain() {
+        return foodRemain;
+    }
 
-public Integer getWoodRemain() {
-return woodRemain;
-}
+    public void setFoodRemain(Integer foodRemain) {
+        this.foodRemain = foodRemain;
+    }
 
-public void setWoodRemain(Integer woodRemain) {
-this.woodRemain = woodRemain;
-}
+    public Integer getWoodRemain() {
+        return woodRemain;
+    }
 
-public Integer getForStone() {
-return forStone;
-}
+    public void setWoodRemain(Integer woodRemain) {
+        this.woodRemain = woodRemain;
+    }
 
-public void setForStone(Integer forStone) {
-this.forStone = forStone;
-}
+    public Integer getForStone() {
+        return forStone;
+    }
 
-public Integer getIronRemain() {
-return ironRemain;
-}
+    public void setForStone(Integer forStone) {
+        this.forStone = forStone;
+    }
 
-public void setIronRemain(Integer ironRemain) {
-this.ironRemain = ironRemain;
-}
+    public Integer getIronRemain() {
+        return ironRemain;
+    }
 
-public Integer getStoneRemain() {
-return stoneRemain;
-}
+    public void setIronRemain(Integer ironRemain) {
+        this.ironRemain = ironRemain;
+    }
 
-public void setStoneRemain(Integer stoneRemain) {
-this.stoneRemain = stoneRemain;
-}
+    public Integer getStoneRemain() {
+        return stoneRemain;
+    }
 
-public Integer getForWood() {
-return forWood;
-}
+    public void setStoneRemain(Integer stoneRemain) {
+        this.stoneRemain = stoneRemain;
+    }
 
-public void setForWood(Integer forWood) {
-this.forWood = forWood;
-}
+    public Integer getForWood() {
+        return forWood;
+    }
 
-public Integer getForIron() {
-return forIron;
-}
+    public void setForWood(Integer forWood) {
+        this.forWood = forWood;
+    }
 
-public void setForIron(Integer forIron) {
-this.forIron = forIron;
-}
+    public Integer getForIron() {
+        return forIron;
+    }
+
+    public void setForIron(Integer forIron) {
+        this.forIron = forIron;
+    }
 }

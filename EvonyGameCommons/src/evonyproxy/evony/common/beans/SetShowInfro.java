@@ -7,48 +7,49 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class SetShowInfro implements EvonyPacket {
-private Integer selectshowheroid = null;
 
-public SetShowInfro(ASObject aso) {
+    private Integer selectshowheroid = null;
 
-if(aso.get("selectshowheroid") != null) {
-this.selectshowheroid = (Integer) aso.get("selectshowheroid");
-}
-}
+    public SetShowInfro(ASObject aso) {
 
-public SetShowInfro() {
-}
+        if (aso.get("selectshowheroid") != null) {
+            this.selectshowheroid = (Integer) aso.get("selectshowheroid");
+        }
+    }
 
-@Override
-public SetShowInfro clone() {
-SetShowInfro clone = new SetShowInfro();
+    public SetShowInfro() {
+    }
 
-if(this.selectshowheroid != null) {
-clone.setSelectshowheroid(this.selectshowheroid);
-}
+    @Override
+    public SetShowInfro clone() {
+        SetShowInfro clone = new SetShowInfro();
 
-return clone;
-}
+        if (this.selectshowheroid != null) {
+            clone.setSelectshowheroid(this.selectshowheroid);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.selectshowheroid != null) {
-aso.put("selectshowheroid", selectshowheroid);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        if (this.selectshowheroid != null) {
+            aso.put("selectshowheroid", selectshowheroid);
+        }
 
-public Integer getSelectshowheroid() {
-return selectshowheroid;
-}
+        return aso;
+    }
 
-public void setSelectshowheroid(Integer selectshowheroid) {
-this.selectshowheroid = selectshowheroid;
-}
+    public Integer getSelectshowheroid() {
+        return selectshowheroid;
+    }
+
+    public void setSelectshowheroid(Integer selectshowheroid) {
+        this.selectshowheroid = selectshowheroid;
+    }
 }

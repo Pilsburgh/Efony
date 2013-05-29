@@ -7,174 +7,175 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class BuildingBean implements EvonyPacket {
-private Double endTime = null;
-private Integer status = null;
-private String name = null;
-private Double startTime = null;
-private Integer typeId = null;
-private Integer positionId = null;
-private Integer level = null;
 
-public BuildingBean(ASObject aso) {
+    private Double endTime = null;
+    private Integer status = null;
+    private String name = null;
+    private Double startTime = null;
+    private Integer typeId = null;
+    private Integer positionId = null;
+    private Integer level = null;
 
-if(aso.get("endTime") != null) {
-this.endTime = (Double) aso.get("endTime");
-}
+    public BuildingBean(ASObject aso) {
 
-if(aso.get("status") != null) {
-this.status = (Integer) aso.get("status");
-}
+        if (aso.get("endTime") != null) {
+            this.endTime = (Double) aso.get("endTime");
+        }
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("status") != null) {
+            this.status = (Integer) aso.get("status");
+        }
 
-if(aso.get("startTime") != null) {
-this.startTime = (Double) aso.get("startTime");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("typeId") != null) {
-this.typeId = (Integer) aso.get("typeId");
-}
+        if (aso.get("startTime") != null) {
+            this.startTime = (Double) aso.get("startTime");
+        }
 
-if(aso.get("positionId") != null) {
-this.positionId = (Integer) aso.get("positionId");
-}
+        if (aso.get("typeId") != null) {
+            this.typeId = (Integer) aso.get("typeId");
+        }
 
-if(aso.get("level") != null) {
-this.level = (Integer) aso.get("level");
-}
-}
+        if (aso.get("positionId") != null) {
+            this.positionId = (Integer) aso.get("positionId");
+        }
 
-public BuildingBean() {
-}
+        if (aso.get("level") != null) {
+            this.level = (Integer) aso.get("level");
+        }
+    }
 
-@Override
-public BuildingBean clone() {
-BuildingBean clone = new BuildingBean();
+    public BuildingBean() {
+    }
 
-if(this.endTime != null) {
-clone.setEndTime(this.endTime);
-}
+    @Override
+    public BuildingBean clone() {
+        BuildingBean clone = new BuildingBean();
 
-if(this.status != null) {
-clone.setStatus(this.status);
-}
+        if (this.endTime != null) {
+            clone.setEndTime(this.endTime);
+        }
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.status != null) {
+            clone.setStatus(this.status);
+        }
 
-if(this.startTime != null) {
-clone.setStartTime(this.startTime);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.typeId != null) {
-clone.setTypeId(this.typeId);
-}
+        if (this.startTime != null) {
+            clone.setStartTime(this.startTime);
+        }
 
-if(this.positionId != null) {
-clone.setPositionId(this.positionId);
-}
+        if (this.typeId != null) {
+            clone.setTypeId(this.typeId);
+        }
 
-if(this.level != null) {
-clone.setLevel(this.level);
-}
+        if (this.positionId != null) {
+            clone.setPositionId(this.positionId);
+        }
 
-return clone;
-}
+        if (this.level != null) {
+            clone.setLevel(this.level);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.endTime != null) {
-aso.put("endTime", endTime);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.status != null) {
-aso.put("status", status);
-}
+        if (this.endTime != null) {
+            aso.put("endTime", endTime);
+        }
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.status != null) {
+            aso.put("status", status);
+        }
 
-if(this.startTime != null) {
-aso.put("startTime", startTime);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.typeId != null) {
-aso.put("typeId", typeId);
-}
+        if (this.startTime != null) {
+            aso.put("startTime", startTime);
+        }
 
-if(this.positionId != null) {
-aso.put("positionId", positionId);
-}
+        if (this.typeId != null) {
+            aso.put("typeId", typeId);
+        }
 
-if(this.level != null) {
-aso.put("level", level);
-}
+        if (this.positionId != null) {
+            aso.put("positionId", positionId);
+        }
 
-return aso;
-}
+        if (this.level != null) {
+            aso.put("level", level);
+        }
 
-public Double getEndTime() {
-return endTime;
-}
+        return aso;
+    }
 
-public void setEndTime(Double endTime) {
-this.endTime = endTime;
-}
+    public Double getEndTime() {
+        return endTime;
+    }
 
-public Integer getStatus() {
-return status;
-}
+    public void setEndTime(Double endTime) {
+        this.endTime = endTime;
+    }
 
-public void setStatus(Integer status) {
-this.status = status;
-}
+    public Integer getStatus() {
+        return status;
+    }
 
-public String getName() {
-return name;
-}
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Double getStartTime() {
-return startTime;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setStartTime(Double startTime) {
-this.startTime = startTime;
-}
+    public Double getStartTime() {
+        return startTime;
+    }
 
-public Integer getTypeId() {
-return typeId;
-}
+    public void setStartTime(Double startTime) {
+        this.startTime = startTime;
+    }
 
-public void setTypeId(Integer typeId) {
-this.typeId = typeId;
-}
+    public Integer getTypeId() {
+        return typeId;
+    }
 
-public Integer getPositionId() {
-return positionId;
-}
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
+    }
 
-public void setPositionId(Integer positionId) {
-this.positionId = positionId;
-}
+    public Integer getPositionId() {
+        return positionId;
+    }
 
-public Integer getLevel() {
-return level;
-}
+    public void setPositionId(Integer positionId) {
+        this.positionId = positionId;
+    }
 
-public void setLevel(Integer level) {
-this.level = level;
-}
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 }

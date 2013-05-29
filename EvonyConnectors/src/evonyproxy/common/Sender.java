@@ -13,6 +13,7 @@ import evonyproxy.evony.common.server.events.LoginResponse;
 import evonyproxy.connectors.event.PolicyObserver;
 
 /**
+ * Interface for a data handler.
  * Represents a class that can delegate data between clients and a server.
  * @version .01
  * @author Michael Archibald

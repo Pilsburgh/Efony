@@ -16,9 +16,9 @@ import java.io.IOException;
  * so that they will be able to recieve incoming data. A legitimate client needs
  * to be the first to connect because it is treated special. After that, as many
  * arbatrary clients can connect as desired.
- * @author HP_Administrator
+ * @author Michael Archibald
  */
-public class EvonyConnector implements Runnable {
+public class EvonyConnectorFactory implements Runnable {
 
     public static final int PORT_CEILING = 65535;
     protected Logger log;
@@ -31,7 +31,7 @@ public class EvonyConnector implements Runnable {
     protected boolean primaryConnection;
     protected String instanceType;
 
-    public EvonyConnector(Sender io, String instanceType) {
+    public EvonyConnectorFactory(Sender io, String instanceType) {
         log = LoggerFactory.newLogger(this.getClass().getName());
         this.io = io;
         this.instanceType = instanceType;
@@ -47,7 +47,7 @@ public class EvonyConnector implements Runnable {
      * instance, or a number representing what port you want to listen for
      * clients on.
      */
-    public EvonyConnector(Sender io, boolean verbose, String instanceType) {
+    public EvonyConnectorFactory(Sender io, boolean verbose, String instanceType) {
         log = LoggerFactory.newLogger(this.getClass().getName());
         this.io = io;
         this.verbose = verbose;

@@ -7,48 +7,49 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class GemStoneBean implements EvonyPacket {
-private String gemstoneid = null;
 
-public GemStoneBean(ASObject aso) {
+    private String gemstoneid = null;
 
-if(aso.get("gemstoneid") != null) {
-this.gemstoneid = (String) aso.get("gemstoneid");
-}
-}
+    public GemStoneBean(ASObject aso) {
 
-public GemStoneBean() {
-}
+        if (aso.get("gemstoneid") != null) {
+            this.gemstoneid = (String) aso.get("gemstoneid");
+        }
+    }
 
-@Override
-public GemStoneBean clone() {
-GemStoneBean clone = new GemStoneBean();
+    public GemStoneBean() {
+    }
 
-if(this.gemstoneid != null) {
-clone.setGemstoneid(this.gemstoneid);
-}
+    @Override
+    public GemStoneBean clone() {
+        GemStoneBean clone = new GemStoneBean();
 
-return clone;
-}
+        if (this.gemstoneid != null) {
+            clone.setGemstoneid(this.gemstoneid);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.gemstoneid != null) {
-aso.put("gemstoneid", gemstoneid);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        if (this.gemstoneid != null) {
+            aso.put("gemstoneid", gemstoneid);
+        }
 
-public String getGemstoneid() {
-return gemstoneid;
-}
+        return aso;
+    }
 
-public void setGemstoneid(String gemstoneid) {
-this.gemstoneid = gemstoneid;
-}
+    public String getGemstoneid() {
+        return gemstoneid;
+    }
+
+    public void setGemstoneid(String gemstoneid) {
+        this.gemstoneid = gemstoneid;
+    }
 }

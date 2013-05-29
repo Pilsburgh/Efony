@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ProduceBean implements EvonyPacket {
-private Double costTime = null;
-private Double endTime = null;
-private Integer queueId = null;
-private Integer num = null;
-private Integer type = null;
 
-public ProduceBean(ASObject aso) {
+    private Double costTime = null;
+    private Double endTime = null;
+    private Integer queueId = null;
+    private Integer num = null;
+    private Integer type = null;
 
-if(aso.get("costTime") != null) {
-this.costTime = (Double) aso.get("costTime");
-}
+    public ProduceBean(ASObject aso) {
 
-if(aso.get("endTime") != null) {
-this.endTime = (Double) aso.get("endTime");
-}
+        if (aso.get("costTime") != null) {
+            this.costTime = (Double) aso.get("costTime");
+        }
 
-if(aso.get("queueId") != null) {
-this.queueId = (Integer) aso.get("queueId");
-}
+        if (aso.get("endTime") != null) {
+            this.endTime = (Double) aso.get("endTime");
+        }
 
-if(aso.get("num") != null) {
-this.num = (Integer) aso.get("num");
-}
+        if (aso.get("queueId") != null) {
+            this.queueId = (Integer) aso.get("queueId");
+        }
 
-if(aso.get("type") != null) {
-this.type = (Integer) aso.get("type");
-}
-}
+        if (aso.get("num") != null) {
+            this.num = (Integer) aso.get("num");
+        }
 
-public ProduceBean() {
-}
+        if (aso.get("type") != null) {
+            this.type = (Integer) aso.get("type");
+        }
+    }
 
-@Override
-public ProduceBean clone() {
-ProduceBean clone = new ProduceBean();
+    public ProduceBean() {
+    }
 
-if(this.costTime != null) {
-clone.setCostTime(this.costTime);
-}
+    @Override
+    public ProduceBean clone() {
+        ProduceBean clone = new ProduceBean();
 
-if(this.endTime != null) {
-clone.setEndTime(this.endTime);
-}
+        if (this.costTime != null) {
+            clone.setCostTime(this.costTime);
+        }
 
-if(this.queueId != null) {
-clone.setQueueId(this.queueId);
-}
+        if (this.endTime != null) {
+            clone.setEndTime(this.endTime);
+        }
 
-if(this.num != null) {
-clone.setNum(this.num);
-}
+        if (this.queueId != null) {
+            clone.setQueueId(this.queueId);
+        }
 
-if(this.type != null) {
-clone.setType(this.type);
-}
+        if (this.num != null) {
+            clone.setNum(this.num);
+        }
 
-return clone;
-}
+        if (this.type != null) {
+            clone.setType(this.type);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.costTime != null) {
-aso.put("costTime", costTime);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.endTime != null) {
-aso.put("endTime", endTime);
-}
+        if (this.costTime != null) {
+            aso.put("costTime", costTime);
+        }
 
-if(this.queueId != null) {
-aso.put("queueId", queueId);
-}
+        if (this.endTime != null) {
+            aso.put("endTime", endTime);
+        }
 
-if(this.num != null) {
-aso.put("num", num);
-}
+        if (this.queueId != null) {
+            aso.put("queueId", queueId);
+        }
 
-if(this.type != null) {
-aso.put("type", type);
-}
+        if (this.num != null) {
+            aso.put("num", num);
+        }
 
-return aso;
-}
+        if (this.type != null) {
+            aso.put("type", type);
+        }
 
-public Double getCostTime() {
-return costTime;
-}
+        return aso;
+    }
 
-public void setCostTime(Double costTime) {
-this.costTime = costTime;
-}
+    public Double getCostTime() {
+        return costTime;
+    }
 
-public Double getEndTime() {
-return endTime;
-}
+    public void setCostTime(Double costTime) {
+        this.costTime = costTime;
+    }
 
-public void setEndTime(Double endTime) {
-this.endTime = endTime;
-}
+    public Double getEndTime() {
+        return endTime;
+    }
 
-public Integer getQueueId() {
-return queueId;
-}
+    public void setEndTime(Double endTime) {
+        this.endTime = endTime;
+    }
 
-public void setQueueId(Integer queueId) {
-this.queueId = queueId;
-}
+    public Integer getQueueId() {
+        return queueId;
+    }
 
-public Integer getNum() {
-return num;
-}
+    public void setQueueId(Integer queueId) {
+        this.queueId = queueId;
+    }
 
-public void setNum(Integer num) {
-this.num = num;
-}
+    public Integer getNum() {
+        return num;
+    }
 
-public Integer getType() {
-return type;
-}
+    public void setNum(Integer num) {
+        this.num = num;
+    }
 
-public void setType(Integer type) {
-this.type = type;
-}
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
 }

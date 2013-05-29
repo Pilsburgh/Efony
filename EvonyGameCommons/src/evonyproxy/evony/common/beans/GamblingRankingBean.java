@@ -7,147 +7,148 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class GamblingRankingBean implements EvonyPacket {
-private Integer isReward = null;
-private ArrayList<ItemBean> itemsBeans = null;
-private String playerName = null;
-private Integer count = null;
-private Integer rank = null;
 
-public GamblingRankingBean(ASObject aso) {
-itemsBeans = new ArrayList<ItemBean>();
+    private Integer isReward = null;
+    private ArrayList<ItemBean> itemsBeans = null;
+    private String playerName = null;
+    private Integer count = null;
+    private Integer rank = null;
 
-if(aso.get("isReward") != null) {
-this.isReward = (Integer) aso.get("isReward");
-}
+    public GamblingRankingBean(ASObject aso) {
+        itemsBeans = new ArrayList<ItemBean>();
 
-if(aso.get("itemsBeans") != null) {
-Object[] objArr = (Object[]) aso.get("itemsBeans");
-for(int j = 0; j < objArr.length; j++) {
-itemsBeans.add(new ItemBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("isReward") != null) {
+            this.isReward = (Integer) aso.get("isReward");
+        }
 
-if(aso.get("playerName") != null) {
-this.playerName = (String) aso.get("playerName");
-}
+        if (aso.get("itemsBeans") != null) {
+            Object[] objArr = (Object[]) aso.get("itemsBeans");
+            for (int j = 0; j < objArr.length; j++) {
+                itemsBeans.add(new ItemBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("count") != null) {
-this.count = (Integer) aso.get("count");
-}
+        if (aso.get("playerName") != null) {
+            this.playerName = (String) aso.get("playerName");
+        }
 
-if(aso.get("rank") != null) {
-this.rank = (Integer) aso.get("rank");
-}
-}
+        if (aso.get("count") != null) {
+            this.count = (Integer) aso.get("count");
+        }
 
-public GamblingRankingBean() {
-}
+        if (aso.get("rank") != null) {
+            this.rank = (Integer) aso.get("rank");
+        }
+    }
 
-@Override
-public GamblingRankingBean clone() {
-GamblingRankingBean clone = new GamblingRankingBean();
+    public GamblingRankingBean() {
+    }
 
-if(this.isReward != null) {
-clone.setIsReward(this.isReward);
-}
+    @Override
+    public GamblingRankingBean clone() {
+        GamblingRankingBean clone = new GamblingRankingBean();
 
-if(this.itemsBeans != null) {
-ArrayList tmpArrLst = new ArrayList<ItemBean>();
+        if (this.isReward != null) {
+            clone.setIsReward(this.isReward);
+        }
 
-for(Object bean : itemsBeans) {
-ItemBean tmpBean = (ItemBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setItemsBeans(tmpArrLst);
-}
+        if (this.itemsBeans != null) {
+            ArrayList tmpArrLst = new ArrayList<ItemBean>();
 
-if(this.playerName != null) {
-clone.setPlayerName(this.playerName);
-}
+            for (Object bean : itemsBeans) {
+                ItemBean tmpBean = (ItemBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setItemsBeans(tmpArrLst);
+        }
 
-if(this.count != null) {
-clone.setCount(this.count);
-}
+        if (this.playerName != null) {
+            clone.setPlayerName(this.playerName);
+        }
 
-if(this.rank != null) {
-clone.setRank(this.rank);
-}
+        if (this.count != null) {
+            clone.setCount(this.count);
+        }
 
-return clone;
-}
+        if (this.rank != null) {
+            clone.setRank(this.rank);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.isReward != null) {
-aso.put("isReward", isReward);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.itemsBeans != null) {
-ArrayList al = new ArrayList();
-for(Object obj : itemsBeans) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("itemsBeans", al);
-}
+        if (this.isReward != null) {
+            aso.put("isReward", isReward);
+        }
 
-if(this.playerName != null) {
-aso.put("playerName", playerName);
-}
+        if (this.itemsBeans != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : itemsBeans) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("itemsBeans", al);
+        }
 
-if(this.count != null) {
-aso.put("count", count);
-}
+        if (this.playerName != null) {
+            aso.put("playerName", playerName);
+        }
 
-if(this.rank != null) {
-aso.put("rank", rank);
-}
+        if (this.count != null) {
+            aso.put("count", count);
+        }
 
-return aso;
-}
+        if (this.rank != null) {
+            aso.put("rank", rank);
+        }
 
-public Integer getIsReward() {
-return isReward;
-}
+        return aso;
+    }
 
-public void setIsReward(Integer isReward) {
-this.isReward = isReward;
-}
+    public Integer getIsReward() {
+        return isReward;
+    }
 
-public ArrayList getItemsBeans() {
-return itemsBeans;
-}
+    public void setIsReward(Integer isReward) {
+        this.isReward = isReward;
+    }
 
-public void setItemsBeans(ArrayList itemsBeans) {
-this.itemsBeans = itemsBeans;
-}
+    public ArrayList getItemsBeans() {
+        return itemsBeans;
+    }
 
-public String getPlayerName() {
-return playerName;
-}
+    public void setItemsBeans(ArrayList itemsBeans) {
+        this.itemsBeans = itemsBeans;
+    }
 
-public void setPlayerName(String playerName) {
-this.playerName = playerName;
-}
+    public String getPlayerName() {
+        return playerName;
+    }
 
-public Integer getCount() {
-return count;
-}
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
 
-public void setCount(Integer count) {
-this.count = count;
-}
+    public Integer getCount() {
+        return count;
+    }
 
-public Integer getRank() {
-return rank;
-}
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
-public void setRank(Integer rank) {
-this.rank = rank;
-}
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 }

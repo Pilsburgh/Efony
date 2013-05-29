@@ -7,174 +7,175 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class TransingTradeBean implements EvonyPacket {
-private Integer amount = null;
-private Double endTime = null;
-private String resourceName = null;
-private Double price = null;
-private Integer total = null;
-private Integer id = null;
-private Integer resType = null;
 
-public TransingTradeBean(ASObject aso) {
+    private Integer amount = null;
+    private Double endTime = null;
+    private String resourceName = null;
+    private Double price = null;
+    private Integer total = null;
+    private Integer id = null;
+    private Integer resType = null;
 
-if(aso.get("amount") != null) {
-this.amount = (Integer) aso.get("amount");
-}
+    public TransingTradeBean(ASObject aso) {
 
-if(aso.get("endTime") != null) {
-this.endTime = (Double) aso.get("endTime");
-}
+        if (aso.get("amount") != null) {
+            this.amount = (Integer) aso.get("amount");
+        }
 
-if(aso.get("resourceName") != null) {
-this.resourceName = (String) aso.get("resourceName");
-}
+        if (aso.get("endTime") != null) {
+            this.endTime = (Double) aso.get("endTime");
+        }
 
-if(aso.get("price") != null) {
-this.price = (Double) aso.get("price");
-}
+        if (aso.get("resourceName") != null) {
+            this.resourceName = (String) aso.get("resourceName");
+        }
 
-if(aso.get("total") != null) {
-this.total = (Integer) aso.get("total");
-}
+        if (aso.get("price") != null) {
+            this.price = (Double) aso.get("price");
+        }
 
-if(aso.get("id") != null) {
-this.id = (Integer) aso.get("id");
-}
+        if (aso.get("total") != null) {
+            this.total = (Integer) aso.get("total");
+        }
 
-if(aso.get("resType") != null) {
-this.resType = (Integer) aso.get("resType");
-}
-}
+        if (aso.get("id") != null) {
+            this.id = (Integer) aso.get("id");
+        }
 
-public TransingTradeBean() {
-}
+        if (aso.get("resType") != null) {
+            this.resType = (Integer) aso.get("resType");
+        }
+    }
 
-@Override
-public TransingTradeBean clone() {
-TransingTradeBean clone = new TransingTradeBean();
+    public TransingTradeBean() {
+    }
 
-if(this.amount != null) {
-clone.setAmount(this.amount);
-}
+    @Override
+    public TransingTradeBean clone() {
+        TransingTradeBean clone = new TransingTradeBean();
 
-if(this.endTime != null) {
-clone.setEndTime(this.endTime);
-}
+        if (this.amount != null) {
+            clone.setAmount(this.amount);
+        }
 
-if(this.resourceName != null) {
-clone.setResourceName(this.resourceName);
-}
+        if (this.endTime != null) {
+            clone.setEndTime(this.endTime);
+        }
 
-if(this.price != null) {
-clone.setPrice(this.price);
-}
+        if (this.resourceName != null) {
+            clone.setResourceName(this.resourceName);
+        }
 
-if(this.total != null) {
-clone.setTotal(this.total);
-}
+        if (this.price != null) {
+            clone.setPrice(this.price);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.total != null) {
+            clone.setTotal(this.total);
+        }
 
-if(this.resType != null) {
-clone.setResType(this.resType);
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-return clone;
-}
+        if (this.resType != null) {
+            clone.setResType(this.resType);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.amount != null) {
-aso.put("amount", amount);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.endTime != null) {
-aso.put("endTime", endTime);
-}
+        if (this.amount != null) {
+            aso.put("amount", amount);
+        }
 
-if(this.resourceName != null) {
-aso.put("resourceName", resourceName);
-}
+        if (this.endTime != null) {
+            aso.put("endTime", endTime);
+        }
 
-if(this.price != null) {
-aso.put("price", price);
-}
+        if (this.resourceName != null) {
+            aso.put("resourceName", resourceName);
+        }
 
-if(this.total != null) {
-aso.put("total", total);
-}
+        if (this.price != null) {
+            aso.put("price", price);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.total != null) {
+            aso.put("total", total);
+        }
 
-if(this.resType != null) {
-aso.put("resType", resType);
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-return aso;
-}
+        if (this.resType != null) {
+            aso.put("resType", resType);
+        }
 
-public Integer getAmount() {
-return amount;
-}
+        return aso;
+    }
 
-public void setAmount(Integer amount) {
-this.amount = amount;
-}
+    public Integer getAmount() {
+        return amount;
+    }
 
-public Double getEndTime() {
-return endTime;
-}
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
 
-public void setEndTime(Double endTime) {
-this.endTime = endTime;
-}
+    public Double getEndTime() {
+        return endTime;
+    }
 
-public String getResourceName() {
-return resourceName;
-}
+    public void setEndTime(Double endTime) {
+        this.endTime = endTime;
+    }
 
-public void setResourceName(String resourceName) {
-this.resourceName = resourceName;
-}
+    public String getResourceName() {
+        return resourceName;
+    }
 
-public Double getPrice() {
-return price;
-}
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
 
-public void setPrice(Double price) {
-this.price = price;
-}
+    public Double getPrice() {
+        return price;
+    }
 
-public Integer getTotal() {
-return total;
-}
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
-public void setTotal(Integer total) {
-this.total = total;
-}
+    public Integer getTotal() {
+        return total;
+    }
 
-public Integer getId() {
-return id;
-}
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
 
-public Integer getResType() {
-return resType;
-}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-public void setResType(Integer resType) {
-this.resType = resType;
-}
+    public Integer getResType() {
+        return resType;
+    }
+
+    public void setResType(Integer resType) {
+        this.resType = resType;
+    }
 }

@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ItemBean implements EvonyPacket {
-private String id = null;
-private String name = null;
-private Integer maxCount = null;
-private Integer minCount = null;
-private Integer count = null;
 
-public ItemBean(ASObject aso) {
+    private String id = null;
+    private String name = null;
+    private Integer maxCount = null;
+    private Integer minCount = null;
+    private Integer count = null;
 
-if(aso.get("id") != null) {
-this.id = (String) aso.get("id");
-}
+    public ItemBean(ASObject aso) {
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("id") != null) {
+            this.id = (String) aso.get("id");
+        }
 
-if(aso.get("maxCount") != null) {
-this.maxCount = (Integer) aso.get("maxCount");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("minCount") != null) {
-this.minCount = (Integer) aso.get("minCount");
-}
+        if (aso.get("maxCount") != null) {
+            this.maxCount = (Integer) aso.get("maxCount");
+        }
 
-if(aso.get("count") != null) {
-this.count = (Integer) aso.get("count");
-}
-}
+        if (aso.get("minCount") != null) {
+            this.minCount = (Integer) aso.get("minCount");
+        }
 
-public ItemBean() {
-}
+        if (aso.get("count") != null) {
+            this.count = (Integer) aso.get("count");
+        }
+    }
 
-@Override
-public ItemBean clone() {
-ItemBean clone = new ItemBean();
+    public ItemBean() {
+    }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+    @Override
+    public ItemBean clone() {
+        ItemBean clone = new ItemBean();
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-if(this.maxCount != null) {
-clone.setMaxCount(this.maxCount);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.minCount != null) {
-clone.setMinCount(this.minCount);
-}
+        if (this.maxCount != null) {
+            clone.setMaxCount(this.maxCount);
+        }
 
-if(this.count != null) {
-clone.setCount(this.count);
-}
+        if (this.minCount != null) {
+            clone.setMinCount(this.minCount);
+        }
 
-return clone;
-}
+        if (this.count != null) {
+            clone.setCount(this.count);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-if(this.maxCount != null) {
-aso.put("maxCount", maxCount);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.minCount != null) {
-aso.put("minCount", minCount);
-}
+        if (this.maxCount != null) {
+            aso.put("maxCount", maxCount);
+        }
 
-if(this.count != null) {
-aso.put("count", count);
-}
+        if (this.minCount != null) {
+            aso.put("minCount", minCount);
+        }
 
-return aso;
-}
+        if (this.count != null) {
+            aso.put("count", count);
+        }
 
-public String getId() {
-return id;
-}
+        return aso;
+    }
 
-public void setId(String id) {
-this.id = id;
-}
+    public String getId() {
+        return id;
+    }
 
-public String getName() {
-return name;
-}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Integer getMaxCount() {
-return maxCount;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setMaxCount(Integer maxCount) {
-this.maxCount = maxCount;
-}
+    public Integer getMaxCount() {
+        return maxCount;
+    }
 
-public Integer getMinCount() {
-return minCount;
-}
+    public void setMaxCount(Integer maxCount) {
+        this.maxCount = maxCount;
+    }
 
-public void setMinCount(Integer minCount) {
-this.minCount = minCount;
-}
+    public Integer getMinCount() {
+        return minCount;
+    }
 
-public Integer getCount() {
-return count;
-}
+    public void setMinCount(Integer minCount) {
+        this.minCount = minCount;
+    }
 
-public void setCount(Integer count) {
-this.count = count;
-}
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 }

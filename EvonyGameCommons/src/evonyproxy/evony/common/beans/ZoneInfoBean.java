@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ZoneInfoBean implements EvonyPacket {
-private Integer playerCount = null;
-private Integer castleCount = null;
-private String name = null;
-private Integer rate = null;
-private Integer id = null;
 
-public ZoneInfoBean(ASObject aso) {
+    private Integer playerCount = null;
+    private Integer castleCount = null;
+    private String name = null;
+    private Integer rate = null;
+    private Integer id = null;
 
-if(aso.get("playerCount") != null) {
-this.playerCount = (Integer) aso.get("playerCount");
-}
+    public ZoneInfoBean(ASObject aso) {
 
-if(aso.get("castleCount") != null) {
-this.castleCount = (Integer) aso.get("castleCount");
-}
+        if (aso.get("playerCount") != null) {
+            this.playerCount = (Integer) aso.get("playerCount");
+        }
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("castleCount") != null) {
+            this.castleCount = (Integer) aso.get("castleCount");
+        }
 
-if(aso.get("rate") != null) {
-this.rate = (Integer) aso.get("rate");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("id") != null) {
-this.id = (Integer) aso.get("id");
-}
-}
+        if (aso.get("rate") != null) {
+            this.rate = (Integer) aso.get("rate");
+        }
 
-public ZoneInfoBean() {
-}
+        if (aso.get("id") != null) {
+            this.id = (Integer) aso.get("id");
+        }
+    }
 
-@Override
-public ZoneInfoBean clone() {
-ZoneInfoBean clone = new ZoneInfoBean();
+    public ZoneInfoBean() {
+    }
 
-if(this.playerCount != null) {
-clone.setPlayerCount(this.playerCount);
-}
+    @Override
+    public ZoneInfoBean clone() {
+        ZoneInfoBean clone = new ZoneInfoBean();
 
-if(this.castleCount != null) {
-clone.setCastleCount(this.castleCount);
-}
+        if (this.playerCount != null) {
+            clone.setPlayerCount(this.playerCount);
+        }
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.castleCount != null) {
+            clone.setCastleCount(this.castleCount);
+        }
 
-if(this.rate != null) {
-clone.setRate(this.rate);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.rate != null) {
+            clone.setRate(this.rate);
+        }
 
-return clone;
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.playerCount != null) {
-aso.put("playerCount", playerCount);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.castleCount != null) {
-aso.put("castleCount", castleCount);
-}
+        if (this.playerCount != null) {
+            aso.put("playerCount", playerCount);
+        }
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.castleCount != null) {
+            aso.put("castleCount", castleCount);
+        }
 
-if(this.rate != null) {
-aso.put("rate", rate);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.rate != null) {
+            aso.put("rate", rate);
+        }
 
-return aso;
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-public Integer getPlayerCount() {
-return playerCount;
-}
+        return aso;
+    }
 
-public void setPlayerCount(Integer playerCount) {
-this.playerCount = playerCount;
-}
+    public Integer getPlayerCount() {
+        return playerCount;
+    }
 
-public Integer getCastleCount() {
-return castleCount;
-}
+    public void setPlayerCount(Integer playerCount) {
+        this.playerCount = playerCount;
+    }
 
-public void setCastleCount(Integer castleCount) {
-this.castleCount = castleCount;
-}
+    public Integer getCastleCount() {
+        return castleCount;
+    }
 
-public String getName() {
-return name;
-}
+    public void setCastleCount(Integer castleCount) {
+        this.castleCount = castleCount;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Integer getRate() {
-return rate;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setRate(Integer rate) {
-this.rate = rate;
-}
+    public Integer getRate() {
+        return rate;
+    }
 
-public Integer getId() {
-return id;
-}
+    public void setRate(Integer rate) {
+        this.rate = rate;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

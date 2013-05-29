@@ -7,27 +7,27 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class BettleResultBean implements EvonyPacket {
 
-public BettleResultBean(ASObject aso) {
-}
+    public BettleResultBean(ASObject aso) {
+    }
 
-public BettleResultBean() {
-}
+    public BettleResultBean() {
+    }
 
-@Override
-public BettleResultBean clone() {
-BettleResultBean clone = new BettleResultBean();
+    @Override
+    public BettleResultBean clone() {
+        BettleResultBean clone = new BettleResultBean();
 
-return clone;
-}
+        return clone;
+    }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        return aso;
+    }
 }

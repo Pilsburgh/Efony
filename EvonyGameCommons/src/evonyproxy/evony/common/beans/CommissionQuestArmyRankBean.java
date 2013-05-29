@@ -7,90 +7,91 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CommissionQuestArmyRankBean implements EvonyPacket {
-private Integer rank = null;
-private Double experience = null;
-private Integer playerId = null;
 
-public CommissionQuestArmyRankBean(ASObject aso) {
+    private Integer rank = null;
+    private Double experience = null;
+    private Integer playerId = null;
 
-if(aso.get("rank") != null) {
-this.rank = (Integer) aso.get("rank");
-}
+    public CommissionQuestArmyRankBean(ASObject aso) {
 
-if(aso.get("experience") != null) {
-this.experience = (Double) aso.get("experience");
-}
+        if (aso.get("rank") != null) {
+            this.rank = (Integer) aso.get("rank");
+        }
 
-if(aso.get("playerId") != null) {
-this.playerId = (Integer) aso.get("playerId");
-}
-}
+        if (aso.get("experience") != null) {
+            this.experience = (Double) aso.get("experience");
+        }
 
-public CommissionQuestArmyRankBean() {
-}
+        if (aso.get("playerId") != null) {
+            this.playerId = (Integer) aso.get("playerId");
+        }
+    }
 
-@Override
-public CommissionQuestArmyRankBean clone() {
-CommissionQuestArmyRankBean clone = new CommissionQuestArmyRankBean();
+    public CommissionQuestArmyRankBean() {
+    }
 
-if(this.rank != null) {
-clone.setRank(this.rank);
-}
+    @Override
+    public CommissionQuestArmyRankBean clone() {
+        CommissionQuestArmyRankBean clone = new CommissionQuestArmyRankBean();
 
-if(this.experience != null) {
-clone.setExperience(this.experience);
-}
+        if (this.rank != null) {
+            clone.setRank(this.rank);
+        }
 
-if(this.playerId != null) {
-clone.setPlayerId(this.playerId);
-}
+        if (this.experience != null) {
+            clone.setExperience(this.experience);
+        }
 
-return clone;
-}
+        if (this.playerId != null) {
+            clone.setPlayerId(this.playerId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.rank != null) {
-aso.put("rank", rank);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.experience != null) {
-aso.put("experience", experience);
-}
+        if (this.rank != null) {
+            aso.put("rank", rank);
+        }
 
-if(this.playerId != null) {
-aso.put("playerId", playerId);
-}
+        if (this.experience != null) {
+            aso.put("experience", experience);
+        }
 
-return aso;
-}
+        if (this.playerId != null) {
+            aso.put("playerId", playerId);
+        }
 
-public Integer getRank() {
-return rank;
-}
+        return aso;
+    }
 
-public void setRank(Integer rank) {
-this.rank = rank;
-}
+    public Integer getRank() {
+        return rank;
+    }
 
-public Double getExperience() {
-return experience;
-}
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 
-public void setExperience(Double experience) {
-this.experience = experience;
-}
+    public Double getExperience() {
+        return experience;
+    }
 
-public Integer getPlayerId() {
-return playerId;
-}
+    public void setExperience(Double experience) {
+        this.experience = experience;
+    }
 
-public void setPlayerId(Integer playerId) {
-this.playerId = playerId;
-}
+    public Integer getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
+    }
 }

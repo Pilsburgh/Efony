@@ -9,6 +9,7 @@ import evonyproxy.connectors.AbstractEvony;
 import java.util.EventObject;
 
 /**
+ * An event containing an AMF Object to be handled.
  *@version .01
  * @author Michael Archibald
  */

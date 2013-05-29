@@ -7,168 +7,169 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class FieldBean implements EvonyPacket {
-private Integer statu = null;
-private String name = null;
-private Integer type = null;
-private Integer level = null;
-private ArrayList<ArmyBean> armys = null;
-private Integer id = null;
 
-public FieldBean(ASObject aso) {
-armys = new ArrayList<ArmyBean>();
+    private Integer statu = null;
+    private String name = null;
+    private Integer type = null;
+    private Integer level = null;
+    private ArrayList<ArmyBean> armys = null;
+    private Integer id = null;
 
-if(aso.get("statu") != null) {
-this.statu = (Integer) aso.get("statu");
-}
+    public FieldBean(ASObject aso) {
+        armys = new ArrayList<ArmyBean>();
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("statu") != null) {
+            this.statu = (Integer) aso.get("statu");
+        }
 
-if(aso.get("type") != null) {
-this.type = (Integer) aso.get("type");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("level") != null) {
-this.level = (Integer) aso.get("level");
-}
+        if (aso.get("type") != null) {
+            this.type = (Integer) aso.get("type");
+        }
 
-if(aso.get("armys") != null) {
-Object[] objArr = (Object[]) aso.get("armys");
-for(int j = 0; j < objArr.length; j++) {
-armys.add(new ArmyBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("level") != null) {
+            this.level = (Integer) aso.get("level");
+        }
 
-if(aso.get("id") != null) {
-this.id = (Integer) aso.get("id");
-}
-}
+        if (aso.get("armys") != null) {
+            Object[] objArr = (Object[]) aso.get("armys");
+            for (int j = 0; j < objArr.length; j++) {
+                armys.add(new ArmyBean((ASObject) objArr[j]));
+            }
+        }
 
-public FieldBean() {
-}
+        if (aso.get("id") != null) {
+            this.id = (Integer) aso.get("id");
+        }
+    }
 
-@Override
-public FieldBean clone() {
-FieldBean clone = new FieldBean();
+    public FieldBean() {
+    }
 
-if(this.statu != null) {
-clone.setStatu(this.statu);
-}
+    @Override
+    public FieldBean clone() {
+        FieldBean clone = new FieldBean();
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.statu != null) {
+            clone.setStatu(this.statu);
+        }
 
-if(this.type != null) {
-clone.setType(this.type);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.level != null) {
-clone.setLevel(this.level);
-}
+        if (this.type != null) {
+            clone.setType(this.type);
+        }
 
-if(this.armys != null) {
-ArrayList tmpArrLst = new ArrayList<ArmyBean>();
+        if (this.level != null) {
+            clone.setLevel(this.level);
+        }
 
-for(Object bean : armys) {
-ArmyBean tmpBean = (ArmyBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setArmys(tmpArrLst);
-}
+        if (this.armys != null) {
+            ArrayList tmpArrLst = new ArrayList<ArmyBean>();
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+            for (Object bean : armys) {
+                ArmyBean tmpBean = (ArmyBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setArmys(tmpArrLst);
+        }
 
-return clone;
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.statu != null) {
-aso.put("statu", statu);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.statu != null) {
+            aso.put("statu", statu);
+        }
 
-if(this.type != null) {
-aso.put("type", type);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.level != null) {
-aso.put("level", level);
-}
+        if (this.type != null) {
+            aso.put("type", type);
+        }
 
-if(this.armys != null) {
-ArrayList al = new ArrayList();
-for(Object obj : armys) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("armys", al);
-}
+        if (this.level != null) {
+            aso.put("level", level);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.armys != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : armys) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("armys", al);
+        }
 
-return aso;
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-public Integer getStatu() {
-return statu;
-}
+        return aso;
+    }
 
-public void setStatu(Integer statu) {
-this.statu = statu;
-}
+    public Integer getStatu() {
+        return statu;
+    }
 
-public String getName() {
-return name;
-}
+    public void setStatu(Integer statu) {
+        this.statu = statu;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Integer getType() {
-return type;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setType(Integer type) {
-this.type = type;
-}
+    public Integer getType() {
+        return type;
+    }
 
-public Integer getLevel() {
-return level;
-}
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
-public void setLevel(Integer level) {
-this.level = level;
-}
+    public Integer getLevel() {
+        return level;
+    }
 
-public ArrayList getArmys() {
-return armys;
-}
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
 
-public void setArmys(ArrayList armys) {
-this.armys = armys;
-}
+    public ArrayList getArmys() {
+        return armys;
+    }
 
-public Integer getId() {
-return id;
-}
+    public void setArmys(ArrayList armys) {
+        this.armys = armys;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

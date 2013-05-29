@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class MarketTradeBean implements EvonyPacket {
-private Integer amount = null;
-private Double price = null;
 
-public MarketTradeBean(ASObject aso) {
+    private Integer amount = null;
+    private Double price = null;
 
-if(aso.get("amount") != null) {
-this.amount = (Integer) aso.get("amount");
-}
+    public MarketTradeBean(ASObject aso) {
 
-if(aso.get("price") != null) {
-this.price = (Double) aso.get("price");
-}
-}
+        if (aso.get("amount") != null) {
+            this.amount = (Integer) aso.get("amount");
+        }
 
-public MarketTradeBean() {
-}
+        if (aso.get("price") != null) {
+            this.price = (Double) aso.get("price");
+        }
+    }
 
-@Override
-public MarketTradeBean clone() {
-MarketTradeBean clone = new MarketTradeBean();
+    public MarketTradeBean() {
+    }
 
-if(this.amount != null) {
-clone.setAmount(this.amount);
-}
+    @Override
+    public MarketTradeBean clone() {
+        MarketTradeBean clone = new MarketTradeBean();
 
-if(this.price != null) {
-clone.setPrice(this.price);
-}
+        if (this.amount != null) {
+            clone.setAmount(this.amount);
+        }
 
-return clone;
-}
+        if (this.price != null) {
+            clone.setPrice(this.price);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.amount != null) {
-aso.put("amount", amount);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.price != null) {
-aso.put("price", price);
-}
+        if (this.amount != null) {
+            aso.put("amount", amount);
+        }
 
-return aso;
-}
+        if (this.price != null) {
+            aso.put("price", price);
+        }
 
-public Integer getAmount() {
-return amount;
-}
+        return aso;
+    }
 
-public void setAmount(Integer amount) {
-this.amount = amount;
-}
+    public Integer getAmount() {
+        return amount;
+    }
 
-public Double getPrice() {
-return price;
-}
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
 
-public void setPrice(Double price) {
-this.price = price;
-}
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 }

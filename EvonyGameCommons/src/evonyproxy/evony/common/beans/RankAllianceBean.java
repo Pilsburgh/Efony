@@ -7,258 +7,259 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class RankAllianceBean implements EvonyPacket {
-private Integer honor = null;
-private Integer member = null;
-private String name = null;
-private Integer id = null;
-private String date = null;
-private String description = null;
-private Integer prestige = null;
-private String createrName = null;
-private Integer city = null;
-private String playerName = null;
-private Integer rank = null;
 
-public RankAllianceBean(ASObject aso) {
+    private Integer honor = null;
+    private Integer member = null;
+    private String name = null;
+    private Integer id = null;
+    private String date = null;
+    private String description = null;
+    private Integer prestige = null;
+    private String createrName = null;
+    private Integer city = null;
+    private String playerName = null;
+    private Integer rank = null;
 
-if(aso.get("honor") != null) {
-this.honor = (Integer) aso.get("honor");
-}
+    public RankAllianceBean(ASObject aso) {
 
-if(aso.get("member") != null) {
-this.member = (Integer) aso.get("member");
-}
+        if (aso.get("honor") != null) {
+            this.honor = (Integer) aso.get("honor");
+        }
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+        if (aso.get("member") != null) {
+            this.member = (Integer) aso.get("member");
+        }
 
-if(aso.get("id") != null) {
-this.id = (Integer) aso.get("id");
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-if(aso.get("date") != null) {
-this.date = (String) aso.get("date");
-}
+        if (aso.get("id") != null) {
+            this.id = (Integer) aso.get("id");
+        }
 
-if(aso.get("description") != null) {
-this.description = (String) aso.get("description");
-}
+        if (aso.get("date") != null) {
+            this.date = (String) aso.get("date");
+        }
 
-if(aso.get("prestige") != null) {
-this.prestige = (Integer) aso.get("prestige");
-}
+        if (aso.get("description") != null) {
+            this.description = (String) aso.get("description");
+        }
 
-if(aso.get("createrName") != null) {
-this.createrName = (String) aso.get("createrName");
-}
+        if (aso.get("prestige") != null) {
+            this.prestige = (Integer) aso.get("prestige");
+        }
 
-if(aso.get("city") != null) {
-this.city = (Integer) aso.get("city");
-}
+        if (aso.get("createrName") != null) {
+            this.createrName = (String) aso.get("createrName");
+        }
 
-if(aso.get("playerName") != null) {
-this.playerName = (String) aso.get("playerName");
-}
+        if (aso.get("city") != null) {
+            this.city = (Integer) aso.get("city");
+        }
 
-if(aso.get("rank") != null) {
-this.rank = (Integer) aso.get("rank");
-}
-}
+        if (aso.get("playerName") != null) {
+            this.playerName = (String) aso.get("playerName");
+        }
 
-public RankAllianceBean() {
-}
+        if (aso.get("rank") != null) {
+            this.rank = (Integer) aso.get("rank");
+        }
+    }
 
-@Override
-public RankAllianceBean clone() {
-RankAllianceBean clone = new RankAllianceBean();
+    public RankAllianceBean() {
+    }
 
-if(this.honor != null) {
-clone.setHonor(this.honor);
-}
+    @Override
+    public RankAllianceBean clone() {
+        RankAllianceBean clone = new RankAllianceBean();
 
-if(this.member != null) {
-clone.setMember(this.member);
-}
+        if (this.honor != null) {
+            clone.setHonor(this.honor);
+        }
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+        if (this.member != null) {
+            clone.setMember(this.member);
+        }
 
-if(this.id != null) {
-clone.setId(this.id);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-if(this.date != null) {
-clone.setDate(this.date);
-}
+        if (this.id != null) {
+            clone.setId(this.id);
+        }
 
-if(this.description != null) {
-clone.setDescription(this.description);
-}
+        if (this.date != null) {
+            clone.setDate(this.date);
+        }
 
-if(this.prestige != null) {
-clone.setPrestige(this.prestige);
-}
+        if (this.description != null) {
+            clone.setDescription(this.description);
+        }
 
-if(this.createrName != null) {
-clone.setCreaterName(this.createrName);
-}
+        if (this.prestige != null) {
+            clone.setPrestige(this.prestige);
+        }
 
-if(this.city != null) {
-clone.setCity(this.city);
-}
+        if (this.createrName != null) {
+            clone.setCreaterName(this.createrName);
+        }
 
-if(this.playerName != null) {
-clone.setPlayerName(this.playerName);
-}
+        if (this.city != null) {
+            clone.setCity(this.city);
+        }
 
-if(this.rank != null) {
-clone.setRank(this.rank);
-}
+        if (this.playerName != null) {
+            clone.setPlayerName(this.playerName);
+        }
 
-return clone;
-}
+        if (this.rank != null) {
+            clone.setRank(this.rank);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.honor != null) {
-aso.put("honor", honor);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.member != null) {
-aso.put("member", member);
-}
+        if (this.honor != null) {
+            aso.put("honor", honor);
+        }
 
-if(this.name != null) {
-aso.put("name", name);
-}
+        if (this.member != null) {
+            aso.put("member", member);
+        }
 
-if(this.id != null) {
-aso.put("id", id);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-if(this.date != null) {
-aso.put("date", date);
-}
+        if (this.id != null) {
+            aso.put("id", id);
+        }
 
-if(this.description != null) {
-aso.put("description", description);
-}
+        if (this.date != null) {
+            aso.put("date", date);
+        }
 
-if(this.prestige != null) {
-aso.put("prestige", prestige);
-}
+        if (this.description != null) {
+            aso.put("description", description);
+        }
 
-if(this.createrName != null) {
-aso.put("createrName", createrName);
-}
+        if (this.prestige != null) {
+            aso.put("prestige", prestige);
+        }
 
-if(this.city != null) {
-aso.put("city", city);
-}
+        if (this.createrName != null) {
+            aso.put("createrName", createrName);
+        }
 
-if(this.playerName != null) {
-aso.put("playerName", playerName);
-}
+        if (this.city != null) {
+            aso.put("city", city);
+        }
 
-if(this.rank != null) {
-aso.put("rank", rank);
-}
+        if (this.playerName != null) {
+            aso.put("playerName", playerName);
+        }
 
-return aso;
-}
+        if (this.rank != null) {
+            aso.put("rank", rank);
+        }
 
-public Integer getHonor() {
-return honor;
-}
+        return aso;
+    }
 
-public void setHonor(Integer honor) {
-this.honor = honor;
-}
+    public Integer getHonor() {
+        return honor;
+    }
 
-public Integer getMember() {
-return member;
-}
+    public void setHonor(Integer honor) {
+        this.honor = honor;
+    }
 
-public void setMember(Integer member) {
-this.member = member;
-}
+    public Integer getMember() {
+        return member;
+    }
 
-public String getName() {
-return name;
-}
+    public void setMember(Integer member) {
+        this.member = member;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Integer getId() {
-return id;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public Integer getId() {
+        return id;
+    }
 
-public String getDate() {
-return date;
-}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-public void setDate(String date) {
-this.date = date;
-}
+    public String getDate() {
+        return date;
+    }
 
-public String getDescription() {
-return description;
-}
+    public void setDate(String date) {
+        this.date = date;
+    }
 
-public void setDescription(String description) {
-this.description = description;
-}
+    public String getDescription() {
+        return description;
+    }
 
-public Integer getPrestige() {
-return prestige;
-}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-public void setPrestige(Integer prestige) {
-this.prestige = prestige;
-}
+    public Integer getPrestige() {
+        return prestige;
+    }
 
-public String getCreaterName() {
-return createrName;
-}
+    public void setPrestige(Integer prestige) {
+        this.prestige = prestige;
+    }
 
-public void setCreaterName(String createrName) {
-this.createrName = createrName;
-}
+    public String getCreaterName() {
+        return createrName;
+    }
 
-public Integer getCity() {
-return city;
-}
+    public void setCreaterName(String createrName) {
+        this.createrName = createrName;
+    }
 
-public void setCity(Integer city) {
-this.city = city;
-}
+    public Integer getCity() {
+        return city;
+    }
 
-public String getPlayerName() {
-return playerName;
-}
+    public void setCity(Integer city) {
+        this.city = city;
+    }
 
-public void setPlayerName(String playerName) {
-this.playerName = playerName;
-}
+    public String getPlayerName() {
+        return playerName;
+    }
 
-public Integer getRank() {
-return rank;
-}
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
 
-public void setRank(Integer rank) {
-this.rank = rank;
-}
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 }
