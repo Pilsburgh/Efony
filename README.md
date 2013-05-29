@@ -23,4 +23,6 @@ Console                 Allows for the detecting and sending of commands through
 EvonyCommonCustom       I'm not sure about this module.<br>
 flex-messaging          Contains the Flex library. It is used for the handling of AMF objects.<br>
 
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/7b7e1669e348e25a44452a7ec867fee0 "githalytics.com")](http://githalytics.com/Pilsburgh/Efony)
+
 
