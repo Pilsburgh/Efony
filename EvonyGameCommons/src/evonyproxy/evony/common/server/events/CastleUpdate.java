@@ -8,69 +8,70 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CastleUpdate implements EvonyPacket {
-public Integer updateType = null;
-public CastleBean castleBean = null;
 
-public CastleUpdate(ASObject aso) {
+    public Integer updateType = null;
+    public CastleBean castleBean = null;
 
-if(aso.get("updateType") != null) {
-this.updateType = (Integer) aso.get("updateType");
-}
+    public CastleUpdate(ASObject aso) {
 
-if(aso.get("castleBean") != null) {
-this.castleBean = new CastleBean((ASObject) aso.get("castleBean"));
-}
-}
+        if (aso.get("updateType") != null) {
+            this.updateType = (Integer) aso.get("updateType");
+        }
 
-public CastleUpdate() {
-}
+        if (aso.get("castleBean") != null) {
+            this.castleBean = new CastleBean((ASObject) aso.get("castleBean"));
+        }
+    }
 
-@Override
-public CastleUpdate clone() {
-CastleUpdate clone = new CastleUpdate();
+    public CastleUpdate() {
+    }
 
-if(this.updateType != null) {
-clone.setUpdateType(this.updateType);
-}
+    @Override
+    public CastleUpdate clone() {
+        CastleUpdate clone = new CastleUpdate();
 
-if(this.castleBean != null) {
-clone.setCastleBean(this.castleBean);
-}
+        if (this.updateType != null) {
+            clone.setUpdateType(this.updateType);
+        }
 
-return clone;
-}
+        if (this.castleBean != null) {
+            clone.setCastleBean(this.castleBean);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.updateType != null) {
-aso.put("updateType", updateType);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.castleBean != null) {
-aso.put("castleBean", castleBean.toASObject());
-}
+        if (this.updateType != null) {
+            aso.put("updateType", updateType);
+        }
 
-return aso;
-}
+        if (this.castleBean != null) {
+            aso.put("castleBean", castleBean.toASObject());
+        }
 
-public Integer getUpdateType() {
-return updateType;
-}
+        return aso;
+    }
 
-public void setUpdateType(Integer updateType) {
-this.updateType = updateType;
-}
+    public Integer getUpdateType() {
+        return updateType;
+    }
 
-public CastleBean getCastleBean() {
-return castleBean;
-}
+    public void setUpdateType(Integer updateType) {
+        this.updateType = updateType;
+    }
 
-public void setCastleBean(CastleBean castleBean) {
-this.castleBean = castleBean;
-}
+    public CastleBean getCastleBean() {
+        return castleBean;
+    }
+
+    public void setCastleBean(CastleBean castleBean) {
+        this.castleBean = castleBean;
+    }
 }

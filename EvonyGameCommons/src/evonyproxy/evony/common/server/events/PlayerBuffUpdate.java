@@ -8,69 +8,70 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class PlayerBuffUpdate implements EvonyPacket {
-public Integer updateType = null;
-public BuffBean buffBean = null;
 
-public PlayerBuffUpdate(ASObject aso) {
+    public Integer updateType = null;
+    public BuffBean buffBean = null;
 
-if(aso.get("updateType") != null) {
-this.updateType = (Integer) aso.get("updateType");
-}
+    public PlayerBuffUpdate(ASObject aso) {
 
-if(aso.get("buffBean") != null) {
-this.buffBean = new BuffBean((ASObject) aso.get("buffBean"));
-}
-}
+        if (aso.get("updateType") != null) {
+            this.updateType = (Integer) aso.get("updateType");
+        }
 
-public PlayerBuffUpdate() {
-}
+        if (aso.get("buffBean") != null) {
+            this.buffBean = new BuffBean((ASObject) aso.get("buffBean"));
+        }
+    }
 
-@Override
-public PlayerBuffUpdate clone() {
-PlayerBuffUpdate clone = new PlayerBuffUpdate();
+    public PlayerBuffUpdate() {
+    }
 
-if(this.updateType != null) {
-clone.setUpdateType(this.updateType);
-}
+    @Override
+    public PlayerBuffUpdate clone() {
+        PlayerBuffUpdate clone = new PlayerBuffUpdate();
 
-if(this.buffBean != null) {
-clone.setBuffBean(this.buffBean);
-}
+        if (this.updateType != null) {
+            clone.setUpdateType(this.updateType);
+        }
 
-return clone;
-}
+        if (this.buffBean != null) {
+            clone.setBuffBean(this.buffBean);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.updateType != null) {
-aso.put("updateType", updateType);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.buffBean != null) {
-aso.put("buffBean", buffBean.toASObject());
-}
+        if (this.updateType != null) {
+            aso.put("updateType", updateType);
+        }
 
-return aso;
-}
+        if (this.buffBean != null) {
+            aso.put("buffBean", buffBean.toASObject());
+        }
 
-public Integer getUpdateType() {
-return updateType;
-}
+        return aso;
+    }
 
-public void setUpdateType(Integer updateType) {
-this.updateType = updateType;
-}
+    public Integer getUpdateType() {
+        return updateType;
+    }
 
-public BuffBean getBuffBean() {
-return buffBean;
-}
+    public void setUpdateType(Integer updateType) {
+        this.updateType = updateType;
+    }
 
-public void setBuffBean(BuffBean buffBean) {
-this.buffBean = buffBean;
-}
+    public BuffBean getBuffBean() {
+        return buffBean;
+    }
+
+    public void setBuffBean(BuffBean buffBean) {
+        this.buffBean = buffBean;
+    }
 }

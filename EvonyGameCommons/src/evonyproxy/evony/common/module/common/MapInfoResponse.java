@@ -8,252 +8,253 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class MapInfoResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public Integer y1 = null;
-public Integer y2 = null;
-public Integer ok = null;
-public ArrayList<CastleBean> castles = null;
-public String errorMsg = null;
-public String mapStr = null;
-public Integer x1 = null;
-public Integer x2 = null;
 
-public MapInfoResponse(ASObject aso) {
-castles = new ArrayList<CastleBean>();
+    public Double packageId = null;
+    public String msg = null;
+    public Integer y1 = null;
+    public Integer y2 = null;
+    public Integer ok = null;
+    public ArrayList<CastleBean> castles = null;
+    public String errorMsg = null;
+    public String mapStr = null;
+    public Integer x1 = null;
+    public Integer x2 = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public MapInfoResponse(ASObject aso) {
+        castles = new ArrayList<CastleBean>();
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("y1") != null) {
-this.y1 = (Integer) aso.get("y1");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("y2") != null) {
-this.y2 = (Integer) aso.get("y2");
-}
+        if (aso.get("y1") != null) {
+            this.y1 = (Integer) aso.get("y1");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
+        if (aso.get("y2") != null) {
+            this.y2 = (Integer) aso.get("y2");
+        }
 
-if(aso.get("castles") != null) {
-Object[] objArr = (Object[]) aso.get("castles");
-for(int j = 0; j < objArr.length; j++) {
-castles.add(new CastleBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("castles") != null) {
+            Object[] objArr = (Object[]) aso.get("castles");
+            for (int j = 0; j < objArr.length; j++) {
+                castles.add(new CastleBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("mapStr") != null) {
-this.mapStr = (String) aso.get("mapStr");
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-if(aso.get("x1") != null) {
-this.x1 = (Integer) aso.get("x1");
-}
+        if (aso.get("mapStr") != null) {
+            this.mapStr = (String) aso.get("mapStr");
+        }
 
-if(aso.get("x2") != null) {
-this.x2 = (Integer) aso.get("x2");
-}
-}
+        if (aso.get("x1") != null) {
+            this.x1 = (Integer) aso.get("x1");
+        }
 
-public MapInfoResponse() {
-}
+        if (aso.get("x2") != null) {
+            this.x2 = (Integer) aso.get("x2");
+        }
+    }
 
-@Override
-public MapInfoResponse clone() {
-MapInfoResponse clone = new MapInfoResponse();
+    public MapInfoResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public MapInfoResponse clone() {
+        MapInfoResponse clone = new MapInfoResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.y1 != null) {
-clone.setY1(this.y1);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.y2 != null) {
-clone.setY2(this.y2);
-}
+        if (this.y1 != null) {
+            clone.setY1(this.y1);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.y2 != null) {
+            clone.setY2(this.y2);
+        }
 
-if(this.castles != null) {
-ArrayList tmpArrLst = new ArrayList<CastleBean>();
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-for(Object bean : castles) {
-CastleBean tmpBean = (CastleBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setCastles(tmpArrLst);
-}
+        if (this.castles != null) {
+            ArrayList tmpArrLst = new ArrayList<CastleBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : castles) {
+                CastleBean tmpBean = (CastleBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setCastles(tmpArrLst);
+        }
 
-if(this.mapStr != null) {
-clone.setMapStr(this.mapStr);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-if(this.x1 != null) {
-clone.setX1(this.x1);
-}
+        if (this.mapStr != null) {
+            clone.setMapStr(this.mapStr);
+        }
 
-if(this.x2 != null) {
-clone.setX2(this.x2);
-}
+        if (this.x1 != null) {
+            clone.setX1(this.x1);
+        }
 
-return clone;
-}
+        if (this.x2 != null) {
+            clone.setX2(this.x2);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.y1 != null) {
-aso.put("y1", y1);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.y2 != null) {
-aso.put("y2", y2);
-}
+        if (this.y1 != null) {
+            aso.put("y1", y1);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.y2 != null) {
+            aso.put("y2", y2);
+        }
 
-if(this.castles != null) {
-ArrayList al = new ArrayList();
-for(Object obj : castles) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("castles", al);
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.castles != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : castles) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("castles", al);
+        }
 
-if(this.mapStr != null) {
-aso.put("mapStr", mapStr);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-if(this.x1 != null) {
-aso.put("x1", x1);
-}
+        if (this.mapStr != null) {
+            aso.put("mapStr", mapStr);
+        }
 
-if(this.x2 != null) {
-aso.put("x2", x2);
-}
+        if (this.x1 != null) {
+            aso.put("x1", x1);
+        }
 
-return aso;
-}
+        if (this.x2 != null) {
+            aso.put("x2", x2);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Integer getY1() {
-return y1;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setY1(Integer y1) {
-this.y1 = y1;
-}
+    public Integer getY1() {
+        return y1;
+    }
 
-public Integer getY2() {
-return y2;
-}
+    public void setY1(Integer y1) {
+        this.y1 = y1;
+    }
 
-public void setY2(Integer y2) {
-this.y2 = y2;
-}
+    public Integer getY2() {
+        return y2;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setY2(Integer y2) {
+        this.y2 = y2;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
 
-public ArrayList getCastles() {
-return castles;
-}
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 
-public void setCastles(ArrayList castles) {
-this.castles = castles;
-}
+    public ArrayList getCastles() {
+        return castles;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setCastles(ArrayList castles) {
+        this.castles = castles;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public String getMapStr() {
-return mapStr;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setMapStr(String mapStr) {
-this.mapStr = mapStr;
-}
+    public String getMapStr() {
+        return mapStr;
+    }
 
-public Integer getX1() {
-return x1;
-}
+    public void setMapStr(String mapStr) {
+        this.mapStr = mapStr;
+    }
 
-public void setX1(Integer x1) {
-this.x1 = x1;
-}
+    public Integer getX1() {
+        return x1;
+    }
 
-public Integer getX2() {
-return x2;
-}
+    public void setX1(Integer x1) {
+        this.x1 = x1;
+    }
 
-public void setX2(Integer x2) {
-this.x2 = x2;
-}
+    public Integer getX2() {
+        return x2;
+    }
+
+    public void setX2(Integer x2) {
+        this.x2 = x2;
+    }
 }

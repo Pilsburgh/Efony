@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class QuestCompleteTipResponse implements EvonyPacket {
-public String name = null;
-public Integer questId = null;
 
-public QuestCompleteTipResponse(ASObject aso) {
+    public String name = null;
+    public Integer questId = null;
 
-if(aso.get("name") != null) {
-this.name = (String) aso.get("name");
-}
+    public QuestCompleteTipResponse(ASObject aso) {
 
-if(aso.get("questId") != null) {
-this.questId = (Integer) aso.get("questId");
-}
-}
+        if (aso.get("name") != null) {
+            this.name = (String) aso.get("name");
+        }
 
-public QuestCompleteTipResponse() {
-}
+        if (aso.get("questId") != null) {
+            this.questId = (Integer) aso.get("questId");
+        }
+    }
 
-@Override
-public QuestCompleteTipResponse clone() {
-QuestCompleteTipResponse clone = new QuestCompleteTipResponse();
+    public QuestCompleteTipResponse() {
+    }
 
-if(this.name != null) {
-clone.setName(this.name);
-}
+    @Override
+    public QuestCompleteTipResponse clone() {
+        QuestCompleteTipResponse clone = new QuestCompleteTipResponse();
 
-if(this.questId != null) {
-clone.setQuestId(this.questId);
-}
+        if (this.name != null) {
+            clone.setName(this.name);
+        }
 
-return clone;
-}
+        if (this.questId != null) {
+            clone.setQuestId(this.questId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.name != null) {
-aso.put("name", name);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.questId != null) {
-aso.put("questId", questId);
-}
+        if (this.name != null) {
+            aso.put("name", name);
+        }
 
-return aso;
-}
+        if (this.questId != null) {
+            aso.put("questId", questId);
+        }
 
-public String getName() {
-return name;
-}
+        return aso;
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public String getName() {
+        return name;
+    }
 
-public Integer getQuestId() {
-return questId;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public void setQuestId(Integer questId) {
-this.questId = questId;
-}
+    public Integer getQuestId() {
+        return questId;
+    }
+
+    public void setQuestId(Integer questId) {
+        this.questId = questId;
+    }
 }

@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class GetPackageNumberResponse implements EvonyPacket {
-public String errorMsg = null;
-public String msg = null;
-public Double packageId = null;
-public Integer number = null;
-public Integer ok = null;
 
-public GetPackageNumberResponse(ASObject aso) {
+    public String errorMsg = null;
+    public String msg = null;
+    public Double packageId = null;
+    public Integer number = null;
+    public Integer ok = null;
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+    public GetPackageNumberResponse(ASObject aso) {
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("number") != null) {
-this.number = (Integer) aso.get("number");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("number") != null) {
+            this.number = (Integer) aso.get("number");
+        }
 
-public GetPackageNumberResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public GetPackageNumberResponse clone() {
-GetPackageNumberResponse clone = new GetPackageNumberResponse();
+    public GetPackageNumberResponse() {
+    }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+    @Override
+    public GetPackageNumberResponse clone() {
+        GetPackageNumberResponse clone = new GetPackageNumberResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.number != null) {
-clone.setNumber(this.number);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.number != null) {
+            clone.setNumber(this.number);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.number != null) {
-aso.put("number", number);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.number != null) {
+            aso.put("number", number);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+        return aso;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public Integer getNumber() {
-return number;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setNumber(Integer number) {
-this.number = number;
-}
+    public Integer getNumber() {
+        return number;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

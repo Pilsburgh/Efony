@@ -8,147 +8,148 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ResourceProduceDataResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public ArrayList<ResourceProduceDataBean> resourceProduceDataBean = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public ResourceProduceDataResponse(ASObject aso) {
-resourceProduceDataBean = new ArrayList<ResourceProduceDataBean>();
+    public Double packageId = null;
+    public String msg = null;
+    public ArrayList<ResourceProduceDataBean> resourceProduceDataBean = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public ResourceProduceDataResponse(ASObject aso) {
+        resourceProduceDataBean = new ArrayList<ResourceProduceDataBean>();
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("resourceProduceDataBean") != null) {
-Object[] objArr = (Object[]) aso.get("resourceProduceDataBean");
-for(int j = 0; j < objArr.length; j++) {
-resourceProduceDataBean.add(new ResourceProduceDataBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("resourceProduceDataBean") != null) {
+            Object[] objArr = (Object[]) aso.get("resourceProduceDataBean");
+            for (int j = 0; j < objArr.length; j++) {
+                resourceProduceDataBean.add(new ResourceProduceDataBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public ResourceProduceDataResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public ResourceProduceDataResponse clone() {
-ResourceProduceDataResponse clone = new ResourceProduceDataResponse();
+    public ResourceProduceDataResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public ResourceProduceDataResponse clone() {
+        ResourceProduceDataResponse clone = new ResourceProduceDataResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.resourceProduceDataBean != null) {
-ArrayList tmpArrLst = new ArrayList<ResourceProduceDataBean>();
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-for(Object bean : resourceProduceDataBean) {
-ResourceProduceDataBean tmpBean = (ResourceProduceDataBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setResourceProduceDataBean(tmpArrLst);
-}
+        if (this.resourceProduceDataBean != null) {
+            ArrayList tmpArrLst = new ArrayList<ResourceProduceDataBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : resourceProduceDataBean) {
+                ResourceProduceDataBean tmpBean = (ResourceProduceDataBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setResourceProduceDataBean(tmpArrLst);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.resourceProduceDataBean != null) {
-ArrayList al = new ArrayList();
-for(Object obj : resourceProduceDataBean) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("resourceProduceDataBean", al);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.resourceProduceDataBean != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : resourceProduceDataBean) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("resourceProduceDataBean", al);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public ArrayList getResourceProduceDataBean() {
-return resourceProduceDataBean;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setResourceProduceDataBean(ArrayList resourceProduceDataBean) {
-this.resourceProduceDataBean = resourceProduceDataBean;
-}
+    public ArrayList getResourceProduceDataBean() {
+        return resourceProduceDataBean;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setResourceProduceDataBean(ArrayList resourceProduceDataBean) {
+        this.resourceProduceDataBean = resourceProduceDataBean;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

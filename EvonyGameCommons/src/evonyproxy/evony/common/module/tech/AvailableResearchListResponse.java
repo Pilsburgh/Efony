@@ -8,168 +8,169 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class AvailableResearchListResponse implements EvonyPacket {
-public Double packageId = null;
-public Integer academyCount = null;
-public String msg = null;
-public ArrayList<AvailableResearchListBean> acailableResearchBeans = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public AvailableResearchListResponse(ASObject aso) {
-acailableResearchBeans = new ArrayList<AvailableResearchListBean>();
+    public Double packageId = null;
+    public Integer academyCount = null;
+    public String msg = null;
+    public ArrayList<AvailableResearchListBean> acailableResearchBeans = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public AvailableResearchListResponse(ASObject aso) {
+        acailableResearchBeans = new ArrayList<AvailableResearchListBean>();
 
-if(aso.get("academyCount") != null) {
-this.academyCount = (Integer) aso.get("academyCount");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("academyCount") != null) {
+            this.academyCount = (Integer) aso.get("academyCount");
+        }
 
-if(aso.get("acailableResearchBeans") != null) {
-Object[] objArr = (Object[]) aso.get("acailableResearchBeans");
-for(int j = 0; j < objArr.length; j++) {
-acailableResearchBeans.add(new AvailableResearchListBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("acailableResearchBeans") != null) {
+            Object[] objArr = (Object[]) aso.get("acailableResearchBeans");
+            for (int j = 0; j < objArr.length; j++) {
+                acailableResearchBeans.add(new AvailableResearchListBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public AvailableResearchListResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public AvailableResearchListResponse clone() {
-AvailableResearchListResponse clone = new AvailableResearchListResponse();
+    public AvailableResearchListResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public AvailableResearchListResponse clone() {
+        AvailableResearchListResponse clone = new AvailableResearchListResponse();
 
-if(this.academyCount != null) {
-clone.setAcademyCount(this.academyCount);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.academyCount != null) {
+            clone.setAcademyCount(this.academyCount);
+        }
 
-if(this.acailableResearchBeans != null) {
-ArrayList tmpArrLst = new ArrayList<AvailableResearchListBean>();
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-for(Object bean : acailableResearchBeans) {
-AvailableResearchListBean tmpBean = (AvailableResearchListBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setAcailableResearchBeans(tmpArrLst);
-}
+        if (this.acailableResearchBeans != null) {
+            ArrayList tmpArrLst = new ArrayList<AvailableResearchListBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : acailableResearchBeans) {
+                AvailableResearchListBean tmpBean = (AvailableResearchListBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setAcailableResearchBeans(tmpArrLst);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.academyCount != null) {
-aso.put("academyCount", academyCount);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.academyCount != null) {
+            aso.put("academyCount", academyCount);
+        }
 
-if(this.acailableResearchBeans != null) {
-ArrayList al = new ArrayList();
-for(Object obj : acailableResearchBeans) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("acailableResearchBeans", al);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.acailableResearchBeans != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : acailableResearchBeans) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("acailableResearchBeans", al);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public Integer getAcademyCount() {
-return academyCount;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setAcademyCount(Integer academyCount) {
-this.academyCount = academyCount;
-}
+    public Integer getAcademyCount() {
+        return academyCount;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setAcademyCount(Integer academyCount) {
+        this.academyCount = academyCount;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public ArrayList getAcailableResearchBeans() {
-return acailableResearchBeans;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setAcailableResearchBeans(ArrayList acailableResearchBeans) {
-this.acailableResearchBeans = acailableResearchBeans;
-}
+    public ArrayList getAcailableResearchBeans() {
+        return acailableResearchBeans;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setAcailableResearchBeans(ArrayList acailableResearchBeans) {
+        this.acailableResearchBeans = acailableResearchBeans;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

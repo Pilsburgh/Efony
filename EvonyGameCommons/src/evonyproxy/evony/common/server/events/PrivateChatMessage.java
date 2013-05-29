@@ -7,92 +7,93 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class PrivateChatMessage implements EvonyPacket {
-public static final int NORMAL_CHAT = 0;
-public static final int GM_CHAT = 1;
-public String msg = null;
-public Integer chatType = null;
-public String fromUser = null;
 
-public PrivateChatMessage(ASObject aso) {
+    public static final int NORMAL_CHAT = 0;
+    public static final int GM_CHAT = 1;
+    public String msg = null;
+    public Integer chatType = null;
+    public String fromUser = null;
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+    public PrivateChatMessage(ASObject aso) {
 
-if(aso.get("chatType") != null) {
-this.chatType = (Integer) aso.get("chatType");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("fromUser") != null) {
-this.fromUser = (String) aso.get("fromUser");
-}
-}
+        if (aso.get("chatType") != null) {
+            this.chatType = (Integer) aso.get("chatType");
+        }
 
-public PrivateChatMessage() {
-}
+        if (aso.get("fromUser") != null) {
+            this.fromUser = (String) aso.get("fromUser");
+        }
+    }
 
-@Override
-public PrivateChatMessage clone() {
-PrivateChatMessage clone = new PrivateChatMessage();
+    public PrivateChatMessage() {
+    }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+    @Override
+    public PrivateChatMessage clone() {
+        PrivateChatMessage clone = new PrivateChatMessage();
 
-if(this.chatType != null) {
-clone.setChatType(this.chatType);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.fromUser != null) {
-clone.setFromUser(this.fromUser);
-}
+        if (this.chatType != null) {
+            clone.setChatType(this.chatType);
+        }
 
-return clone;
-}
+        if (this.fromUser != null) {
+            clone.setFromUser(this.fromUser);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.chatType != null) {
-aso.put("chatType", chatType);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.fromUser != null) {
-aso.put("fromUser", fromUser);
-}
+        if (this.chatType != null) {
+            aso.put("chatType", chatType);
+        }
 
-return aso;
-}
+        if (this.fromUser != null) {
+            aso.put("fromUser", fromUser);
+        }
 
-public String getMsg() {
-return msg;
-}
+        return aso;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Integer getChatType() {
-return chatType;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setChatType(Integer chatType) {
-this.chatType = chatType;
-}
+    public Integer getChatType() {
+        return chatType;
+    }
 
-public String getFromUser() {
-return fromUser;
-}
+    public void setChatType(Integer chatType) {
+        this.chatType = chatType;
+    }
 
-public void setFromUser(String fromUser) {
-this.fromUser = fromUser;
-}
+    public String getFromUser() {
+        return fromUser;
+    }
+
+    public void setFromUser(String fromUser) {
+        this.fromUser = fromUser;
+    }
 }

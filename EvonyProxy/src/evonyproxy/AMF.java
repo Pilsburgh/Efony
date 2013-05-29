@@ -11,7 +11,7 @@ import evonyproxy.connectors.EvonyPolicy;
 import evonyproxy.connectors.AbstractEvony;
 import evonyproxy.connectors.EvonyServer;
 import evonyproxy.connectors.EvonyClient;
-import evonyproxy.evony.command.CmdFactory;
+import evonyproxy.evony.command.CommandFactory;
 import evonyproxy.evony.command.QuestCommands;
 import evonyproxy.evony.command.CastleCommands;
 import evonyproxy.evony.command.TechCommand;
@@ -68,7 +68,7 @@ public class AMF implements AmfListener, Serializer, ConsoleObserver {
     protected List<ConsoleListener> listeners = new ArrayList();
     protected Dispatch dispatch;
     protected int asoLength;
-    protected CmdFactory command = CmdFactory.getInstance();
+    protected CommandFactory command = CommandFactory.getInstance();
     protected Map<Integer, String> castleNames = new HashMap<Integer, String>();
     protected Map<Integer, String> bldTypes = new HashMap<Integer, String>();
     protected Map<Integer, String> techTypes = new HashMap<Integer, String>();

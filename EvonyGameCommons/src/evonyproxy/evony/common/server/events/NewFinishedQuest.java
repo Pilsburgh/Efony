@@ -7,27 +7,27 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class NewFinishedQuest implements EvonyPacket {
 
-public NewFinishedQuest(ASObject aso) {
-}
+    public NewFinishedQuest(ASObject aso) {
+    }
 
-public NewFinishedQuest() {
-}
+    public NewFinishedQuest() {
+    }
 
-@Override
-public NewFinishedQuest clone() {
-NewFinishedQuest clone = new NewFinishedQuest();
+    @Override
+    public NewFinishedQuest clone() {
+        NewFinishedQuest clone = new NewFinishedQuest();
 
-return clone;
-}
+        return clone;
+    }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        return aso;
+    }
 }

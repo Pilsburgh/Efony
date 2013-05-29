@@ -8,132 +8,133 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class OtherFieldInfoResponse implements EvonyPacket {
-public String msg = null;
-public Double packageId = null;
-public MapCastleBean bean = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public OtherFieldInfoResponse(ASObject aso) {
+    public String msg = null;
+    public Double packageId = null;
+    public MapCastleBean bean = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+    public OtherFieldInfoResponse(ASObject aso) {
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("bean") != null) {
-this.bean = new MapCastleBean((ASObject) aso.get("bean"));
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("bean") != null) {
+            this.bean = new MapCastleBean((ASObject) aso.get("bean"));
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public OtherFieldInfoResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public OtherFieldInfoResponse clone() {
-OtherFieldInfoResponse clone = new OtherFieldInfoResponse();
+    public OtherFieldInfoResponse() {
+    }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+    @Override
+    public OtherFieldInfoResponse clone() {
+        OtherFieldInfoResponse clone = new OtherFieldInfoResponse();
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.bean != null) {
-clone.setBean(this.bean);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.bean != null) {
+            clone.setBean(this.bean);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.bean != null) {
-aso.put("bean", bean.toASObject());
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.bean != null) {
+            aso.put("bean", bean.toASObject());
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public String getMsg() {
-return msg;
-}
+        return aso;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public MapCastleBean getBean() {
-return bean;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setBean(MapCastleBean bean) {
-this.bean = bean;
-}
+    public MapCastleBean getBean() {
+        return bean;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setBean(MapCastleBean bean) {
+        this.bean = bean;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

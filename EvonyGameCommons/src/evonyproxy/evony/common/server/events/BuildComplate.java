@@ -8,69 +8,70 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class BuildComplate implements EvonyPacket {
-public Integer castleId = null;
-public BuildingBean buildingBean = null;
 
-public BuildComplate(ASObject aso) {
+    public Integer castleId = null;
+    public BuildingBean buildingBean = null;
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
+    public BuildComplate(ASObject aso) {
 
-if(aso.get("buildingBean") != null) {
-this.buildingBean = new BuildingBean((ASObject) aso.get("buildingBean"));
-}
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
 
-public BuildComplate() {
-}
+        if (aso.get("buildingBean") != null) {
+            this.buildingBean = new BuildingBean((ASObject) aso.get("buildingBean"));
+        }
+    }
 
-@Override
-public BuildComplate clone() {
-BuildComplate clone = new BuildComplate();
+    public BuildComplate() {
+    }
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+    @Override
+    public BuildComplate clone() {
+        BuildComplate clone = new BuildComplate();
 
-if(this.buildingBean != null) {
-clone.setBuildingBean(this.buildingBean);
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-return clone;
-}
+        if (this.buildingBean != null) {
+            clone.setBuildingBean(this.buildingBean);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.buildingBean != null) {
-aso.put("buildingBean", buildingBean.toASObject());
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-return aso;
-}
+        if (this.buildingBean != null) {
+            aso.put("buildingBean", buildingBean.toASObject());
+        }
 
-public Integer getCastleId() {
-return castleId;
-}
+        return aso;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
 
-public BuildingBean getBuildingBean() {
-return buildingBean;
-}
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 
-public void setBuildingBean(BuildingBean buildingBean) {
-this.buildingBean = buildingBean;
-}
+    public BuildingBean getBuildingBean() {
+        return buildingBean;
+    }
+
+    public void setBuildingBean(BuildingBean buildingBean) {
+        this.buildingBean = buildingBean;
+    }
 }

@@ -8,48 +8,49 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class PlayerInfoUpdate implements EvonyPacket {
-public PlayerInfoBean playerInfo = null;
 
-public PlayerInfoUpdate(ASObject aso) {
+    public PlayerInfoBean playerInfo = null;
 
-if(aso.get("playerInfo") != null) {
-this.playerInfo = new PlayerInfoBean((ASObject) aso.get("playerInfo"));
-}
-}
+    public PlayerInfoUpdate(ASObject aso) {
 
-public PlayerInfoUpdate() {
-}
+        if (aso.get("playerInfo") != null) {
+            this.playerInfo = new PlayerInfoBean((ASObject) aso.get("playerInfo"));
+        }
+    }
 
-@Override
-public PlayerInfoUpdate clone() {
-PlayerInfoUpdate clone = new PlayerInfoUpdate();
+    public PlayerInfoUpdate() {
+    }
 
-if(this.playerInfo != null) {
-clone.setPlayerInfo(this.playerInfo);
-}
+    @Override
+    public PlayerInfoUpdate clone() {
+        PlayerInfoUpdate clone = new PlayerInfoUpdate();
 
-return clone;
-}
+        if (this.playerInfo != null) {
+            clone.setPlayerInfo(this.playerInfo);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.playerInfo != null) {
-aso.put("playerInfo", playerInfo.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        if (this.playerInfo != null) {
+            aso.put("playerInfo", playerInfo.toASObject());
+        }
 
-public PlayerInfoBean getPlayerInfo() {
-return playerInfo;
-}
+        return aso;
+    }
 
-public void setPlayerInfo(PlayerInfoBean playerInfo) {
-this.playerInfo = playerInfo;
-}
+    public PlayerInfoBean getPlayerInfo() {
+        return playerInfo;
+    }
+
+    public void setPlayerInfo(PlayerInfoBean playerInfo) {
+        this.playerInfo = playerInfo;
+    }
 }

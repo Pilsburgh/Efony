@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ChannelChatMsg implements EvonyPacket {
-public String msg = null;
-public String channel = null;
-public Integer languageType = null;
-public Integer ownitemid = null;
-public String fromUser = null;
 
-public ChannelChatMsg(ASObject aso) {
+    public String msg = null;
+    public String channel = null;
+    public Integer languageType = null;
+    public Integer ownitemid = null;
+    public String fromUser = null;
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+    public ChannelChatMsg(ASObject aso) {
 
-if(aso.get("channel") != null) {
-this.channel = (String) aso.get("channel");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("languageType") != null) {
-this.languageType = (Integer) aso.get("languageType");
-}
+        if (aso.get("channel") != null) {
+            this.channel = (String) aso.get("channel");
+        }
 
-if(aso.get("ownitemid") != null) {
-this.ownitemid = (Integer) aso.get("ownitemid");
-}
+        if (aso.get("languageType") != null) {
+            this.languageType = (Integer) aso.get("languageType");
+        }
 
-if(aso.get("fromUser") != null) {
-this.fromUser = (String) aso.get("fromUser");
-}
-}
+        if (aso.get("ownitemid") != null) {
+            this.ownitemid = (Integer) aso.get("ownitemid");
+        }
 
-public ChannelChatMsg() {
-}
+        if (aso.get("fromUser") != null) {
+            this.fromUser = (String) aso.get("fromUser");
+        }
+    }
 
-@Override
-public ChannelChatMsg clone() {
-ChannelChatMsg clone = new ChannelChatMsg();
+    public ChannelChatMsg() {
+    }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+    @Override
+    public ChannelChatMsg clone() {
+        ChannelChatMsg clone = new ChannelChatMsg();
 
-if(this.channel != null) {
-clone.setChannel(this.channel);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.languageType != null) {
-clone.setLanguageType(this.languageType);
-}
+        if (this.channel != null) {
+            clone.setChannel(this.channel);
+        }
 
-if(this.ownitemid != null) {
-clone.setOwnitemid(this.ownitemid);
-}
+        if (this.languageType != null) {
+            clone.setLanguageType(this.languageType);
+        }
 
-if(this.fromUser != null) {
-clone.setFromUser(this.fromUser);
-}
+        if (this.ownitemid != null) {
+            clone.setOwnitemid(this.ownitemid);
+        }
 
-return clone;
-}
+        if (this.fromUser != null) {
+            clone.setFromUser(this.fromUser);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.channel != null) {
-aso.put("channel", channel);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.languageType != null) {
-aso.put("languageType", languageType);
-}
+        if (this.channel != null) {
+            aso.put("channel", channel);
+        }
 
-if(this.ownitemid != null) {
-aso.put("ownitemid", ownitemid);
-}
+        if (this.languageType != null) {
+            aso.put("languageType", languageType);
+        }
 
-if(this.fromUser != null) {
-aso.put("fromUser", fromUser);
-}
+        if (this.ownitemid != null) {
+            aso.put("ownitemid", ownitemid);
+        }
 
-return aso;
-}
+        if (this.fromUser != null) {
+            aso.put("fromUser", fromUser);
+        }
 
-public String getMsg() {
-return msg;
-}
+        return aso;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getChannel() {
-return channel;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setChannel(String channel) {
-this.channel = channel;
-}
+    public String getChannel() {
+        return channel;
+    }
 
-public Integer getLanguageType() {
-return languageType;
-}
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
 
-public void setLanguageType(Integer languageType) {
-this.languageType = languageType;
-}
+    public Integer getLanguageType() {
+        return languageType;
+    }
 
-public Integer getOwnitemid() {
-return ownitemid;
-}
+    public void setLanguageType(Integer languageType) {
+        this.languageType = languageType;
+    }
 
-public void setOwnitemid(Integer ownitemid) {
-this.ownitemid = ownitemid;
-}
+    public Integer getOwnitemid() {
+        return ownitemid;
+    }
 
-public String getFromUser() {
-return fromUser;
-}
+    public void setOwnitemid(Integer ownitemid) {
+        this.ownitemid = ownitemid;
+    }
 
-public void setFromUser(String fromUser) {
-this.fromUser = fromUser;
-}
+    public String getFromUser() {
+        return fromUser;
+    }
+
+    public void setFromUser(String fromUser) {
+        this.fromUser = fromUser;
+    }
 }

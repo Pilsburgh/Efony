@@ -7,153 +7,154 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ChangeNameResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public Integer changeType = null;
-public String nowName = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public ChangeNameResponse(ASObject aso) {
+    public Double packageId = null;
+    public String msg = null;
+    public Integer changeType = null;
+    public String nowName = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public ChangeNameResponse(ASObject aso) {
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("changeType") != null) {
-this.changeType = (Integer) aso.get("changeType");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("nowName") != null) {
-this.nowName = (String) aso.get("nowName");
-}
+        if (aso.get("changeType") != null) {
+            this.changeType = (Integer) aso.get("changeType");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("nowName") != null) {
+            this.nowName = (String) aso.get("nowName");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public ChangeNameResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public ChangeNameResponse clone() {
-ChangeNameResponse clone = new ChangeNameResponse();
+    public ChangeNameResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public ChangeNameResponse clone() {
+        ChangeNameResponse clone = new ChangeNameResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.changeType != null) {
-clone.setChangeType(this.changeType);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.nowName != null) {
-clone.setNowName(this.nowName);
-}
+        if (this.changeType != null) {
+            clone.setChangeType(this.changeType);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.nowName != null) {
+            clone.setNowName(this.nowName);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.changeType != null) {
-aso.put("changeType", changeType);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.nowName != null) {
-aso.put("nowName", nowName);
-}
+        if (this.changeType != null) {
+            aso.put("changeType", changeType);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.nowName != null) {
+            aso.put("nowName", nowName);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Integer getChangeType() {
-return changeType;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setChangeType(Integer changeType) {
-this.changeType = changeType;
-}
+    public Integer getChangeType() {
+        return changeType;
+    }
 
-public String getNowName() {
-return nowName;
-}
+    public void setChangeType(Integer changeType) {
+        this.changeType = changeType;
+    }
 
-public void setNowName(String nowName) {
-this.nowName = nowName;
-}
+    public String getNowName() {
+        return nowName;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setNowName(String nowName) {
+        this.nowName = nowName;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

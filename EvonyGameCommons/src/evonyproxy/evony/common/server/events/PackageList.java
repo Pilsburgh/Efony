@@ -7,27 +7,27 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class PackageList implements EvonyPacket {
 
-public PackageList(ASObject aso) {
-}
+    public PackageList(ASObject aso) {
+    }
 
-public PackageList() {
-}
+    public PackageList() {
+    }
 
-@Override
-public PackageList clone() {
-PackageList clone = new PackageList();
+    @Override
+    public PackageList clone() {
+        PackageList clone = new PackageList();
 
-return clone;
-}
+        return clone;
+    }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        return aso;
+    }
 }

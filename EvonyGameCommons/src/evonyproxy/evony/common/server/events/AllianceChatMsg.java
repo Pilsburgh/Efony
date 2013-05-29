@@ -7,111 +7,112 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class AllianceChatMsg implements EvonyPacket {
-public String msg = null;
-public Integer languageType = null;
-public String fromUser = null;
-public Integer ownitemid = null;
 
-public AllianceChatMsg(ASObject aso) {
+    public String msg = null;
+    public Integer languageType = null;
+    public String fromUser = null;
+    public Integer ownitemid = null;
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+    public AllianceChatMsg(ASObject aso) {
 
-if(aso.get("languageType") != null) {
-this.languageType = (Integer) aso.get("languageType");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("fromUser") != null) {
-this.fromUser = (String) aso.get("fromUser");
-}
+        if (aso.get("languageType") != null) {
+            this.languageType = (Integer) aso.get("languageType");
+        }
 
-if(aso.get("ownitemid") != null) {
-this.ownitemid = (Integer) aso.get("ownitemid");
-}
-}
+        if (aso.get("fromUser") != null) {
+            this.fromUser = (String) aso.get("fromUser");
+        }
 
-public AllianceChatMsg() {
-}
+        if (aso.get("ownitemid") != null) {
+            this.ownitemid = (Integer) aso.get("ownitemid");
+        }
+    }
 
-@Override
-public AllianceChatMsg clone() {
-AllianceChatMsg clone = new AllianceChatMsg();
+    public AllianceChatMsg() {
+    }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+    @Override
+    public AllianceChatMsg clone() {
+        AllianceChatMsg clone = new AllianceChatMsg();
 
-if(this.languageType != null) {
-clone.setLanguageType(this.languageType);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.fromUser != null) {
-clone.setFromUser(this.fromUser);
-}
+        if (this.languageType != null) {
+            clone.setLanguageType(this.languageType);
+        }
 
-if(this.ownitemid != null) {
-clone.setOwnitemid(this.ownitemid);
-}
+        if (this.fromUser != null) {
+            clone.setFromUser(this.fromUser);
+        }
 
-return clone;
-}
+        if (this.ownitemid != null) {
+            clone.setOwnitemid(this.ownitemid);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.languageType != null) {
-aso.put("languageType", languageType);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.fromUser != null) {
-aso.put("fromUser", fromUser);
-}
+        if (this.languageType != null) {
+            aso.put("languageType", languageType);
+        }
 
-if(this.ownitemid != null) {
-aso.put("ownitemid", ownitemid);
-}
+        if (this.fromUser != null) {
+            aso.put("fromUser", fromUser);
+        }
 
-return aso;
-}
+        if (this.ownitemid != null) {
+            aso.put("ownitemid", ownitemid);
+        }
 
-public String getMsg() {
-return msg;
-}
+        return aso;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Integer getLanguageType() {
-return languageType;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setLanguageType(Integer languageType) {
-this.languageType = languageType;
-}
+    public Integer getLanguageType() {
+        return languageType;
+    }
 
-public String getFromUser() {
-return fromUser;
-}
+    public void setLanguageType(Integer languageType) {
+        this.languageType = languageType;
+    }
 
-public void setFromUser(String fromUser) {
-this.fromUser = fromUser;
-}
+    public String getFromUser() {
+        return fromUser;
+    }
 
-public Integer getOwnitemid() {
-return ownitemid;
-}
+    public void setFromUser(String fromUser) {
+        this.fromUser = fromUser;
+    }
 
-public void setOwnitemid(Integer ownitemid) {
-this.ownitemid = ownitemid;
-}
+    public Integer getOwnitemid() {
+        return ownitemid;
+    }
+
+    public void setOwnitemid(Integer ownitemid) {
+        this.ownitemid = ownitemid;
+    }
 }

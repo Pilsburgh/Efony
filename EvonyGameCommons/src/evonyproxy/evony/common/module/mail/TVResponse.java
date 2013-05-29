@@ -8,147 +8,148 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class TVResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public String errorMsg = null;
-public Integer ok = null;
-public ArrayList<TVmsgBean> tvBeans = null;
 
-public TVResponse(ASObject aso) {
-tvBeans = new ArrayList<TVmsgBean>();
+    public Double packageId = null;
+    public String msg = null;
+    public String errorMsg = null;
+    public Integer ok = null;
+    public ArrayList<TVmsgBean> tvBeans = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public TVResponse(ASObject aso) {
+        tvBeans = new ArrayList<TVmsgBean>();
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-if(aso.get("tvBeans") != null) {
-Object[] objArr = (Object[]) aso.get("tvBeans");
-for(int j = 0; j < objArr.length; j++) {
-tvBeans.add(new TVmsgBean((ASObject) objArr[j]));
-}
-}
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
 
-public TVResponse() {
-}
+        if (aso.get("tvBeans") != null) {
+            Object[] objArr = (Object[]) aso.get("tvBeans");
+            for (int j = 0; j < objArr.length; j++) {
+                tvBeans.add(new TVmsgBean((ASObject) objArr[j]));
+            }
+        }
+    }
 
-@Override
-public TVResponse clone() {
-TVResponse clone = new TVResponse();
+    public TVResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public TVResponse clone() {
+        TVResponse clone = new TVResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-if(this.tvBeans != null) {
-ArrayList tmpArrLst = new ArrayList<TVmsgBean>();
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-for(Object bean : tvBeans) {
-TVmsgBean tmpBean = (TVmsgBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setTvBeans(tmpArrLst);
-}
+        if (this.tvBeans != null) {
+            ArrayList tmpArrLst = new ArrayList<TVmsgBean>();
 
-return clone;
-}
+            for (Object bean : tvBeans) {
+                TVmsgBean tmpBean = (TVmsgBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setTvBeans(tmpArrLst);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-if(this.tvBeans != null) {
-ArrayList al = new ArrayList();
-for(Object obj : tvBeans) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("tvBeans", al);
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-return aso;
-}
+        if (this.tvBeans != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : tvBeans) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("tvBeans", al);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
 
-public ArrayList getTvBeans() {
-return tvBeans;
-}
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 
-public void setTvBeans(ArrayList tvBeans) {
-this.tvBeans = tvBeans;
-}
+    public ArrayList getTvBeans() {
+        return tvBeans;
+    }
+
+    public void setTvBeans(ArrayList tvBeans) {
+        this.tvBeans = tvBeans;
+    }
 }

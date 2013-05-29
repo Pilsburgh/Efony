@@ -8,63 +8,64 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class EnemyArmysUpdate implements EvonyPacket {
-public ArrayList<ArmyBean> armys = null;
 
-public EnemyArmysUpdate(ASObject aso) {
-armys = new ArrayList<ArmyBean>();
+    public ArrayList<ArmyBean> armys = null;
 
-if(aso.get("armys") != null) {
-Object[] objArr = (Object[]) aso.get("armys");
-for(int j = 0; j < objArr.length; j++) {
-armys.add(new ArmyBean((ASObject) objArr[j]));
-}
-}
-}
+    public EnemyArmysUpdate(ASObject aso) {
+        armys = new ArrayList<ArmyBean>();
 
-public EnemyArmysUpdate() {
-}
+        if (aso.get("armys") != null) {
+            Object[] objArr = (Object[]) aso.get("armys");
+            for (int j = 0; j < objArr.length; j++) {
+                armys.add(new ArmyBean((ASObject) objArr[j]));
+            }
+        }
+    }
 
-@Override
-public EnemyArmysUpdate clone() {
-EnemyArmysUpdate clone = new EnemyArmysUpdate();
+    public EnemyArmysUpdate() {
+    }
 
-if(this.armys != null) {
-ArrayList tmpArrLst = new ArrayList<ArmyBean>();
+    @Override
+    public EnemyArmysUpdate clone() {
+        EnemyArmysUpdate clone = new EnemyArmysUpdate();
 
-for(Object bean : armys) {
-ArmyBean tmpBean = (ArmyBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setArmys(tmpArrLst);
-}
+        if (this.armys != null) {
+            ArrayList tmpArrLst = new ArrayList<ArmyBean>();
 
-return clone;
-}
+            for (Object bean : armys) {
+                ArmyBean tmpBean = (ArmyBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setArmys(tmpArrLst);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.armys != null) {
-ArrayList al = new ArrayList();
-for(Object obj : armys) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("armys", al);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        if (this.armys != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : armys) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("armys", al);
+        }
 
-public ArrayList getArmys() {
-return armys;
-}
+        return aso;
+    }
 
-public void setArmys(ArrayList armys) {
-this.armys = armys;
-}
+    public ArrayList getArmys() {
+        return armys;
+    }
+
+    public void setArmys(ArrayList armys) {
+        this.armys = armys;
+    }
 }

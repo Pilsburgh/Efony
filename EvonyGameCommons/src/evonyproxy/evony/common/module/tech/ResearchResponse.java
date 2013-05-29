@@ -8,132 +8,133 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ResearchResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public AvailableResearchListBean tech = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public ResearchResponse(ASObject aso) {
+    public Double packageId = null;
+    public String msg = null;
+    public AvailableResearchListBean tech = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public ResearchResponse(ASObject aso) {
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("tech") != null) {
-this.tech = new AvailableResearchListBean((ASObject) aso.get("tech"));
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("tech") != null) {
+            this.tech = new AvailableResearchListBean((ASObject) aso.get("tech"));
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public ResearchResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public ResearchResponse clone() {
-ResearchResponse clone = new ResearchResponse();
+    public ResearchResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public ResearchResponse clone() {
+        ResearchResponse clone = new ResearchResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.tech != null) {
-clone.setTech(this.tech);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.tech != null) {
+            clone.setTech(this.tech);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.tech != null) {
-aso.put("tech", tech.toASObject());
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.tech != null) {
+            aso.put("tech", tech.toASObject());
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public AvailableResearchListBean getTech() {
-return tech;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setTech(AvailableResearchListBean tech) {
-this.tech = tech;
-}
+    public AvailableResearchListBean getTech() {
+        return tech;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setTech(AvailableResearchListBean tech) {
+        this.tech = tech;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

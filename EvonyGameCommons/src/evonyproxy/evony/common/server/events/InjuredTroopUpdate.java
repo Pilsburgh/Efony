@@ -8,90 +8,91 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class InjuredTroopUpdate implements EvonyPacket {
-public TroopBean troop = null;
-public Integer castleId = null;
-public Integer goldNeed = null;
 
-public InjuredTroopUpdate(ASObject aso) {
+    public TroopBean troop = null;
+    public Integer castleId = null;
+    public Integer goldNeed = null;
 
-if(aso.get("troop") != null) {
-this.troop = new TroopBean((ASObject) aso.get("troop"));
-}
+    public InjuredTroopUpdate(ASObject aso) {
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
+        if (aso.get("troop") != null) {
+            this.troop = new TroopBean((ASObject) aso.get("troop"));
+        }
 
-if(aso.get("goldNeed") != null) {
-this.goldNeed = (Integer) aso.get("goldNeed");
-}
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
 
-public InjuredTroopUpdate() {
-}
+        if (aso.get("goldNeed") != null) {
+            this.goldNeed = (Integer) aso.get("goldNeed");
+        }
+    }
 
-@Override
-public InjuredTroopUpdate clone() {
-InjuredTroopUpdate clone = new InjuredTroopUpdate();
+    public InjuredTroopUpdate() {
+    }
 
-if(this.troop != null) {
-clone.setTroop(this.troop);
-}
+    @Override
+    public InjuredTroopUpdate clone() {
+        InjuredTroopUpdate clone = new InjuredTroopUpdate();
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+        if (this.troop != null) {
+            clone.setTroop(this.troop);
+        }
 
-if(this.goldNeed != null) {
-clone.setGoldNeed(this.goldNeed);
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-return clone;
-}
+        if (this.goldNeed != null) {
+            clone.setGoldNeed(this.goldNeed);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.troop != null) {
-aso.put("troop", troop.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+        if (this.troop != null) {
+            aso.put("troop", troop.toASObject());
+        }
 
-if(this.goldNeed != null) {
-aso.put("goldNeed", goldNeed);
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-return aso;
-}
+        if (this.goldNeed != null) {
+            aso.put("goldNeed", goldNeed);
+        }
 
-public TroopBean getTroop() {
-return troop;
-}
+        return aso;
+    }
 
-public void setTroop(TroopBean troop) {
-this.troop = troop;
-}
+    public TroopBean getTroop() {
+        return troop;
+    }
 
-public Integer getCastleId() {
-return castleId;
-}
+    public void setTroop(TroopBean troop) {
+        this.troop = troop;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
 
-public Integer getGoldNeed() {
-return goldNeed;
-}
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 
-public void setGoldNeed(Integer goldNeed) {
-this.goldNeed = goldNeed;
-}
+    public Integer getGoldNeed() {
+        return goldNeed;
+    }
+
+    public void setGoldNeed(Integer goldNeed) {
+        this.goldNeed = goldNeed;
+    }
 }

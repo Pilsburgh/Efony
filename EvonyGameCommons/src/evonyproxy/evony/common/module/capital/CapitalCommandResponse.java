@@ -7,195 +7,196 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CapitalCommandResponse implements EvonyPacket {
-public String msg = null;
-public Integer targetFieldId = null;
-public Double packageId = null;
-public Integer castleId = null;
-public String armyType = null;
-public Integer amount = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public CapitalCommandResponse(ASObject aso) {
+    public String msg = null;
+    public Integer targetFieldId = null;
+    public Double packageId = null;
+    public Integer castleId = null;
+    public String armyType = null;
+    public Integer amount = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+    public CapitalCommandResponse(ASObject aso) {
 
-if(aso.get("targetFieldId") != null) {
-this.targetFieldId = (Integer) aso.get("targetFieldId");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+        if (aso.get("targetFieldId") != null) {
+            this.targetFieldId = (Integer) aso.get("targetFieldId");
+        }
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("armyType") != null) {
-this.armyType = (String) aso.get("armyType");
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
 
-if(aso.get("amount") != null) {
-this.amount = (Integer) aso.get("amount");
-}
+        if (aso.get("armyType") != null) {
+            this.armyType = (String) aso.get("armyType");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("amount") != null) {
+            this.amount = (Integer) aso.get("amount");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public CapitalCommandResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public CapitalCommandResponse clone() {
-CapitalCommandResponse clone = new CapitalCommandResponse();
+    public CapitalCommandResponse() {
+    }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+    @Override
+    public CapitalCommandResponse clone() {
+        CapitalCommandResponse clone = new CapitalCommandResponse();
 
-if(this.targetFieldId != null) {
-clone.setTargetFieldId(this.targetFieldId);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+        if (this.targetFieldId != null) {
+            clone.setTargetFieldId(this.targetFieldId);
+        }
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.armyType != null) {
-clone.setArmyType(this.armyType);
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-if(this.amount != null) {
-clone.setAmount(this.amount);
-}
+        if (this.armyType != null) {
+            clone.setArmyType(this.armyType);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.amount != null) {
+            clone.setAmount(this.amount);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.targetFieldId != null) {
-aso.put("targetFieldId", targetFieldId);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.targetFieldId != null) {
+            aso.put("targetFieldId", targetFieldId);
+        }
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.armyType != null) {
-aso.put("armyType", armyType);
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-if(this.amount != null) {
-aso.put("amount", amount);
-}
+        if (this.armyType != null) {
+            aso.put("armyType", armyType);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.amount != null) {
+            aso.put("amount", amount);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public String getMsg() {
-return msg;
-}
+        return aso;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Integer getTargetFieldId() {
-return targetFieldId;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setTargetFieldId(Integer targetFieldId) {
-this.targetFieldId = targetFieldId;
-}
+    public Integer getTargetFieldId() {
+        return targetFieldId;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public void setTargetFieldId(Integer targetFieldId) {
+        this.targetFieldId = targetFieldId;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public Integer getCastleId() {
-return castleId;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
 
-public String getArmyType() {
-return armyType;
-}
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 
-public void setArmyType(String armyType) {
-this.armyType = armyType;
-}
+    public String getArmyType() {
+        return armyType;
+    }
 
-public Integer getAmount() {
-return amount;
-}
+    public void setArmyType(String armyType) {
+        this.armyType = armyType;
+    }
 
-public void setAmount(Integer amount) {
-this.amount = amount;
-}
+    public Integer getAmount() {
+        return amount;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

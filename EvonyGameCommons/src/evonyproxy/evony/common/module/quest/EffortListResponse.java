@@ -8,189 +8,190 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class EffortListResponse implements EvonyPacket {
-public Double packageId = null;
-public String effortpoint = null;
-public String effortcomplete = null;
-public String msg = null;
-public String errorMsg = null;
-public Integer ok = null;
-public ArrayList<EffortListBean> effortlistbean = null;
 
-public EffortListResponse(ASObject aso) {
-effortlistbean = new ArrayList<EffortListBean>();
+    public Double packageId = null;
+    public String effortpoint = null;
+    public String effortcomplete = null;
+    public String msg = null;
+    public String errorMsg = null;
+    public Integer ok = null;
+    public ArrayList<EffortListBean> effortlistbean = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public EffortListResponse(ASObject aso) {
+        effortlistbean = new ArrayList<EffortListBean>();
 
-if(aso.get("effortpoint") != null) {
-this.effortpoint = (String) aso.get("effortpoint");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("effortcomplete") != null) {
-this.effortcomplete = (String) aso.get("effortcomplete");
-}
+        if (aso.get("effortpoint") != null) {
+            this.effortpoint = (String) aso.get("effortpoint");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("effortcomplete") != null) {
+            this.effortcomplete = (String) aso.get("effortcomplete");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-if(aso.get("effortlistbean") != null) {
-Object[] objArr = (Object[]) aso.get("effortlistbean");
-for(int j = 0; j < objArr.length; j++) {
-effortlistbean.add(new EffortListBean((ASObject) objArr[j]));
-}
-}
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
 
-public EffortListResponse() {
-}
+        if (aso.get("effortlistbean") != null) {
+            Object[] objArr = (Object[]) aso.get("effortlistbean");
+            for (int j = 0; j < objArr.length; j++) {
+                effortlistbean.add(new EffortListBean((ASObject) objArr[j]));
+            }
+        }
+    }
 
-@Override
-public EffortListResponse clone() {
-EffortListResponse clone = new EffortListResponse();
+    public EffortListResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public EffortListResponse clone() {
+        EffortListResponse clone = new EffortListResponse();
 
-if(this.effortpoint != null) {
-clone.setEffortpoint(this.effortpoint);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.effortcomplete != null) {
-clone.setEffortcomplete(this.effortcomplete);
-}
+        if (this.effortpoint != null) {
+            clone.setEffortpoint(this.effortpoint);
+        }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.effortcomplete != null) {
+            clone.setEffortcomplete(this.effortcomplete);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-if(this.effortlistbean != null) {
-ArrayList tmpArrLst = new ArrayList<EffortListBean>();
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-for(Object bean : effortlistbean) {
-EffortListBean tmpBean = (EffortListBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setEffortlistbean(tmpArrLst);
-}
+        if (this.effortlistbean != null) {
+            ArrayList tmpArrLst = new ArrayList<EffortListBean>();
 
-return clone;
-}
+            for (Object bean : effortlistbean) {
+                EffortListBean tmpBean = (EffortListBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setEffortlistbean(tmpArrLst);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.effortpoint != null) {
-aso.put("effortpoint", effortpoint);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.effortcomplete != null) {
-aso.put("effortcomplete", effortcomplete);
-}
+        if (this.effortpoint != null) {
+            aso.put("effortpoint", effortpoint);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.effortcomplete != null) {
+            aso.put("effortcomplete", effortcomplete);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-if(this.effortlistbean != null) {
-ArrayList al = new ArrayList();
-for(Object obj : effortlistbean) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("effortlistbean", al);
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-return aso;
-}
+        if (this.effortlistbean != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : effortlistbean) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("effortlistbean", al);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getEffortpoint() {
-return effortpoint;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setEffortpoint(String effortpoint) {
-this.effortpoint = effortpoint;
-}
+    public String getEffortpoint() {
+        return effortpoint;
+    }
 
-public String getEffortcomplete() {
-return effortcomplete;
-}
+    public void setEffortpoint(String effortpoint) {
+        this.effortpoint = effortpoint;
+    }
 
-public void setEffortcomplete(String effortcomplete) {
-this.effortcomplete = effortcomplete;
-}
+    public String getEffortcomplete() {
+        return effortcomplete;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setEffortcomplete(String effortcomplete) {
+        this.effortcomplete = effortcomplete;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
 
-public ArrayList getEffortlistbean() {
-return effortlistbean;
-}
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 
-public void setEffortlistbean(ArrayList effortlistbean) {
-this.effortlistbean = effortlistbean;
-}
+    public ArrayList getEffortlistbean() {
+        return effortlistbean;
+    }
+
+    public void setEffortlistbean(ArrayList effortlistbean) {
+        this.effortlistbean = effortlistbean;
+    }
 }

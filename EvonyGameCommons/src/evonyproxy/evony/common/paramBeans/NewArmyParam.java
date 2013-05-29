@@ -8,195 +8,196 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class NewArmyParam implements EvonyPacket {
-private TroopBean troops = null;
-private Integer missionType = null;
-private Integer heroId = null;
-private ResourceBean resource = null;
-private Boolean useFlag = null;
-private Boolean backAfterConstruct = null;
-private Integer restTime = null;
-private Integer targetPoint = null;
 
-public NewArmyParam(ASObject aso) {
+    private TroopBean troops = null;
+    private Integer missionType = null;
+    private Integer heroId = null;
+    private ResourceBean resource = null;
+    private Boolean useFlag = null;
+    private Boolean backAfterConstruct = null;
+    private Integer restTime = null;
+    private Integer targetPoint = null;
 
-if(aso.get("troops") != null) {
-this.troops = new TroopBean((ASObject) aso.get("troops"));
-}
+    public NewArmyParam(ASObject aso) {
 
-if(aso.get("missionType") != null) {
-this.missionType = (Integer) aso.get("missionType");
-}
+        if (aso.get("troops") != null) {
+            this.troops = new TroopBean((ASObject) aso.get("troops"));
+        }
 
-if(aso.get("heroId") != null) {
-this.heroId = (Integer) aso.get("heroId");
-}
+        if (aso.get("missionType") != null) {
+            this.missionType = (Integer) aso.get("missionType");
+        }
 
-if(aso.get("resource") != null) {
-this.resource = new ResourceBean((ASObject) aso.get("resource"));
-}
+        if (aso.get("heroId") != null) {
+            this.heroId = (Integer) aso.get("heroId");
+        }
 
-if(aso.get("useFlag") != null) {
-this.useFlag = (Boolean) aso.get("useFlag");
-}
+        if (aso.get("resource") != null) {
+            this.resource = new ResourceBean((ASObject) aso.get("resource"));
+        }
 
-if(aso.get("backAfterConstruct") != null) {
-this.backAfterConstruct = (Boolean) aso.get("backAfterConstruct");
-}
+        if (aso.get("useFlag") != null) {
+            this.useFlag = (Boolean) aso.get("useFlag");
+        }
 
-if(aso.get("restTime") != null) {
-this.restTime = (Integer) aso.get("restTime");
-}
+        if (aso.get("backAfterConstruct") != null) {
+            this.backAfterConstruct = (Boolean) aso.get("backAfterConstruct");
+        }
 
-if(aso.get("targetPoint") != null) {
-this.targetPoint = (Integer) aso.get("targetPoint");
-}
-}
+        if (aso.get("restTime") != null) {
+            this.restTime = (Integer) aso.get("restTime");
+        }
 
-public NewArmyParam() {
-}
+        if (aso.get("targetPoint") != null) {
+            this.targetPoint = (Integer) aso.get("targetPoint");
+        }
+    }
 
-@Override
-public NewArmyParam clone() {
-NewArmyParam clone = new NewArmyParam();
+    public NewArmyParam() {
+    }
 
-if(this.troops != null) {
-clone.setTroops(this.troops);
-}
+    @Override
+    public NewArmyParam clone() {
+        NewArmyParam clone = new NewArmyParam();
 
-if(this.missionType != null) {
-clone.setMissionType(this.missionType);
-}
+        if (this.troops != null) {
+            clone.setTroops(this.troops);
+        }
 
-if(this.heroId != null) {
-clone.setHeroId(this.heroId);
-}
+        if (this.missionType != null) {
+            clone.setMissionType(this.missionType);
+        }
 
-if(this.resource != null) {
-clone.setResource(this.resource);
-}
+        if (this.heroId != null) {
+            clone.setHeroId(this.heroId);
+        }
 
-if(this.useFlag != null) {
-clone.setUseFlag(this.useFlag);
-}
+        if (this.resource != null) {
+            clone.setResource(this.resource);
+        }
 
-if(this.backAfterConstruct != null) {
-clone.setBackAfterConstruct(this.backAfterConstruct);
-}
+        if (this.useFlag != null) {
+            clone.setUseFlag(this.useFlag);
+        }
 
-if(this.restTime != null) {
-clone.setRestTime(this.restTime);
-}
+        if (this.backAfterConstruct != null) {
+            clone.setBackAfterConstruct(this.backAfterConstruct);
+        }
 
-if(this.targetPoint != null) {
-clone.setTargetPoint(this.targetPoint);
-}
+        if (this.restTime != null) {
+            clone.setRestTime(this.restTime);
+        }
 
-return clone;
-}
+        if (this.targetPoint != null) {
+            clone.setTargetPoint(this.targetPoint);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.troops != null) {
-aso.put("troops", troops.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.missionType != null) {
-aso.put("missionType", missionType);
-}
+        if (this.troops != null) {
+            aso.put("troops", troops.toASObject());
+        }
 
-if(this.heroId != null) {
-aso.put("heroId", heroId);
-}
+        if (this.missionType != null) {
+            aso.put("missionType", missionType);
+        }
 
-if(this.resource != null) {
-aso.put("resource", resource.toASObject());
-}
+        if (this.heroId != null) {
+            aso.put("heroId", heroId);
+        }
 
-if(this.useFlag != null) {
-aso.put("useFlag", useFlag);
-}
+        if (this.resource != null) {
+            aso.put("resource", resource.toASObject());
+        }
 
-if(this.backAfterConstruct != null) {
-aso.put("backAfterConstruct", backAfterConstruct);
-}
+        if (this.useFlag != null) {
+            aso.put("useFlag", useFlag);
+        }
 
-if(this.restTime != null) {
-aso.put("restTime", restTime);
-}
+        if (this.backAfterConstruct != null) {
+            aso.put("backAfterConstruct", backAfterConstruct);
+        }
 
-if(this.targetPoint != null) {
-aso.put("targetPoint", targetPoint);
-}
+        if (this.restTime != null) {
+            aso.put("restTime", restTime);
+        }
 
-return aso;
-}
+        if (this.targetPoint != null) {
+            aso.put("targetPoint", targetPoint);
+        }
 
-public TroopBean getTroops() {
-return troops;
-}
+        return aso;
+    }
 
-public void setTroops(TroopBean troops) {
-this.troops = troops;
-}
+    public TroopBean getTroops() {
+        return troops;
+    }
 
-public Integer getMissionType() {
-return missionType;
-}
+    public void setTroops(TroopBean troops) {
+        this.troops = troops;
+    }
 
-public void setMissionType(Integer missionType) {
-this.missionType = missionType;
-}
+    public Integer getMissionType() {
+        return missionType;
+    }
 
-public Integer getHeroId() {
-return heroId;
-}
+    public void setMissionType(Integer missionType) {
+        this.missionType = missionType;
+    }
 
-public void setHeroId(Integer heroId) {
-this.heroId = heroId;
-}
+    public Integer getHeroId() {
+        return heroId;
+    }
 
-public ResourceBean getResource() {
-return resource;
-}
+    public void setHeroId(Integer heroId) {
+        this.heroId = heroId;
+    }
 
-public void setResource(ResourceBean resource) {
-this.resource = resource;
-}
+    public ResourceBean getResource() {
+        return resource;
+    }
 
-public Boolean getUseFlag() {
-return useFlag;
-}
+    public void setResource(ResourceBean resource) {
+        this.resource = resource;
+    }
 
-public void setUseFlag(Boolean useFlag) {
-this.useFlag = useFlag;
-}
+    public Boolean getUseFlag() {
+        return useFlag;
+    }
 
-public Boolean getBackAfterConstruct() {
-return backAfterConstruct;
-}
+    public void setUseFlag(Boolean useFlag) {
+        this.useFlag = useFlag;
+    }
 
-public void setBackAfterConstruct(Boolean backAfterConstruct) {
-this.backAfterConstruct = backAfterConstruct;
-}
+    public Boolean getBackAfterConstruct() {
+        return backAfterConstruct;
+    }
 
-public Integer getRestTime() {
-return restTime;
-}
+    public void setBackAfterConstruct(Boolean backAfterConstruct) {
+        this.backAfterConstruct = backAfterConstruct;
+    }
 
-public void setRestTime(Integer restTime) {
-this.restTime = restTime;
-}
+    public Integer getRestTime() {
+        return restTime;
+    }
 
-public Integer getTargetPoint() {
-return targetPoint;
-}
+    public void setRestTime(Integer restTime) {
+        this.restTime = restTime;
+    }
 
-public void setTargetPoint(Integer targetPoint) {
-this.targetPoint = targetPoint;
-}
+    public Integer getTargetPoint() {
+        return targetPoint;
+    }
+
+    public void setTargetPoint(Integer targetPoint) {
+        this.targetPoint = targetPoint;
+    }
 }

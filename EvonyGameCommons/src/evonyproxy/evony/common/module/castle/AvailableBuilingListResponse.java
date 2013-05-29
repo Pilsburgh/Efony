@@ -8,147 +8,148 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class AvailableBuilingListResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public ArrayList<AvailableBuildingListBean> builingList = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public AvailableBuilingListResponse(ASObject aso) {
-builingList = new ArrayList<AvailableBuildingListBean>();
+    public Double packageId = null;
+    public String msg = null;
+    public ArrayList<AvailableBuildingListBean> builingList = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public AvailableBuilingListResponse(ASObject aso) {
+        builingList = new ArrayList<AvailableBuildingListBean>();
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("builingList") != null) {
-Object[] objArr = (Object[]) aso.get("builingList");
-for(int j = 0; j < objArr.length; j++) {
-builingList.add(new AvailableBuildingListBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("builingList") != null) {
+            Object[] objArr = (Object[]) aso.get("builingList");
+            for (int j = 0; j < objArr.length; j++) {
+                builingList.add(new AvailableBuildingListBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public AvailableBuilingListResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public AvailableBuilingListResponse clone() {
-AvailableBuilingListResponse clone = new AvailableBuilingListResponse();
+    public AvailableBuilingListResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public AvailableBuilingListResponse clone() {
+        AvailableBuilingListResponse clone = new AvailableBuilingListResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.builingList != null) {
-ArrayList tmpArrLst = new ArrayList<AvailableBuildingListBean>();
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-for(Object bean : builingList) {
-AvailableBuildingListBean tmpBean = (AvailableBuildingListBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setBuilingList(tmpArrLst);
-}
+        if (this.builingList != null) {
+            ArrayList tmpArrLst = new ArrayList<AvailableBuildingListBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : builingList) {
+                AvailableBuildingListBean tmpBean = (AvailableBuildingListBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setBuilingList(tmpArrLst);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.builingList != null) {
-ArrayList al = new ArrayList();
-for(Object obj : builingList) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("builingList", al);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.builingList != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : builingList) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("builingList", al);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public ArrayList getBuilingList() {
-return builingList;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setBuilingList(ArrayList builingList) {
-this.builingList = builingList;
-}
+    public ArrayList getBuilingList() {
+        return builingList;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setBuilingList(ArrayList builingList) {
+        this.builingList = builingList;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

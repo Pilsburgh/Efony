@@ -8,183 +8,184 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CelebResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public ArrayList<RankAllianceBean> allianceBean = null;
-public ArrayList<PlayerInfoBean> playerBean = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public CelebResponse(ASObject aso) {
-allianceBean = new ArrayList<RankAllianceBean>();
-playerBean = new ArrayList<PlayerInfoBean>();
+    public Double packageId = null;
+    public String msg = null;
+    public ArrayList<RankAllianceBean> allianceBean = null;
+    public ArrayList<PlayerInfoBean> playerBean = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public CelebResponse(ASObject aso) {
+        allianceBean = new ArrayList<RankAllianceBean>();
+        playerBean = new ArrayList<PlayerInfoBean>();
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("allianceBean") != null) {
-Object[] objArr = (Object[]) aso.get("allianceBean");
-for(int j = 0; j < objArr.length; j++) {
-allianceBean.add(new RankAllianceBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("playerBean") != null) {
-Object[] objArr = (Object[]) aso.get("playerBean");
-for(int j = 0; j < objArr.length; j++) {
-playerBean.add(new PlayerInfoBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("allianceBean") != null) {
+            Object[] objArr = (Object[]) aso.get("allianceBean");
+            for (int j = 0; j < objArr.length; j++) {
+                allianceBean.add(new RankAllianceBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("playerBean") != null) {
+            Object[] objArr = (Object[]) aso.get("playerBean");
+            for (int j = 0; j < objArr.length; j++) {
+                playerBean.add(new PlayerInfoBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public CelebResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public CelebResponse clone() {
-CelebResponse clone = new CelebResponse();
+    public CelebResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public CelebResponse clone() {
+        CelebResponse clone = new CelebResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.allianceBean != null) {
-ArrayList tmpArrLst = new ArrayList<RankAllianceBean>();
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-for(Object bean : allianceBean) {
-RankAllianceBean tmpBean = (RankAllianceBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setAllianceBean(tmpArrLst);
-}
+        if (this.allianceBean != null) {
+            ArrayList tmpArrLst = new ArrayList<RankAllianceBean>();
 
-if(this.playerBean != null) {
-ArrayList tmpArrLst = new ArrayList<PlayerInfoBean>();
+            for (Object bean : allianceBean) {
+                RankAllianceBean tmpBean = (RankAllianceBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setAllianceBean(tmpArrLst);
+        }
 
-for(Object bean : playerBean) {
-PlayerInfoBean tmpBean = (PlayerInfoBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setPlayerBean(tmpArrLst);
-}
+        if (this.playerBean != null) {
+            ArrayList tmpArrLst = new ArrayList<PlayerInfoBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : playerBean) {
+                PlayerInfoBean tmpBean = (PlayerInfoBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setPlayerBean(tmpArrLst);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.allianceBean != null) {
-ArrayList al = new ArrayList();
-for(Object obj : allianceBean) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("allianceBean", al);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.playerBean != null) {
-ArrayList al = new ArrayList();
-for(Object obj : playerBean) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("playerBean", al);
-}
+        if (this.allianceBean != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : allianceBean) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("allianceBean", al);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.playerBean != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : playerBean) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("playerBean", al);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public ArrayList getAllianceBean() {
-return allianceBean;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setAllianceBean(ArrayList allianceBean) {
-this.allianceBean = allianceBean;
-}
+    public ArrayList getAllianceBean() {
+        return allianceBean;
+    }
 
-public ArrayList getPlayerBean() {
-return playerBean;
-}
+    public void setAllianceBean(ArrayList allianceBean) {
+        this.allianceBean = allianceBean;
+    }
 
-public void setPlayerBean(ArrayList playerBean) {
-this.playerBean = playerBean;
-}
+    public ArrayList getPlayerBean() {
+        return playerBean;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setPlayerBean(ArrayList playerBean) {
+        this.playerBean = playerBean;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

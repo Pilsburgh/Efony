@@ -8,183 +8,184 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class FriendResponse implements EvonyPacket {
-public Double packageId = null;
-public ArrayList<PlayerInfoBean> blockArr = null;
-public String msg = null;
-public ArrayList<PlayerInfoBean> friendArr = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public FriendResponse(ASObject aso) {
-blockArr = new ArrayList<PlayerInfoBean>();
-friendArr = new ArrayList<PlayerInfoBean>();
+    public Double packageId = null;
+    public ArrayList<PlayerInfoBean> blockArr = null;
+    public String msg = null;
+    public ArrayList<PlayerInfoBean> friendArr = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public FriendResponse(ASObject aso) {
+        blockArr = new ArrayList<PlayerInfoBean>();
+        friendArr = new ArrayList<PlayerInfoBean>();
 
-if(aso.get("blockArr") != null) {
-Object[] objArr = (Object[]) aso.get("blockArr");
-for(int j = 0; j < objArr.length; j++) {
-blockArr.add(new PlayerInfoBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("blockArr") != null) {
+            Object[] objArr = (Object[]) aso.get("blockArr");
+            for (int j = 0; j < objArr.length; j++) {
+                blockArr.add(new PlayerInfoBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("friendArr") != null) {
-Object[] objArr = (Object[]) aso.get("friendArr");
-for(int j = 0; j < objArr.length; j++) {
-friendArr.add(new PlayerInfoBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("friendArr") != null) {
+            Object[] objArr = (Object[]) aso.get("friendArr");
+            for (int j = 0; j < objArr.length; j++) {
+                friendArr.add(new PlayerInfoBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public FriendResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public FriendResponse clone() {
-FriendResponse clone = new FriendResponse();
+    public FriendResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public FriendResponse clone() {
+        FriendResponse clone = new FriendResponse();
 
-if(this.blockArr != null) {
-ArrayList tmpArrLst = new ArrayList<PlayerInfoBean>();
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-for(Object bean : blockArr) {
-PlayerInfoBean tmpBean = (PlayerInfoBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setBlockArr(tmpArrLst);
-}
+        if (this.blockArr != null) {
+            ArrayList tmpArrLst = new ArrayList<PlayerInfoBean>();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+            for (Object bean : blockArr) {
+                PlayerInfoBean tmpBean = (PlayerInfoBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setBlockArr(tmpArrLst);
+        }
 
-if(this.friendArr != null) {
-ArrayList tmpArrLst = new ArrayList<PlayerInfoBean>();
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-for(Object bean : friendArr) {
-PlayerInfoBean tmpBean = (PlayerInfoBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setFriendArr(tmpArrLst);
-}
+        if (this.friendArr != null) {
+            ArrayList tmpArrLst = new ArrayList<PlayerInfoBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : friendArr) {
+                PlayerInfoBean tmpBean = (PlayerInfoBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setFriendArr(tmpArrLst);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.blockArr != null) {
-ArrayList al = new ArrayList();
-for(Object obj : blockArr) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("blockArr", al);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.blockArr != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : blockArr) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("blockArr", al);
+        }
 
-if(this.friendArr != null) {
-ArrayList al = new ArrayList();
-for(Object obj : friendArr) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("friendArr", al);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.friendArr != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : friendArr) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("friendArr", al);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public ArrayList getBlockArr() {
-return blockArr;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setBlockArr(ArrayList blockArr) {
-this.blockArr = blockArr;
-}
+    public ArrayList getBlockArr() {
+        return blockArr;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setBlockArr(ArrayList blockArr) {
+        this.blockArr = blockArr;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public ArrayList getFriendArr() {
-return friendArr;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setFriendArr(ArrayList friendArr) {
-this.friendArr = friendArr;
-}
+    public ArrayList getFriendArr() {
+        return friendArr;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setFriendArr(ArrayList friendArr) {
+        this.friendArr = friendArr;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

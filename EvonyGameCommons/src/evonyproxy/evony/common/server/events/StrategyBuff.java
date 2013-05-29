@@ -7,27 +7,27 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class StrategyBuff implements EvonyPacket {
 
-public StrategyBuff(ASObject aso) {
-}
+    public StrategyBuff(ASObject aso) {
+    }
 
-public StrategyBuff() {
-}
+    public StrategyBuff() {
+    }
 
-@Override
-public StrategyBuff clone() {
-StrategyBuff clone = new StrategyBuff();
+    @Override
+    public StrategyBuff clone() {
+        StrategyBuff clone = new StrategyBuff();
 
-return clone;
-}
+        return clone;
+    }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        return aso;
+    }
 }

@@ -7,153 +7,154 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class SystemInfoMsg implements EvonyPacket {
-public String msg = null;
-public Boolean tV = null;
-public Boolean noSenderSystemInfo = null;
-public String tVContext = null;
-public String sender = null;
-public Boolean alliance = null;
 
-public SystemInfoMsg(ASObject aso) {
+    public String msg = null;
+    public Boolean tV = null;
+    public Boolean noSenderSystemInfo = null;
+    public String tVContext = null;
+    public String sender = null;
+    public Boolean alliance = null;
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+    public SystemInfoMsg(ASObject aso) {
 
-if(aso.get("tV") != null) {
-this.tV = (Boolean) aso.get("tV");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("noSenderSystemInfo") != null) {
-this.noSenderSystemInfo = (Boolean) aso.get("noSenderSystemInfo");
-}
+        if (aso.get("tV") != null) {
+            this.tV = (Boolean) aso.get("tV");
+        }
 
-if(aso.get("tVContext") != null) {
-this.tVContext = (String) aso.get("tVContext");
-}
+        if (aso.get("noSenderSystemInfo") != null) {
+            this.noSenderSystemInfo = (Boolean) aso.get("noSenderSystemInfo");
+        }
 
-if(aso.get("sender") != null) {
-this.sender = (String) aso.get("sender");
-}
+        if (aso.get("tVContext") != null) {
+            this.tVContext = (String) aso.get("tVContext");
+        }
 
-if(aso.get("alliance") != null) {
-this.alliance = (Boolean) aso.get("alliance");
-}
-}
+        if (aso.get("sender") != null) {
+            this.sender = (String) aso.get("sender");
+        }
 
-public SystemInfoMsg() {
-}
+        if (aso.get("alliance") != null) {
+            this.alliance = (Boolean) aso.get("alliance");
+        }
+    }
 
-@Override
-public SystemInfoMsg clone() {
-SystemInfoMsg clone = new SystemInfoMsg();
+    public SystemInfoMsg() {
+    }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+    @Override
+    public SystemInfoMsg clone() {
+        SystemInfoMsg clone = new SystemInfoMsg();
 
-if(this.tV != null) {
-clone.setTV(this.tV);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.noSenderSystemInfo != null) {
-clone.setNoSenderSystemInfo(this.noSenderSystemInfo);
-}
+        if (this.tV != null) {
+            clone.setTV(this.tV);
+        }
 
-if(this.tVContext != null) {
-clone.setTVContext(this.tVContext);
-}
+        if (this.noSenderSystemInfo != null) {
+            clone.setNoSenderSystemInfo(this.noSenderSystemInfo);
+        }
 
-if(this.sender != null) {
-clone.setSender(this.sender);
-}
+        if (this.tVContext != null) {
+            clone.setTVContext(this.tVContext);
+        }
 
-if(this.alliance != null) {
-clone.setAlliance(this.alliance);
-}
+        if (this.sender != null) {
+            clone.setSender(this.sender);
+        }
 
-return clone;
-}
+        if (this.alliance != null) {
+            clone.setAlliance(this.alliance);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.tV != null) {
-aso.put("tV", tV);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.noSenderSystemInfo != null) {
-aso.put("noSenderSystemInfo", noSenderSystemInfo);
-}
+        if (this.tV != null) {
+            aso.put("tV", tV);
+        }
 
-if(this.tVContext != null) {
-aso.put("tVContext", tVContext);
-}
+        if (this.noSenderSystemInfo != null) {
+            aso.put("noSenderSystemInfo", noSenderSystemInfo);
+        }
 
-if(this.sender != null) {
-aso.put("sender", sender);
-}
+        if (this.tVContext != null) {
+            aso.put("tVContext", tVContext);
+        }
 
-if(this.alliance != null) {
-aso.put("alliance", alliance);
-}
+        if (this.sender != null) {
+            aso.put("sender", sender);
+        }
 
-return aso;
-}
+        if (this.alliance != null) {
+            aso.put("alliance", alliance);
+        }
 
-public String getMsg() {
-return msg;
-}
+        return aso;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Boolean getTV() {
-return tV;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setTV(Boolean tV) {
-this.tV = tV;
-}
+    public Boolean getTV() {
+        return tV;
+    }
 
-public Boolean getNoSenderSystemInfo() {
-return noSenderSystemInfo;
-}
+    public void setTV(Boolean tV) {
+        this.tV = tV;
+    }
 
-public void setNoSenderSystemInfo(Boolean noSenderSystemInfo) {
-this.noSenderSystemInfo = noSenderSystemInfo;
-}
+    public Boolean getNoSenderSystemInfo() {
+        return noSenderSystemInfo;
+    }
 
-public String getTVContext() {
-return tVContext;
-}
+    public void setNoSenderSystemInfo(Boolean noSenderSystemInfo) {
+        this.noSenderSystemInfo = noSenderSystemInfo;
+    }
 
-public void setTVContext(String tVContext) {
-this.tVContext = tVContext;
-}
+    public String getTVContext() {
+        return tVContext;
+    }
 
-public String getSender() {
-return sender;
-}
+    public void setTVContext(String tVContext) {
+        this.tVContext = tVContext;
+    }
 
-public void setSender(String sender) {
-this.sender = sender;
-}
+    public String getSender() {
+        return sender;
+    }
 
-public Boolean getAlliance() {
-return alliance;
-}
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
 
-public void setAlliance(Boolean alliance) {
-this.alliance = alliance;
-}
+    public Boolean getAlliance() {
+        return alliance;
+    }
+
+    public void setAlliance(Boolean alliance) {
+        this.alliance = alliance;
+    }
 }

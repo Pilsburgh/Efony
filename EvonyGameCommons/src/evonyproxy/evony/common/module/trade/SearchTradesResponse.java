@@ -8,183 +8,184 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class SearchTradesResponse implements EvonyPacket {
-public ArrayList<MarketTradeBean> buyers = null;
-public Double packageId = null;
-public ArrayList<MarketTradeBean> sellers = null;
-public String msg = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public SearchTradesResponse(ASObject aso) {
-buyers = new ArrayList<MarketTradeBean>();
-sellers = new ArrayList<MarketTradeBean>();
+    public ArrayList<MarketTradeBean> buyers = null;
+    public Double packageId = null;
+    public ArrayList<MarketTradeBean> sellers = null;
+    public String msg = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("buyers") != null) {
-Object[] objArr = (Object[]) aso.get("buyers");
-for(int j = 0; j < objArr.length; j++) {
-buyers.add(new MarketTradeBean((ASObject) objArr[j]));
-}
-}
+    public SearchTradesResponse(ASObject aso) {
+        buyers = new ArrayList<MarketTradeBean>();
+        sellers = new ArrayList<MarketTradeBean>();
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+        if (aso.get("buyers") != null) {
+            Object[] objArr = (Object[]) aso.get("buyers");
+            for (int j = 0; j < objArr.length; j++) {
+                buyers.add(new MarketTradeBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("sellers") != null) {
-Object[] objArr = (Object[]) aso.get("sellers");
-for(int j = 0; j < objArr.length; j++) {
-sellers.add(new MarketTradeBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("sellers") != null) {
+            Object[] objArr = (Object[]) aso.get("sellers");
+            for (int j = 0; j < objArr.length; j++) {
+                sellers.add(new MarketTradeBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public SearchTradesResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public SearchTradesResponse clone() {
-SearchTradesResponse clone = new SearchTradesResponse();
+    public SearchTradesResponse() {
+    }
 
-if(this.buyers != null) {
-ArrayList tmpArrLst = new ArrayList<MarketTradeBean>();
+    @Override
+    public SearchTradesResponse clone() {
+        SearchTradesResponse clone = new SearchTradesResponse();
 
-for(Object bean : buyers) {
-MarketTradeBean tmpBean = (MarketTradeBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setBuyers(tmpArrLst);
-}
+        if (this.buyers != null) {
+            ArrayList tmpArrLst = new ArrayList<MarketTradeBean>();
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+            for (Object bean : buyers) {
+                MarketTradeBean tmpBean = (MarketTradeBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setBuyers(tmpArrLst);
+        }
 
-if(this.sellers != null) {
-ArrayList tmpArrLst = new ArrayList<MarketTradeBean>();
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-for(Object bean : sellers) {
-MarketTradeBean tmpBean = (MarketTradeBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setSellers(tmpArrLst);
-}
+        if (this.sellers != null) {
+            ArrayList tmpArrLst = new ArrayList<MarketTradeBean>();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+            for (Object bean : sellers) {
+                MarketTradeBean tmpBean = (MarketTradeBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setSellers(tmpArrLst);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.buyers != null) {
-ArrayList al = new ArrayList();
-for(Object obj : buyers) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("buyers", al);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.buyers != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : buyers) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("buyers", al);
+        }
 
-if(this.sellers != null) {
-ArrayList al = new ArrayList();
-for(Object obj : sellers) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("sellers", al);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.sellers != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : sellers) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("sellers", al);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public ArrayList getBuyers() {
-return buyers;
-}
+        return aso;
+    }
 
-public void setBuyers(ArrayList buyers) {
-this.buyers = buyers;
-}
+    public ArrayList getBuyers() {
+        return buyers;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public void setBuyers(ArrayList buyers) {
+        this.buyers = buyers;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public ArrayList getSellers() {
-return sellers;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setSellers(ArrayList sellers) {
-this.sellers = sellers;
-}
+    public ArrayList getSellers() {
+        return sellers;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setSellers(ArrayList sellers) {
+        this.sellers = sellers;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

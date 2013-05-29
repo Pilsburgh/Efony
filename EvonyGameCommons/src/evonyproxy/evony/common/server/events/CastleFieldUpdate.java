@@ -8,90 +8,91 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CastleFieldUpdate implements EvonyPacket {
-public FieldBean bean = null;
-public Integer updateType = null;
-public Integer castleId = null;
 
-public CastleFieldUpdate(ASObject aso) {
+    public FieldBean bean = null;
+    public Integer updateType = null;
+    public Integer castleId = null;
 
-if(aso.get("bean") != null) {
-this.bean = new FieldBean((ASObject) aso.get("bean"));
-}
+    public CastleFieldUpdate(ASObject aso) {
 
-if(aso.get("updateType") != null) {
-this.updateType = (Integer) aso.get("updateType");
-}
+        if (aso.get("bean") != null) {
+            this.bean = new FieldBean((ASObject) aso.get("bean"));
+        }
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
-}
+        if (aso.get("updateType") != null) {
+            this.updateType = (Integer) aso.get("updateType");
+        }
 
-public CastleFieldUpdate() {
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
+    }
 
-@Override
-public CastleFieldUpdate clone() {
-CastleFieldUpdate clone = new CastleFieldUpdate();
+    public CastleFieldUpdate() {
+    }
 
-if(this.bean != null) {
-clone.setBean(this.bean);
-}
+    @Override
+    public CastleFieldUpdate clone() {
+        CastleFieldUpdate clone = new CastleFieldUpdate();
 
-if(this.updateType != null) {
-clone.setUpdateType(this.updateType);
-}
+        if (this.bean != null) {
+            clone.setBean(this.bean);
+        }
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+        if (this.updateType != null) {
+            clone.setUpdateType(this.updateType);
+        }
 
-return clone;
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.bean != null) {
-aso.put("bean", bean.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.updateType != null) {
-aso.put("updateType", updateType);
-}
+        if (this.bean != null) {
+            aso.put("bean", bean.toASObject());
+        }
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+        if (this.updateType != null) {
+            aso.put("updateType", updateType);
+        }
 
-return aso;
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-public FieldBean getBean() {
-return bean;
-}
+        return aso;
+    }
 
-public void setBean(FieldBean bean) {
-this.bean = bean;
-}
+    public FieldBean getBean() {
+        return bean;
+    }
 
-public Integer getUpdateType() {
-return updateType;
-}
+    public void setBean(FieldBean bean) {
+        this.bean = bean;
+    }
 
-public void setUpdateType(Integer updateType) {
-this.updateType = updateType;
-}
+    public Integer getUpdateType() {
+        return updateType;
+    }
 
-public Integer getCastleId() {
-return castleId;
-}
+    public void setUpdateType(Integer updateType) {
+        this.updateType = updateType;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
+
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 }

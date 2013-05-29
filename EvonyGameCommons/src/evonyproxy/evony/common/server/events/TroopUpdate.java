@@ -8,69 +8,70 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class TroopUpdate implements EvonyPacket {
-public TroopBean troop = null;
-public Integer caslteId = null;
 
-public TroopUpdate(ASObject aso) {
+    public TroopBean troop = null;
+    public Integer caslteId = null;
 
-if(aso.get("troop") != null) {
-this.troop = new TroopBean((ASObject) aso.get("troop"));
-}
+    public TroopUpdate(ASObject aso) {
 
-if(aso.get("caslteId") != null) {
-this.caslteId = (Integer) aso.get("caslteId");
-}
-}
+        if (aso.get("troop") != null) {
+            this.troop = new TroopBean((ASObject) aso.get("troop"));
+        }
 
-public TroopUpdate() {
-}
+        if (aso.get("caslteId") != null) {
+            this.caslteId = (Integer) aso.get("caslteId");
+        }
+    }
 
-@Override
-public TroopUpdate clone() {
-TroopUpdate clone = new TroopUpdate();
+    public TroopUpdate() {
+    }
 
-if(this.troop != null) {
-clone.setTroop(this.troop);
-}
+    @Override
+    public TroopUpdate clone() {
+        TroopUpdate clone = new TroopUpdate();
 
-if(this.caslteId != null) {
-clone.setCaslteId(this.caslteId);
-}
+        if (this.troop != null) {
+            clone.setTroop(this.troop);
+        }
 
-return clone;
-}
+        if (this.caslteId != null) {
+            clone.setCaslteId(this.caslteId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.troop != null) {
-aso.put("troop", troop.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.caslteId != null) {
-aso.put("caslteId", caslteId);
-}
+        if (this.troop != null) {
+            aso.put("troop", troop.toASObject());
+        }
 
-return aso;
-}
+        if (this.caslteId != null) {
+            aso.put("caslteId", caslteId);
+        }
 
-public TroopBean getTroop() {
-return troop;
-}
+        return aso;
+    }
 
-public void setTroop(TroopBean troop) {
-this.troop = troop;
-}
+    public TroopBean getTroop() {
+        return troop;
+    }
 
-public Integer getCaslteId() {
-return caslteId;
-}
+    public void setTroop(TroopBean troop) {
+        this.troop = troop;
+    }
 
-public void setCaslteId(Integer caslteId) {
-this.caslteId = caslteId;
-}
+    public Integer getCaslteId() {
+        return caslteId;
+    }
+
+    public void setCaslteId(Integer caslteId) {
+        this.caslteId = caslteId;
+    }
 }

@@ -12,21 +12,22 @@ import evonyproxy.evony.common.beans.*;
  * @author Michael Archibald
  */
 public class HeroUpdate implements EvonyPacket {
+
     public Integer castleId = null;
     public HeroBean hero = null;
     public Integer updateType = null;
 
     public HeroUpdate(ASObject aso) {
 
-        if(aso.get("castleId") != null) {
+        if (aso.get("castleId") != null) {
             this.castleId = (Integer) aso.get("castleId");
         }
 
-        if(aso.get("hero") != null) {
+        if (aso.get("hero") != null) {
             this.hero = new HeroBean((ASObject) aso.get("hero"));
         }
 
-        if(aso.get("updateType") != null) {
+        if (aso.get("updateType") != null) {
             this.updateType = (Integer) aso.get("updateType");
         }
     }
@@ -38,15 +39,15 @@ public class HeroUpdate implements EvonyPacket {
     public HeroUpdate clone() {
         HeroUpdate clone = new HeroUpdate();
 
-        if(this.castleId != null) {
+        if (this.castleId != null) {
             clone.setCastleId(this.castleId);
         }
 
-        if(this.hero != null) {
+        if (this.hero != null) {
             clone.setHero(this.hero);
         }
 
-        if(this.updateType != null) {
+        if (this.updateType != null) {
             clone.setUpdateType(this.updateType);
         }
 
@@ -56,15 +57,15 @@ public class HeroUpdate implements EvonyPacket {
     public ASObject toASObject() {
         ASObject aso = new ASObject();
 
-        if(this.castleId != null) {
+        if (this.castleId != null) {
             aso.put("castleId", castleId);
         }
 
-        if(this.hero != null) {
+        if (this.hero != null) {
             aso.put("hero", hero.toASObject());
         }
 
-        if(this.updateType != null) {
+        if (this.updateType != null) {
             aso.put("updateType", updateType);
         }
 

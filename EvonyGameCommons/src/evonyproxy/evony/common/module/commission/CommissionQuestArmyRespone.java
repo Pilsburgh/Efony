@@ -8,147 +8,148 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CommissionQuestArmyRespone implements EvonyPacket {
-public ArrayList<CommissionQuestArmyRankBean> armyRankBean = null;
-public Double packageId = null;
-public String msg = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public CommissionQuestArmyRespone(ASObject aso) {
-armyRankBean = new ArrayList<CommissionQuestArmyRankBean>();
+    public ArrayList<CommissionQuestArmyRankBean> armyRankBean = null;
+    public Double packageId = null;
+    public String msg = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("armyRankBean") != null) {
-Object[] objArr = (Object[]) aso.get("armyRankBean");
-for(int j = 0; j < objArr.length; j++) {
-armyRankBean.add(new CommissionQuestArmyRankBean((ASObject) objArr[j]));
-}
-}
+    public CommissionQuestArmyRespone(ASObject aso) {
+        armyRankBean = new ArrayList<CommissionQuestArmyRankBean>();
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+        if (aso.get("armyRankBean") != null) {
+            Object[] objArr = (Object[]) aso.get("armyRankBean");
+            for (int j = 0; j < objArr.length; j++) {
+                armyRankBean.add(new CommissionQuestArmyRankBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public CommissionQuestArmyRespone() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public CommissionQuestArmyRespone clone() {
-CommissionQuestArmyRespone clone = new CommissionQuestArmyRespone();
+    public CommissionQuestArmyRespone() {
+    }
 
-if(this.armyRankBean != null) {
-ArrayList tmpArrLst = new ArrayList<CommissionQuestArmyRankBean>();
+    @Override
+    public CommissionQuestArmyRespone clone() {
+        CommissionQuestArmyRespone clone = new CommissionQuestArmyRespone();
 
-for(Object bean : armyRankBean) {
-CommissionQuestArmyRankBean tmpBean = (CommissionQuestArmyRankBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setArmyRankBean(tmpArrLst);
-}
+        if (this.armyRankBean != null) {
+            ArrayList tmpArrLst = new ArrayList<CommissionQuestArmyRankBean>();
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+            for (Object bean : armyRankBean) {
+                CommissionQuestArmyRankBean tmpBean = (CommissionQuestArmyRankBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setArmyRankBean(tmpArrLst);
+        }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.armyRankBean != null) {
-ArrayList al = new ArrayList();
-for(Object obj : armyRankBean) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("armyRankBean", al);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.armyRankBean != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : armyRankBean) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("armyRankBean", al);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public ArrayList getArmyRankBean() {
-return armyRankBean;
-}
+        return aso;
+    }
 
-public void setArmyRankBean(ArrayList armyRankBean) {
-this.armyRankBean = armyRankBean;
-}
+    public ArrayList getArmyRankBean() {
+        return armyRankBean;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public void setArmyRankBean(ArrayList armyRankBean) {
+        this.armyRankBean = armyRankBean;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

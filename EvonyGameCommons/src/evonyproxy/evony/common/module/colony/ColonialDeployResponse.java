@@ -8,153 +8,154 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ColonialDeployResponse implements EvonyPacket {
-public Double reduceCoolDown = null;
-public Double packageId = null;
-public String msg = null;
-public TroopBean troopBean = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public ColonialDeployResponse(ASObject aso) {
+    public Double reduceCoolDown = null;
+    public Double packageId = null;
+    public String msg = null;
+    public TroopBean troopBean = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("reduceCoolDown") != null) {
-this.reduceCoolDown = (Double) aso.get("reduceCoolDown");
-}
+    public ColonialDeployResponse(ASObject aso) {
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+        if (aso.get("reduceCoolDown") != null) {
+            this.reduceCoolDown = (Double) aso.get("reduceCoolDown");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("troopBean") != null) {
-this.troopBean = new TroopBean((ASObject) aso.get("troopBean"));
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("troopBean") != null) {
+            this.troopBean = new TroopBean((ASObject) aso.get("troopBean"));
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public ColonialDeployResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public ColonialDeployResponse clone() {
-ColonialDeployResponse clone = new ColonialDeployResponse();
+    public ColonialDeployResponse() {
+    }
 
-if(this.reduceCoolDown != null) {
-clone.setReduceCoolDown(this.reduceCoolDown);
-}
+    @Override
+    public ColonialDeployResponse clone() {
+        ColonialDeployResponse clone = new ColonialDeployResponse();
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+        if (this.reduceCoolDown != null) {
+            clone.setReduceCoolDown(this.reduceCoolDown);
+        }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.troopBean != null) {
-clone.setTroopBean(this.troopBean);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.troopBean != null) {
+            clone.setTroopBean(this.troopBean);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.reduceCoolDown != null) {
-aso.put("reduceCoolDown", reduceCoolDown);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.reduceCoolDown != null) {
+            aso.put("reduceCoolDown", reduceCoolDown);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.troopBean != null) {
-aso.put("troopBean", troopBean.toASObject());
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.troopBean != null) {
+            aso.put("troopBean", troopBean.toASObject());
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getReduceCoolDown() {
-return reduceCoolDown;
-}
+        return aso;
+    }
 
-public void setReduceCoolDown(Double reduceCoolDown) {
-this.reduceCoolDown = reduceCoolDown;
-}
+    public Double getReduceCoolDown() {
+        return reduceCoolDown;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public void setReduceCoolDown(Double reduceCoolDown) {
+        this.reduceCoolDown = reduceCoolDown;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public TroopBean getTroopBean() {
-return troopBean;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setTroopBean(TroopBean troopBean) {
-this.troopBean = troopBean;
-}
+    public TroopBean getTroopBean() {
+        return troopBean;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setTroopBean(TroopBean troopBean) {
+        this.troopBean = troopBean;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

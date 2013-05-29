@@ -8,147 +8,148 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CastleFieldInfoResponse implements EvonyPacket {
-public ArrayList<FieldBean> fields = null;
-public Double packageId = null;
-public String msg = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public CastleFieldInfoResponse(ASObject aso) {
-fields = new ArrayList<FieldBean>();
+    public ArrayList<FieldBean> fields = null;
+    public Double packageId = null;
+    public String msg = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("fields") != null) {
-Object[] objArr = (Object[]) aso.get("fields");
-for(int j = 0; j < objArr.length; j++) {
-fields.add(new FieldBean((ASObject) objArr[j]));
-}
-}
+    public CastleFieldInfoResponse(ASObject aso) {
+        fields = new ArrayList<FieldBean>();
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+        if (aso.get("fields") != null) {
+            Object[] objArr = (Object[]) aso.get("fields");
+            for (int j = 0; j < objArr.length; j++) {
+                fields.add(new FieldBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public CastleFieldInfoResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public CastleFieldInfoResponse clone() {
-CastleFieldInfoResponse clone = new CastleFieldInfoResponse();
+    public CastleFieldInfoResponse() {
+    }
 
-if(this.fields != null) {
-ArrayList tmpArrLst = new ArrayList<FieldBean>();
+    @Override
+    public CastleFieldInfoResponse clone() {
+        CastleFieldInfoResponse clone = new CastleFieldInfoResponse();
 
-for(Object bean : fields) {
-FieldBean tmpBean = (FieldBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setFields(tmpArrLst);
-}
+        if (this.fields != null) {
+            ArrayList tmpArrLst = new ArrayList<FieldBean>();
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+            for (Object bean : fields) {
+                FieldBean tmpBean = (FieldBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setFields(tmpArrLst);
+        }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.fields != null) {
-ArrayList al = new ArrayList();
-for(Object obj : fields) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("fields", al);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.fields != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : fields) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("fields", al);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public ArrayList getFields() {
-return fields;
-}
+        return aso;
+    }
 
-public void setFields(ArrayList fields) {
-this.fields = fields;
-}
+    public ArrayList getFields() {
+        return fields;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public void setFields(ArrayList fields) {
+        this.fields = fields;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

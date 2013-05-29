@@ -10,10 +10,11 @@ import java.lang.reflect.Method;
 
 
 /**
+ * Factory helper for the creation of Evony commands. Encompasses all Commands classes.
  * @version .01
  * @author Michael Archibald
  */
-public class CmdFactory {
+public class CommandFactory {
     protected AllianceCommands alliance;
     protected AllianceManagementCommands allianceManagement;
     protected ArmyCommands army;
@@ -45,9 +46,9 @@ public class CmdFactory {
     protected TradeCommands trade;
     protected TroopCommands troop;
     protected TruceCommands truce;
-    private static CmdFactory INSTANCE = new CmdFactory();
+    private static CommandFactory INSTANCE = new CommandFactory();
 
-    public CmdFactory() {
+    public CommandFactory() {
         alliance = new AllianceCommands();
         allianceManagement = new AllianceManagementCommands();
         army = new ArmyCommands();
@@ -149,7 +150,7 @@ public class CmdFactory {
         truce.setSerializer(serializer);
     }
 
-    public static CmdFactory getInstance() {
+    public static CommandFactory getInstance() {
         return INSTANCE;
     }
 

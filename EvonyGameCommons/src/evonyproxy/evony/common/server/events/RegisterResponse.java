@@ -8,135 +8,136 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class RegisterResponse implements EvonyPacket {
-public static final int CREATE_RESULT_HAVE_CREATED = -3;
-public static final int CREATE_RESULT_ZONE_FULL = -2;
-public static final int CREATE_RESULT_NAME_DUP = -1;
-public Double packageId = null;
-public PlayerBean player = null;
-public String msg = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public RegisterResponse(ASObject aso) {
+    public static final int CREATE_RESULT_HAVE_CREATED = -3;
+    public static final int CREATE_RESULT_ZONE_FULL = -2;
+    public static final int CREATE_RESULT_NAME_DUP = -1;
+    public Double packageId = null;
+    public PlayerBean player = null;
+    public String msg = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public RegisterResponse(ASObject aso) {
 
-if(aso.get("player") != null) {
-this.player = new PlayerBean((ASObject) aso.get("player"));
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("player") != null) {
+            this.player = new PlayerBean((ASObject) aso.get("player"));
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public RegisterResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public RegisterResponse clone() {
-RegisterResponse clone = new RegisterResponse();
+    public RegisterResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public RegisterResponse clone() {
+        RegisterResponse clone = new RegisterResponse();
 
-if(this.player != null) {
-clone.setPlayer(this.player);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.player != null) {
+            clone.setPlayer(this.player);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.player != null) {
-aso.put("player", player.toASObject());
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.player != null) {
+            aso.put("player", player.toASObject());
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public PlayerBean getPlayer() {
-return player;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setPlayer(PlayerBean player) {
-this.player = player;
-}
+    public PlayerBean getPlayer() {
+        return player;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPlayer(PlayerBean player) {
+        this.player = player;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

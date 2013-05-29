@@ -7,132 +7,133 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class NewReport implements EvonyPacket {
-public Integer other_count = null;
-public Integer scout_cout = null;
-public Integer army_count = null;
-public Integer count = null;
-public Integer trade_count = null;
 
-public NewReport(ASObject aso) {
+    public Integer other_count = null;
+    public Integer scout_cout = null;
+    public Integer army_count = null;
+    public Integer count = null;
+    public Integer trade_count = null;
 
-if(aso.get("other_count") != null) {
-this.other_count = (Integer) aso.get("other_count");
-}
+    public NewReport(ASObject aso) {
 
-if(aso.get("scout_cout") != null) {
-this.scout_cout = (Integer) aso.get("scout_cout");
-}
+        if (aso.get("other_count") != null) {
+            this.other_count = (Integer) aso.get("other_count");
+        }
 
-if(aso.get("army_count") != null) {
-this.army_count = (Integer) aso.get("army_count");
-}
+        if (aso.get("scout_cout") != null) {
+            this.scout_cout = (Integer) aso.get("scout_cout");
+        }
 
-if(aso.get("count") != null) {
-this.count = (Integer) aso.get("count");
-}
+        if (aso.get("army_count") != null) {
+            this.army_count = (Integer) aso.get("army_count");
+        }
 
-if(aso.get("trade_count") != null) {
-this.trade_count = (Integer) aso.get("trade_count");
-}
-}
+        if (aso.get("count") != null) {
+            this.count = (Integer) aso.get("count");
+        }
 
-public NewReport() {
-}
+        if (aso.get("trade_count") != null) {
+            this.trade_count = (Integer) aso.get("trade_count");
+        }
+    }
 
-@Override
-public NewReport clone() {
-NewReport clone = new NewReport();
+    public NewReport() {
+    }
 
-if(this.other_count != null) {
-clone.setOther_count(this.other_count);
-}
+    @Override
+    public NewReport clone() {
+        NewReport clone = new NewReport();
 
-if(this.scout_cout != null) {
-clone.setScout_cout(this.scout_cout);
-}
+        if (this.other_count != null) {
+            clone.setOther_count(this.other_count);
+        }
 
-if(this.army_count != null) {
-clone.setArmy_count(this.army_count);
-}
+        if (this.scout_cout != null) {
+            clone.setScout_cout(this.scout_cout);
+        }
 
-if(this.count != null) {
-clone.setCount(this.count);
-}
+        if (this.army_count != null) {
+            clone.setArmy_count(this.army_count);
+        }
 
-if(this.trade_count != null) {
-clone.setTrade_count(this.trade_count);
-}
+        if (this.count != null) {
+            clone.setCount(this.count);
+        }
 
-return clone;
-}
+        if (this.trade_count != null) {
+            clone.setTrade_count(this.trade_count);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.other_count != null) {
-aso.put("other_count", other_count);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.scout_cout != null) {
-aso.put("scout_cout", scout_cout);
-}
+        if (this.other_count != null) {
+            aso.put("other_count", other_count);
+        }
 
-if(this.army_count != null) {
-aso.put("army_count", army_count);
-}
+        if (this.scout_cout != null) {
+            aso.put("scout_cout", scout_cout);
+        }
 
-if(this.count != null) {
-aso.put("count", count);
-}
+        if (this.army_count != null) {
+            aso.put("army_count", army_count);
+        }
 
-if(this.trade_count != null) {
-aso.put("trade_count", trade_count);
-}
+        if (this.count != null) {
+            aso.put("count", count);
+        }
 
-return aso;
-}
+        if (this.trade_count != null) {
+            aso.put("trade_count", trade_count);
+        }
 
-public Integer getOther_count() {
-return other_count;
-}
+        return aso;
+    }
 
-public void setOther_count(Integer other_count) {
-this.other_count = other_count;
-}
+    public Integer getOther_count() {
+        return other_count;
+    }
 
-public Integer getScout_cout() {
-return scout_cout;
-}
+    public void setOther_count(Integer other_count) {
+        this.other_count = other_count;
+    }
 
-public void setScout_cout(Integer scout_cout) {
-this.scout_cout = scout_cout;
-}
+    public Integer getScout_cout() {
+        return scout_cout;
+    }
 
-public Integer getArmy_count() {
-return army_count;
-}
+    public void setScout_cout(Integer scout_cout) {
+        this.scout_cout = scout_cout;
+    }
 
-public void setArmy_count(Integer army_count) {
-this.army_count = army_count;
-}
+    public Integer getArmy_count() {
+        return army_count;
+    }
 
-public Integer getCount() {
-return count;
-}
+    public void setArmy_count(Integer army_count) {
+        this.army_count = army_count;
+    }
 
-public void setCount(Integer count) {
-this.count = count;
-}
+    public Integer getCount() {
+        return count;
+    }
 
-public Integer getTrade_count() {
-return trade_count;
-}
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
-public void setTrade_count(Integer trade_count) {
-this.trade_count = trade_count;
-}
+    public Integer getTrade_count() {
+        return trade_count;
+    }
+
+    public void setTrade_count(Integer trade_count) {
+        this.trade_count = trade_count;
+    }
 }

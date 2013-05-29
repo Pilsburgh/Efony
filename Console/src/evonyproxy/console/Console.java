@@ -75,7 +75,7 @@ public class Console implements ConsoleConstants {
         for(i += 1; i < splitSpace.length; i++) {
             str += splitSpace[i] + " ";
         }
-        str.trim();
+        str = str.trim();
         fireConsoleResponseEvent(formatResponse(str));
     }
 

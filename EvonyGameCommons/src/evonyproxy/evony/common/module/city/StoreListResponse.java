@@ -8,168 +8,169 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class StoreListResponse implements EvonyPacket {
-public Double packageId = null;
-public Integer ok = null;
-public String msg = null;
-public Integer totalCap = null;
-public ArrayList<StoreBean> storeBeans = null;
-public String errorMsg = null;
 
-public StoreListResponse(ASObject aso) {
-storeBeans = new ArrayList<StoreBean>();
+    public Double packageId = null;
+    public Integer ok = null;
+    public String msg = null;
+    public Integer totalCap = null;
+    public ArrayList<StoreBean> storeBeans = null;
+    public String errorMsg = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public StoreListResponse(ASObject aso) {
+        storeBeans = new ArrayList<StoreBean>();
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
 
-if(aso.get("totalCap") != null) {
-this.totalCap = (Integer) aso.get("totalCap");
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("storeBeans") != null) {
-Object[] objArr = (Object[]) aso.get("storeBeans");
-for(int j = 0; j < objArr.length; j++) {
-storeBeans.add(new StoreBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("totalCap") != null) {
+            this.totalCap = (Integer) aso.get("totalCap");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
-}
+        if (aso.get("storeBeans") != null) {
+            Object[] objArr = (Object[]) aso.get("storeBeans");
+            for (int j = 0; j < objArr.length; j++) {
+                storeBeans.add(new StoreBean((ASObject) objArr[j]));
+            }
+        }
 
-public StoreListResponse() {
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
+    }
 
-@Override
-public StoreListResponse clone() {
-StoreListResponse clone = new StoreListResponse();
+    public StoreListResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public StoreListResponse clone() {
+        StoreListResponse clone = new StoreListResponse();
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-if(this.totalCap != null) {
-clone.setTotalCap(this.totalCap);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-if(this.storeBeans != null) {
-ArrayList tmpArrLst = new ArrayList<StoreBean>();
+        if (this.totalCap != null) {
+            clone.setTotalCap(this.totalCap);
+        }
 
-for(Object bean : storeBeans) {
-StoreBean tmpBean = (StoreBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setStoreBeans(tmpArrLst);
-}
+        if (this.storeBeans != null) {
+            ArrayList tmpArrLst = new ArrayList<StoreBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : storeBeans) {
+                StoreBean tmpBean = (StoreBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setStoreBeans(tmpArrLst);
+        }
 
-return clone;
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-if(this.totalCap != null) {
-aso.put("totalCap", totalCap);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.storeBeans != null) {
-ArrayList al = new ArrayList();
-for(Object obj : storeBeans) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("storeBeans", al);
-}
+        if (this.totalCap != null) {
+            aso.put("totalCap", totalCap);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.storeBeans != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : storeBeans) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("storeBeans", al);
+        }
 
-return aso;
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public Integer getTotalCap() {
-return totalCap;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setTotalCap(Integer totalCap) {
-this.totalCap = totalCap;
-}
+    public Integer getTotalCap() {
+        return totalCap;
+    }
 
-public ArrayList getStoreBeans() {
-return storeBeans;
-}
+    public void setTotalCap(Integer totalCap) {
+        this.totalCap = totalCap;
+    }
 
-public void setStoreBeans(ArrayList storeBeans) {
-this.storeBeans = storeBeans;
-}
+    public ArrayList getStoreBeans() {
+        return storeBeans;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setStoreBeans(ArrayList storeBeans) {
+        this.storeBeans = storeBeans;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 }

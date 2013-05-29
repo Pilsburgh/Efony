@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class DeclaredWarStatusChange implements EvonyPacket {
-public Integer status = null;
-public String userName = null;
 
-public DeclaredWarStatusChange(ASObject aso) {
+    public Integer status = null;
+    public String userName = null;
 
-if(aso.get("status") != null) {
-this.status = (Integer) aso.get("status");
-}
+    public DeclaredWarStatusChange(ASObject aso) {
 
-if(aso.get("userName") != null) {
-this.userName = (String) aso.get("userName");
-}
-}
+        if (aso.get("status") != null) {
+            this.status = (Integer) aso.get("status");
+        }
 
-public DeclaredWarStatusChange() {
-}
+        if (aso.get("userName") != null) {
+            this.userName = (String) aso.get("userName");
+        }
+    }
 
-@Override
-public DeclaredWarStatusChange clone() {
-DeclaredWarStatusChange clone = new DeclaredWarStatusChange();
+    public DeclaredWarStatusChange() {
+    }
 
-if(this.status != null) {
-clone.setStatus(this.status);
-}
+    @Override
+    public DeclaredWarStatusChange clone() {
+        DeclaredWarStatusChange clone = new DeclaredWarStatusChange();
 
-if(this.userName != null) {
-clone.setUserName(this.userName);
-}
+        if (this.status != null) {
+            clone.setStatus(this.status);
+        }
 
-return clone;
-}
+        if (this.userName != null) {
+            clone.setUserName(this.userName);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.status != null) {
-aso.put("status", status);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.userName != null) {
-aso.put("userName", userName);
-}
+        if (this.status != null) {
+            aso.put("status", status);
+        }
 
-return aso;
-}
+        if (this.userName != null) {
+            aso.put("userName", userName);
+        }
 
-public Integer getStatus() {
-return status;
-}
+        return aso;
+    }
 
-public void setStatus(Integer status) {
-this.status = status;
-}
+    public Integer getStatus() {
+        return status;
+    }
 
-public String getUserName() {
-return userName;
-}
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-public void setUserName(String userName) {
-this.userName = userName;
-}
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 }

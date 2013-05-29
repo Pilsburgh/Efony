@@ -8,69 +8,70 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class FortificationsUpdate implements EvonyPacket {
-public FortificationsBean fortification = null;
-public Integer castleId = null;
 
-public FortificationsUpdate(ASObject aso) {
+    public FortificationsBean fortification = null;
+    public Integer castleId = null;
 
-if(aso.get("fortification") != null) {
-this.fortification = new FortificationsBean((ASObject) aso.get("fortification"));
-}
+    public FortificationsUpdate(ASObject aso) {
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
-}
+        if (aso.get("fortification") != null) {
+            this.fortification = new FortificationsBean((ASObject) aso.get("fortification"));
+        }
 
-public FortificationsUpdate() {
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
+    }
 
-@Override
-public FortificationsUpdate clone() {
-FortificationsUpdate clone = new FortificationsUpdate();
+    public FortificationsUpdate() {
+    }
 
-if(this.fortification != null) {
-clone.setFortification(this.fortification);
-}
+    @Override
+    public FortificationsUpdate clone() {
+        FortificationsUpdate clone = new FortificationsUpdate();
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+        if (this.fortification != null) {
+            clone.setFortification(this.fortification);
+        }
 
-return clone;
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.fortification != null) {
-aso.put("fortification", fortification.toASObject());
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+        if (this.fortification != null) {
+            aso.put("fortification", fortification.toASObject());
+        }
 
-return aso;
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-public FortificationsBean getFortification() {
-return fortification;
-}
+        return aso;
+    }
 
-public void setFortification(FortificationsBean fortification) {
-this.fortification = fortification;
-}
+    public FortificationsBean getFortification() {
+        return fortification;
+    }
 
-public Integer getCastleId() {
-return castleId;
-}
+    public void setFortification(FortificationsBean fortification) {
+        this.fortification = fortification;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
+
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 }

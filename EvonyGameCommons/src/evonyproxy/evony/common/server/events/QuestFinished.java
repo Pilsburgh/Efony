@@ -7,48 +7,49 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class QuestFinished implements EvonyPacket {
-public Integer finishedQuest = null;
 
-public QuestFinished(ASObject aso) {
+    public Integer finishedQuest = null;
 
-if(aso.get("finishedQuest") != null) {
-this.finishedQuest = (Integer) aso.get("finishedQuest");
-}
-}
+    public QuestFinished(ASObject aso) {
 
-public QuestFinished() {
-}
+        if (aso.get("finishedQuest") != null) {
+            this.finishedQuest = (Integer) aso.get("finishedQuest");
+        }
+    }
 
-@Override
-public QuestFinished clone() {
-QuestFinished clone = new QuestFinished();
+    public QuestFinished() {
+    }
 
-if(this.finishedQuest != null) {
-clone.setFinishedQuest(this.finishedQuest);
-}
+    @Override
+    public QuestFinished clone() {
+        QuestFinished clone = new QuestFinished();
 
-return clone;
-}
+        if (this.finishedQuest != null) {
+            clone.setFinishedQuest(this.finishedQuest);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.finishedQuest != null) {
-aso.put("finishedQuest", finishedQuest);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        if (this.finishedQuest != null) {
+            aso.put("finishedQuest", finishedQuest);
+        }
 
-public Integer getFinishedQuest() {
-return finishedQuest;
-}
+        return aso;
+    }
 
-public void setFinishedQuest(Integer finishedQuest) {
-this.finishedQuest = finishedQuest;
-}
+    public Integer getFinishedQuest() {
+        return finishedQuest;
+    }
+
+    public void setFinishedQuest(Integer finishedQuest) {
+        this.finishedQuest = finishedQuest;
+    }
 }

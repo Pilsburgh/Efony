@@ -7,48 +7,49 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ResearchCompleteUpdate implements EvonyPacket {
-public Integer castleId = null;
 
-public ResearchCompleteUpdate(ASObject aso) {
+    public Integer castleId = null;
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
-}
+    public ResearchCompleteUpdate(ASObject aso) {
 
-public ResearchCompleteUpdate() {
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
+    }
 
-@Override
-public ResearchCompleteUpdate clone() {
-ResearchCompleteUpdate clone = new ResearchCompleteUpdate();
+    public ResearchCompleteUpdate() {
+    }
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+    @Override
+    public ResearchCompleteUpdate clone() {
+        ResearchCompleteUpdate clone = new ResearchCompleteUpdate();
 
-return clone;
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-return aso;
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-public Integer getCastleId() {
-return castleId;
-}
+        return aso;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
+
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 }

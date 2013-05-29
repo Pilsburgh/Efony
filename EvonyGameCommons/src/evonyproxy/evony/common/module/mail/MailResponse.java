@@ -7,321 +7,322 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class MailResponse implements EvonyPacket {
-public String msg = null;
-public Integer type_id = null;
-public Double packageId = null;
-public Integer targetId = null;
-public String receiveTime = null;
-public String content = null;
-public Integer mailid = null;
-public String errorMsg = null;
-public Integer playerId = null;
-public String title = null;
-public Integer isRead = null;
-public Integer ok = null;
-public String receiver = null;
-public String sender = null;
-
-public MailResponse(ASObject aso) {
-
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
-
-if(aso.get("type_id") != null) {
-this.type_id = (Integer) aso.get("type_id");
-}
-
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
-
-if(aso.get("targetId") != null) {
-this.targetId = (Integer) aso.get("targetId");
-}
-
-if(aso.get("receiveTime") != null) {
-this.receiveTime = (String) aso.get("receiveTime");
-}
-
-if(aso.get("content") != null) {
-this.content = (String) aso.get("content");
-}
-
-if(aso.get("mailid") != null) {
-this.mailid = (Integer) aso.get("mailid");
-}
-
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
-
-if(aso.get("playerId") != null) {
-this.playerId = (Integer) aso.get("playerId");
-}
-
-if(aso.get("title") != null) {
-this.title = (String) aso.get("title");
-}
-
-if(aso.get("isRead") != null) {
-this.isRead = (Integer) aso.get("isRead");
-}
-
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-
-if(aso.get("receiver") != null) {
-this.receiver = (String) aso.get("receiver");
-}
-
-if(aso.get("sender") != null) {
-this.sender = (String) aso.get("sender");
-}
-}
-
-public MailResponse() {
-}
-
-@Override
-public MailResponse clone() {
-MailResponse clone = new MailResponse();
-
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
-
-if(this.type_id != null) {
-clone.setType_id(this.type_id);
-}
-
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
-
-if(this.targetId != null) {
-clone.setTargetId(this.targetId);
-}
-
-if(this.receiveTime != null) {
-clone.setReceiveTime(this.receiveTime);
-}
-
-if(this.content != null) {
-clone.setContent(this.content);
-}
 
-if(this.mailid != null) {
-clone.setMailid(this.mailid);
-}
+    public String msg = null;
+    public Integer type_id = null;
+    public Double packageId = null;
+    public Integer targetId = null;
+    public String receiveTime = null;
+    public String content = null;
+    public Integer mailid = null;
+    public String errorMsg = null;
+    public Integer playerId = null;
+    public String title = null;
+    public Integer isRead = null;
+    public Integer ok = null;
+    public String receiver = null;
+    public String sender = null;
+
+    public MailResponse(ASObject aso) {
+
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
+
+        if (aso.get("type_id") != null) {
+            this.type_id = (Integer) aso.get("type_id");
+        }
+
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
+
+        if (aso.get("targetId") != null) {
+            this.targetId = (Integer) aso.get("targetId");
+        }
+
+        if (aso.get("receiveTime") != null) {
+            this.receiveTime = (String) aso.get("receiveTime");
+        }
+
+        if (aso.get("content") != null) {
+            this.content = (String) aso.get("content");
+        }
+
+        if (aso.get("mailid") != null) {
+            this.mailid = (Integer) aso.get("mailid");
+        }
+
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
+
+        if (aso.get("playerId") != null) {
+            this.playerId = (Integer) aso.get("playerId");
+        }
+
+        if (aso.get("title") != null) {
+            this.title = (String) aso.get("title");
+        }
+
+        if (aso.get("isRead") != null) {
+            this.isRead = (Integer) aso.get("isRead");
+        }
+
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+
+        if (aso.get("receiver") != null) {
+            this.receiver = (String) aso.get("receiver");
+        }
+
+        if (aso.get("sender") != null) {
+            this.sender = (String) aso.get("sender");
+        }
+    }
+
+    public MailResponse() {
+    }
+
+    @Override
+    public MailResponse clone() {
+        MailResponse clone = new MailResponse();
+
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
+
+        if (this.type_id != null) {
+            clone.setType_id(this.type_id);
+        }
+
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
+
+        if (this.targetId != null) {
+            clone.setTargetId(this.targetId);
+        }
+
+        if (this.receiveTime != null) {
+            clone.setReceiveTime(this.receiveTime);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.content != null) {
+            clone.setContent(this.content);
+        }
 
-if(this.playerId != null) {
-clone.setPlayerId(this.playerId);
-}
+        if (this.mailid != null) {
+            clone.setMailid(this.mailid);
+        }
 
-if(this.title != null) {
-clone.setTitle(this.title);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-if(this.isRead != null) {
-clone.setIsRead(this.isRead);
-}
+        if (this.playerId != null) {
+            clone.setPlayerId(this.playerId);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.title != null) {
+            clone.setTitle(this.title);
+        }
 
-if(this.receiver != null) {
-clone.setReceiver(this.receiver);
-}
+        if (this.isRead != null) {
+            clone.setIsRead(this.isRead);
+        }
 
-if(this.sender != null) {
-clone.setSender(this.sender);
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-return clone;
-}
+        if (this.receiver != null) {
+            clone.setReceiver(this.receiver);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        if (this.sender != null) {
+            clone.setSender(this.sender);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        return clone;
+    }
 
-if(this.type_id != null) {
-aso.put("type_id", type_id);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.targetId != null) {
-aso.put("targetId", targetId);
-}
+        if (this.type_id != null) {
+            aso.put("type_id", type_id);
+        }
 
-if(this.receiveTime != null) {
-aso.put("receiveTime", receiveTime);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.content != null) {
-aso.put("content", content);
-}
+        if (this.targetId != null) {
+            aso.put("targetId", targetId);
+        }
 
-if(this.mailid != null) {
-aso.put("mailid", mailid);
-}
+        if (this.receiveTime != null) {
+            aso.put("receiveTime", receiveTime);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.content != null) {
+            aso.put("content", content);
+        }
 
-if(this.playerId != null) {
-aso.put("playerId", playerId);
-}
+        if (this.mailid != null) {
+            aso.put("mailid", mailid);
+        }
 
-if(this.title != null) {
-aso.put("title", title);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-if(this.isRead != null) {
-aso.put("isRead", isRead);
-}
+        if (this.playerId != null) {
+            aso.put("playerId", playerId);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.title != null) {
+            aso.put("title", title);
+        }
 
-if(this.receiver != null) {
-aso.put("receiver", receiver);
-}
+        if (this.isRead != null) {
+            aso.put("isRead", isRead);
+        }
 
-if(this.sender != null) {
-aso.put("sender", sender);
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-return aso;
-}
+        if (this.receiver != null) {
+            aso.put("receiver", receiver);
+        }
 
-public String getMsg() {
-return msg;
-}
+        if (this.sender != null) {
+            aso.put("sender", sender);
+        }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+        return aso;
+    }
 
-public Integer getType_id() {
-return type_id;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public void setType_id(Integer type_id) {
-this.type_id = type_id;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public Double getPackageId() {
-return packageId;
-}
+    public Integer getType_id() {
+        return type_id;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public void setType_id(Integer type_id) {
+        this.type_id = type_id;
+    }
 
-public Integer getTargetId() {
-return targetId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public void setTargetId(Integer targetId) {
-this.targetId = targetId;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public String getReceiveTime() {
-return receiveTime;
-}
+    public Integer getTargetId() {
+        return targetId;
+    }
 
-public void setReceiveTime(String receiveTime) {
-this.receiveTime = receiveTime;
-}
+    public void setTargetId(Integer targetId) {
+        this.targetId = targetId;
+    }
 
-public String getContent() {
-return content;
-}
+    public String getReceiveTime() {
+        return receiveTime;
+    }
 
-public void setContent(String content) {
-this.content = content;
-}
+    public void setReceiveTime(String receiveTime) {
+        this.receiveTime = receiveTime;
+    }
 
-public Integer getMailid() {
-return mailid;
-}
+    public String getContent() {
+        return content;
+    }
 
-public void setMailid(Integer mailid) {
-this.mailid = mailid;
-}
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public Integer getMailid() {
+        return mailid;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public void setMailid(Integer mailid) {
+        this.mailid = mailid;
+    }
 
-public Integer getPlayerId() {
-return playerId;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public void setPlayerId(Integer playerId) {
-this.playerId = playerId;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public String getTitle() {
-return title;
-}
+    public Integer getPlayerId() {
+        return playerId;
+    }
 
-public void setTitle(String title) {
-this.title = title;
-}
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
+    }
 
-public Integer getIsRead() {
-return isRead;
-}
+    public String getTitle() {
+        return title;
+    }
 
-public void setIsRead(Integer isRead) {
-this.isRead = isRead;
-}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public Integer getIsRead() {
+        return isRead;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public void setIsRead(Integer isRead) {
+        this.isRead = isRead;
+    }
 
-public String getReceiver() {
-return receiver;
-}
+    public Integer getOk() {
+        return ok;
+    }
 
-public void setReceiver(String receiver) {
-this.receiver = receiver;
-}
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 
-public String getSender() {
-return sender;
-}
+    public String getReceiver() {
+        return receiver;
+    }
 
-public void setSender(String sender) {
-this.sender = sender;
-}
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
 }

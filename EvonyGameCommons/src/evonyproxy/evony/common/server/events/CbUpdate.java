@@ -7,69 +7,70 @@ import evonyproxy.evony.EvonyPacket;
 import flex.messaging.io.ArrayCollection;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class CbUpdate implements EvonyPacket {
-public Integer tp = null;
-public String text = null;
 
-public CbUpdate(ASObject aso) {
+    public Integer tp = null;
+    public String text = null;
 
-if(aso.get("tp") != null) {
-this.tp = (Integer) aso.get("tp");
-}
+    public CbUpdate(ASObject aso) {
 
-if(aso.get("text") != null) {
-this.text = (String) aso.get("text");
-}
-}
+        if (aso.get("tp") != null) {
+            this.tp = (Integer) aso.get("tp");
+        }
 
-public CbUpdate() {
-}
+        if (aso.get("text") != null) {
+            this.text = (String) aso.get("text");
+        }
+    }
 
-@Override
-public CbUpdate clone() {
-CbUpdate clone = new CbUpdate();
+    public CbUpdate() {
+    }
 
-if(this.tp != null) {
-clone.setTp(this.tp);
-}
+    @Override
+    public CbUpdate clone() {
+        CbUpdate clone = new CbUpdate();
 
-if(this.text != null) {
-clone.setText(this.text);
-}
+        if (this.tp != null) {
+            clone.setTp(this.tp);
+        }
 
-return clone;
-}
+        if (this.text != null) {
+            clone.setText(this.text);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.tp != null) {
-aso.put("tp", tp);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.text != null) {
-aso.put("text", text);
-}
+        if (this.tp != null) {
+            aso.put("tp", tp);
+        }
 
-return aso;
-}
+        if (this.text != null) {
+            aso.put("text", text);
+        }
 
-public Integer getTp() {
-return tp;
-}
+        return aso;
+    }
 
-public void setTp(Integer tp) {
-this.tp = tp;
-}
+    public Integer getTp() {
+        return tp;
+    }
 
-public String getText() {
-return text;
-}
+    public void setTp(Integer tp) {
+        this.tp = tp;
+    }
 
-public void setText(String text) {
-this.text = text;
-}
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 }

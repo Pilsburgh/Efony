@@ -8,90 +8,91 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class TradesUpdate implements EvonyPacket {
-public Integer updateType = null;
-public Integer castleId = null;
-public TradeBean tradeBean = null;
 
-public TradesUpdate(ASObject aso) {
+    public Integer updateType = null;
+    public Integer castleId = null;
+    public TradeBean tradeBean = null;
 
-if(aso.get("updateType") != null) {
-this.updateType = (Integer) aso.get("updateType");
-}
+    public TradesUpdate(ASObject aso) {
 
-if(aso.get("castleId") != null) {
-this.castleId = (Integer) aso.get("castleId");
-}
+        if (aso.get("updateType") != null) {
+            this.updateType = (Integer) aso.get("updateType");
+        }
 
-if(aso.get("tradeBean") != null) {
-this.tradeBean = new TradeBean((ASObject) aso.get("tradeBean"));
-}
-}
+        if (aso.get("castleId") != null) {
+            this.castleId = (Integer) aso.get("castleId");
+        }
 
-public TradesUpdate() {
-}
+        if (aso.get("tradeBean") != null) {
+            this.tradeBean = new TradeBean((ASObject) aso.get("tradeBean"));
+        }
+    }
 
-@Override
-public TradesUpdate clone() {
-TradesUpdate clone = new TradesUpdate();
+    public TradesUpdate() {
+    }
 
-if(this.updateType != null) {
-clone.setUpdateType(this.updateType);
-}
+    @Override
+    public TradesUpdate clone() {
+        TradesUpdate clone = new TradesUpdate();
 
-if(this.castleId != null) {
-clone.setCastleId(this.castleId);
-}
+        if (this.updateType != null) {
+            clone.setUpdateType(this.updateType);
+        }
 
-if(this.tradeBean != null) {
-clone.setTradeBean(this.tradeBean);
-}
+        if (this.castleId != null) {
+            clone.setCastleId(this.castleId);
+        }
 
-return clone;
-}
+        if (this.tradeBean != null) {
+            clone.setTradeBean(this.tradeBean);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.updateType != null) {
-aso.put("updateType", updateType);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.castleId != null) {
-aso.put("castleId", castleId);
-}
+        if (this.updateType != null) {
+            aso.put("updateType", updateType);
+        }
 
-if(this.tradeBean != null) {
-aso.put("tradeBean", tradeBean.toASObject());
-}
+        if (this.castleId != null) {
+            aso.put("castleId", castleId);
+        }
 
-return aso;
-}
+        if (this.tradeBean != null) {
+            aso.put("tradeBean", tradeBean.toASObject());
+        }
 
-public Integer getUpdateType() {
-return updateType;
-}
+        return aso;
+    }
 
-public void setUpdateType(Integer updateType) {
-this.updateType = updateType;
-}
+    public Integer getUpdateType() {
+        return updateType;
+    }
 
-public Integer getCastleId() {
-return castleId;
-}
+    public void setUpdateType(Integer updateType) {
+        this.updateType = updateType;
+    }
 
-public void setCastleId(Integer castleId) {
-this.castleId = castleId;
-}
+    public Integer getCastleId() {
+        return castleId;
+    }
 
-public TradeBean getTradeBean() {
-return tradeBean;
-}
+    public void setCastleId(Integer castleId) {
+        this.castleId = castleId;
+    }
 
-public void setTradeBean(TradeBean tradeBean) {
-this.tradeBean = tradeBean;
-}
+    public TradeBean getTradeBean() {
+        return tradeBean;
+    }
+
+    public void setTradeBean(TradeBean tradeBean) {
+        this.tradeBean = tradeBean;
+    }
 }

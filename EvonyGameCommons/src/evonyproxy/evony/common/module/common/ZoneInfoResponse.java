@@ -8,147 +8,148 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ZoneInfoResponse implements EvonyPacket {
-public Double packageId = null;
-public String msg = null;
-public ArrayList<ZoneInfoBean> zones = null;
-public String errorMsg = null;
-public Integer ok = null;
 
-public ZoneInfoResponse(ASObject aso) {
-zones = new ArrayList<ZoneInfoBean>();
+    public Double packageId = null;
+    public String msg = null;
+    public ArrayList<ZoneInfoBean> zones = null;
+    public String errorMsg = null;
+    public Integer ok = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public ZoneInfoResponse(ASObject aso) {
+        zones = new ArrayList<ZoneInfoBean>();
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("zones") != null) {
-Object[] objArr = (Object[]) aso.get("zones");
-for(int j = 0; j < objArr.length; j++) {
-zones.add(new ZoneInfoBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
+        if (aso.get("zones") != null) {
+            Object[] objArr = (Object[]) aso.get("zones");
+            for (int j = 0; j < objArr.length; j++) {
+                zones.add(new ZoneInfoBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
 
-public ZoneInfoResponse() {
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
+    }
 
-@Override
-public ZoneInfoResponse clone() {
-ZoneInfoResponse clone = new ZoneInfoResponse();
+    public ZoneInfoResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public ZoneInfoResponse clone() {
+        ZoneInfoResponse clone = new ZoneInfoResponse();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.zones != null) {
-ArrayList tmpArrLst = new ArrayList<ZoneInfoBean>();
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-for(Object bean : zones) {
-ZoneInfoBean tmpBean = (ZoneInfoBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setZones(tmpArrLst);
-}
+        if (this.zones != null) {
+            ArrayList tmpArrLst = new ArrayList<ZoneInfoBean>();
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+            for (Object bean : zones) {
+                ZoneInfoBean tmpBean = (ZoneInfoBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setZones(tmpArrLst);
+        }
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-return clone;
-}
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.zones != null) {
-ArrayList al = new ArrayList();
-for(Object obj : zones) {
-EvonyPacket as = (EvonyPacket) obj;
-al.add(as.toASObject());
-}
-aso.put("zones", al);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.zones != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : zones) {
+                EvonyPacket as = (EvonyPacket) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("zones", al);
+        }
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-return aso;
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public ArrayList getZones() {
-return zones;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setZones(ArrayList zones) {
-this.zones = zones;
-}
+    public ArrayList getZones() {
+        return zones;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setZones(ArrayList zones) {
+        this.zones = zones;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
+
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 }

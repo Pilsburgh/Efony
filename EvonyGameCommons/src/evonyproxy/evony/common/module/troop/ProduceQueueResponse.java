@@ -8,147 +8,148 @@ import flex.messaging.io.ArrayCollection;
 import evonyproxy.evony.common.beans.*;
 
 /**
-* @version .02
-* @author Michael Archibald
-*/
+ * @version .02
+ * @author Michael Archibald
+ */
 public class ProduceQueueResponse implements ASObjectable {
-public Double packageId = null;
-public Integer ok = null;
-public ArrayList<AllProduceBean> allProduceQueue = null;
-public String msg = null;
-public String errorMsg = null;
 
-public ProduceQueueResponse(ASObject aso) {
-allProduceQueue = new ArrayList<AllProduceBean>();
+    public Double packageId = null;
+    public Integer ok = null;
+    public ArrayList<AllProduceBean> allProduceQueue = null;
+    public String msg = null;
+    public String errorMsg = null;
 
-if(aso.get("packageId") != null) {
-this.packageId = (Double) aso.get("packageId");
-}
+    public ProduceQueueResponse(ASObject aso) {
+        allProduceQueue = new ArrayList<AllProduceBean>();
 
-if(aso.get("ok") != null) {
-this.ok = (Integer) aso.get("ok");
-}
+        if (aso.get("packageId") != null) {
+            this.packageId = (Double) aso.get("packageId");
+        }
 
-if(aso.get("allProduceQueue") != null) {
-Object[] objArr = (Object[]) aso.get("allProduceQueue");
-for(int j = 0; j < objArr.length; j++) {
-allProduceQueue.add(new AllProduceBean((ASObject) objArr[j]));
-}
-}
+        if (aso.get("ok") != null) {
+            this.ok = (Integer) aso.get("ok");
+        }
 
-if(aso.get("msg") != null) {
-this.msg = (String) aso.get("msg");
-}
+        if (aso.get("allProduceQueue") != null) {
+            Object[] objArr = (Object[]) aso.get("allProduceQueue");
+            for (int j = 0; j < objArr.length; j++) {
+                allProduceQueue.add(new AllProduceBean((ASObject) objArr[j]));
+            }
+        }
 
-if(aso.get("errorMsg") != null) {
-this.errorMsg = (String) aso.get("errorMsg");
-}
-}
+        if (aso.get("msg") != null) {
+            this.msg = (String) aso.get("msg");
+        }
 
-public ProduceQueueResponse() {
-}
+        if (aso.get("errorMsg") != null) {
+            this.errorMsg = (String) aso.get("errorMsg");
+        }
+    }
 
-@Override
-public ProduceQueueResponse clone() {
-ProduceQueueResponse clone = new ProduceQueueResponse();
+    public ProduceQueueResponse() {
+    }
 
-if(this.packageId != null) {
-clone.setPackageId(this.packageId);
-}
+    @Override
+    public ProduceQueueResponse clone() {
+        ProduceQueueResponse clone = new ProduceQueueResponse();
 
-if(this.ok != null) {
-clone.setOk(this.ok);
-}
+        if (this.packageId != null) {
+            clone.setPackageId(this.packageId);
+        }
 
-if(this.allProduceQueue != null) {
-ArrayList tmpArrLst = new ArrayList<AllProduceBean>();
+        if (this.ok != null) {
+            clone.setOk(this.ok);
+        }
 
-for(Object bean : allProduceQueue) {
-AllProduceBean tmpBean = (AllProduceBean) bean;
-tmpArrLst.add(tmpBean.clone());
-}
-clone.setAllProduceQueue(tmpArrLst);
-}
+        if (this.allProduceQueue != null) {
+            ArrayList tmpArrLst = new ArrayList<AllProduceBean>();
 
-if(this.msg != null) {
-clone.setMsg(this.msg);
-}
+            for (Object bean : allProduceQueue) {
+                AllProduceBean tmpBean = (AllProduceBean) bean;
+                tmpArrLst.add(tmpBean.clone());
+            }
+            clone.setAllProduceQueue(tmpArrLst);
+        }
 
-if(this.errorMsg != null) {
-clone.setErrorMsg(this.errorMsg);
-}
+        if (this.msg != null) {
+            clone.setMsg(this.msg);
+        }
 
-return clone;
-}
+        if (this.errorMsg != null) {
+            clone.setErrorMsg(this.errorMsg);
+        }
 
-public ASObject toASObject() {
-ASObject aso = new ASObject();
+        return clone;
+    }
 
-if(this.packageId != null) {
-aso.put("packageId", packageId);
-}
+    public ASObject toASObject() {
+        ASObject aso = new ASObject();
 
-if(this.ok != null) {
-aso.put("ok", ok);
-}
+        if (this.packageId != null) {
+            aso.put("packageId", packageId);
+        }
 
-if(this.allProduceQueue != null) {
-ArrayList al = new ArrayList();
-for(Object obj : allProduceQueue) {
-ASObjectable as = (ASObjectable) obj;
-al.add(as.toASObject());
-}
-aso.put("allProduceQueue", al);
-}
+        if (this.ok != null) {
+            aso.put("ok", ok);
+        }
 
-if(this.msg != null) {
-aso.put("msg", msg);
-}
+        if (this.allProduceQueue != null) {
+            ArrayList al = new ArrayList();
+            for (Object obj : allProduceQueue) {
+                ASObjectable as = (ASObjectable) obj;
+                al.add(as.toASObject());
+            }
+            aso.put("allProduceQueue", al);
+        }
 
-if(this.errorMsg != null) {
-aso.put("errorMsg", errorMsg);
-}
+        if (this.msg != null) {
+            aso.put("msg", msg);
+        }
 
-return aso;
-}
+        if (this.errorMsg != null) {
+            aso.put("errorMsg", errorMsg);
+        }
 
-public Double getPackageId() {
-return packageId;
-}
+        return aso;
+    }
 
-public void setPackageId(Double packageId) {
-this.packageId = packageId;
-}
+    public Double getPackageId() {
+        return packageId;
+    }
 
-public Integer getOk() {
-return ok;
-}
+    public void setPackageId(Double packageId) {
+        this.packageId = packageId;
+    }
 
-public void setOk(Integer ok) {
-this.ok = ok;
-}
+    public Integer getOk() {
+        return ok;
+    }
 
-public ArrayList getAllProduceQueue() {
-return allProduceQueue;
-}
+    public void setOk(Integer ok) {
+        this.ok = ok;
+    }
 
-public void setAllProduceQueue(ArrayList allProduceQueue) {
-this.allProduceQueue = allProduceQueue;
-}
+    public ArrayList getAllProduceQueue() {
+        return allProduceQueue;
+    }
 
-public String getMsg() {
-return msg;
-}
+    public void setAllProduceQueue(ArrayList allProduceQueue) {
+        this.allProduceQueue = allProduceQueue;
+    }
 
-public void setMsg(String msg) {
-this.msg = msg;
-}
+    public String getMsg() {
+        return msg;
+    }
 
-public String getErrorMsg() {
-return errorMsg;
-}
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
-public void setErrorMsg(String errorMsg) {
-this.errorMsg = errorMsg;
-}
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 }
