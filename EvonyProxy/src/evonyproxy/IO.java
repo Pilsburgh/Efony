@@ -21,8 +21,12 @@ import evonyproxy.AMF;
 
 /**
  * Handles communcations between clients and server.
+ * Looking back on this, it needs to be reprogrammed so that it is loosley
+ * coupled. Instead of having how the server and client connections communicate,
+ * I would rather use an observer pattern so that whatever client can listen
+ * to whatever server it wants.
  * @version .01
- * @author HP_Administrator
+ * @author Michael Archibald
  */
 public class IO implements Sender  {
     protected Logger log;

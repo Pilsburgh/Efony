@@ -13,6 +13,9 @@ import java.util.HashMap;
 /**
  * @version .01
  * @author Michael Archibald
+ * This is an attempt to make Efony work using the reflection design pattern.
+ * It is more closely related to how the actual Evony client works, however,
+ * I never implemented it.
  */
 public class Dispatch implements EConst {
 

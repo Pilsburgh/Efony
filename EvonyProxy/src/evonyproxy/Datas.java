@@ -20,6 +20,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * @version .01
  * @author Michael Archibald
+ * I appear to have used this class to encapsulate the methods that listen for
+ * the Flash policy that is transmitted whenever you start a Flash program, as
+ * well as the Evony login response. I think I did this to allow for the
+ * program to operate under several Evony user contexts at once. The context
+ * being a particular Evony account on a particular server.
  */
 public class Datas implements PolicyListener, PolicyObserver {
     protected IO io;

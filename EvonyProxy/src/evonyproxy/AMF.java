@@ -43,7 +43,12 @@ import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
  * @version .01
- * @author Michael Archibald
+ * @author Michael Archibald (archibald@choomogo.com)
+ * Serializes and deserializes Java Beans to Action Message Format.
+ * AMF is the standard serialisation format for Flash and ActionScript.
+ * 
+ * After looking back at the code I wrote a long time ago, this needs to be
+ * refactored into smaller classes.
  */
 public class AMF implements AmfListener, Serializer, ConsoleObserver {
     public static final String VERSION_REQUEST = "gameClient.version";
