@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-OpenIDE-Module: evonyproxy.common.custom
-OpenIDE-Module-Layer: evonyproxy/common/custom/layer.xml
-OpenIDE-Module-Localizing-Bundle: evonyproxy/common/custom/Bundle.properties
-OpenIDE-Module-Specification-Version: 1.0
-

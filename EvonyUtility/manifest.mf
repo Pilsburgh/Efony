@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-OpenIDE-Module: evonyproxy.util
-OpenIDE-Module-Localizing-Bundle: evonyproxy/util/Bundle.properties
-OpenIDE-Module-Specification-Version: 1.0
-
