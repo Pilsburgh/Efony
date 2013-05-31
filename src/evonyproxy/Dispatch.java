@@ -4,8 +4,8 @@
  */
 package evonyproxy;
 
-import evonyproxy.constants.EConst;
-import evonyproxy.constants.ResponseConstants;
+import evonyproxy.evony.common.constants.EConst;
+import evonyproxy.evony.common.constants.ResponseConstants;
 import flex.messaging.io.amf.ASObject;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -13,9 +13,9 @@ import java.util.HashMap;
 /**
  * @version .01
  * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
+ * This is an attempt to make Efony work using the reflection design pattern.
+ * It is more closely related to how the actual Evony client works, however,
+ * I never implemented it.
  */
 public class Dispatch implements EConst {
 

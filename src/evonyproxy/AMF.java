@@ -4,23 +4,28 @@
  */
 package evonyproxy;
 
-import evonyproxy.common.command.CmdFactory;
-import evonyproxy.common.command.QuestCommands;
-import evonyproxy.common.beans.CastleBean;
-import evonyproxy.common.command.CastleCommands;
-import evonyproxy.common.command.TechCommand;
+import evonyproxy.common.Serializer;
+import evonyproxy.common.EvpUtil;
 import evonyproxy.common.custom.LoginRequest;
-import evonyproxy.common.module.tech.AvailableResearchListResponse;
-import evonyproxy.common.server.events.BuildComplate;
-import evonyproxy.common.server.events.LoginResponse;
+import evonyproxy.connectors.EvonyPolicy;
+import evonyproxy.connectors.AbstractEvony;
+import evonyproxy.connectors.EvonyServer;
+import evonyproxy.connectors.EvonyClient;
+import evonyproxy.evony.command.CommandFactory;
+import evonyproxy.evony.command.QuestCommands;
+import evonyproxy.evony.command.CastleCommands;
+import evonyproxy.evony.command.TechCommand;
+import evonyproxy.evony.common.server.events.BuildComplate;
+import evonyproxy.evony.common.server.events.LoginResponse;
 import evonyproxy.console.Console;
 import evonyproxy.console.event.ConsoleAdapter;
 import evonyproxy.console.event.ConsoleRequestEvent;
 import evonyproxy.console.event.ConsoleListener;
 import evonyproxy.console.event.ConsoleResponseEvent;
-import evonyproxy.constants.EConst;
-import evonyproxy.event.AmfDataEvent;
-import evonyproxy.event.AmfListener;
+import evonyproxy.evony.common.constants.EConst;
+import evonyproxy.connectors.event.AmfDataEvent;
+import evonyproxy.connectors.event.AmfListener;
+import evonyproxy.console.event.ConsoleObserver;
 import flex.messaging.io.SerializationContext;
 import flex.messaging.io.UnknownTypeException;
 import flex.messaging.io.amf.ASObject;
@@ -38,12 +43,14 @@ import sun.jkernel.ByteArrayToFromHexDigits;
 
 /**
  * @version .01
- * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
+ * @author Michael Archibald (archibald@choomogo.com)
+ * Serializes and deserializes Java Beans to Action Message Format.
+ * AMF is the standard serialisation format for Flash and ActionScript.
+ * 
+ * After looking back at the code I wrote a long time ago, this needs to be
+ * refactored into smaller classes.
  */
-public class AMF implements AmfListener, Serializer {
+public class AMF implements AmfListener, Serializer, ConsoleObserver {
     public static final String VERSION_REQUEST = "gameClient.version";
     public static final String LOGIN_REQUEST = "login";
     public static final String COMMON_PRIVATE_CHAT = "common.privateChat";
@@ -61,7 +68,7 @@ public class AMF implements AmfListener, Serializer {
     protected List<ConsoleListener> listeners = new ArrayList();
     protected Dispatch dispatch;
     protected int asoLength;
-    protected CmdFactory command = CmdFactory.getInstance();
+    protected CommandFactory command = CommandFactory.getInstance();
     protected Map<Integer, String> castleNames = new HashMap<Integer, String>();
     protected Map<Integer, String> bldTypes = new HashMap<Integer, String>();
     protected Map<Integer, String> techTypes = new HashMap<Integer, String>();
@@ -95,7 +102,8 @@ public class AMF implements AmfListener, Serializer {
         amfi = new Amf3Input(context);
         amfo = new Amf3Output(context);
 
-        console = new Console(this);
+        console = new Console();
+        makeConsoleObserveThis();
         observeConsole();
 
         event = null;
@@ -108,6 +116,16 @@ public class AMF implements AmfListener, Serializer {
 
         populateBldType();
         populateTechType();
+    }
+
+    private void makeConsoleObserveThis() {
+        this.addConsoleListener(
+                new ConsoleAdapter() {
+                    @Override
+                    public void onConsoleRequestEvent(ConsoleRequestEvent event) {
+                        console.read(event.msg());
+                    }
+                });
     }
 
     private void populateBldType() {
@@ -176,6 +194,17 @@ public class AMF implements AmfListener, Serializer {
         parse(event.data());
     }
 
+    private void onMalformedPacketException() {
+            if(event.getSource().getClass().getName().equals("EvonyServer")) {
+                io.passDataToClients(event.data());
+            }
+            else {
+//                if(event.getSource().getClass().getName().equals("EvonyClient")) {
+                    io.passDataToServer(event.data());
+//                }
+            }
+    }
+
     protected void parse(byte[] data) {
         try {
             asObject = null;
@@ -228,6 +257,7 @@ public class AMF implements AmfListener, Serializer {
 //                    + EvpUtil.byteArrayToChars(mpe.getData());
 //            System.out.println(tmpStr);
             System.out.println(mpe.getMessage());
+            onMalformedPacketException();
         } catch(IOException e) {
         } catch(ClassNotFoundException cnfe) {
             System.out.println(cnfe.getMessage());
@@ -236,6 +266,8 @@ public class AMF implements AmfListener, Serializer {
             amfi.reset();
             System.out.println(event.getSource().getClass().getName());
             System.out.println(e.getMessage() + "\n" + e.getStackTrace().toString() + "\n");
+            /* use onMalformedPacketException because its also needed in this case */
+            onMalformedPacketException();
         } catch(ClassCastException e) {
             System.out.println(e.getMessage()
                     + "\nThis was probably caused by a bean using the wrong type for"
@@ -274,7 +306,8 @@ public class AMF implements AmfListener, Serializer {
                     }
                 }
             } catch(MalformedPacketException mpe) {
-                System.out.println("aso.get(\"cmd\") == null");
+                System.out.println(mpe.getMessage());
+                onMalformedPacketException();
 //                mpe.printStackTrace();
             } catch(NullPointerException npe) {
                 System.out.println(npe.getMessage());
@@ -306,7 +339,8 @@ public class AMF implements AmfListener, Serializer {
                         }
                     }
                 } catch(MalformedPacketException mpe) {
-                    System.out.println("aso.get(\"cmd\") == null");
+                    System.out.println(mpe.getMessage());
+                    onMalformedPacketException();
 //                    mpe.printStackTrace();
                 }
             }

@@ -5,12 +5,11 @@
 
 package evonyproxy;
 
+import evonyproxy.connectors.AbstractEvony;
+
 /**
  * @version .01
  * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
  */
 public class MalformedPacketException extends Exception {
     private static final String MSG = "Recieved malformed packet from ";

@@ -4,24 +4,31 @@
  */
 package evonyproxy;
 
+import evonyproxy.evony.common.server.events.LoginResponse;
+import evonyproxy.common.Sender;
+import evonyproxy.common.LoggerFactory;
 import evonyproxy.common.custom.LoginRequest;
-import evonyproxy.common.server.events.LoginResponse;
+import evonyproxy.connectors.EvonyPolicy;
+import evonyproxy.connectors.EvonyServer;
+import evonyproxy.connectors.EvonyClient;
 import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.*;
 import sun.jkernel.ByteArrayToFromHexDigits;
+import evonyproxy.AMF;
 
 /**
+ * Handles communcations between clients and server.
+ * Looking back on this, it needs to be reprogrammed so that it is loosley
+ * coupled. Instead of having how the server and client connections communicate,
+ * I would rather use an observer pattern so that whatever client can listen
+ * to whatever server it wants.
  * @version .01
  * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
- * Handles communcations between clients and server.
  */
-public class IO implements Sender {
+public class IO implements Sender  {
     protected Logger log;
     protected Datas dat;
     protected EvonyServer server;
@@ -168,33 +175,85 @@ public class IO implements Sender {
         this.dat = dat;
     }
 
-    /**
-     * @return dat.getLoginResponse()
-     */
-    public LoginResponse getLoginResponse() {
-        return dat.getLoginResponse();
+    public void setVersionRequest(String versionRequest) {
+        dat.setVersionRequest(versionRequest);
     }
 
-    /**
-     * dat.setLoginResponse
-     * @param loginResponse
-     */
-    public void setLoginResponse(LoginResponse loginResponse) {
-        dat.setLoginResponse(loginResponse);
+    public void setPolicyResponse(String policyResponse) {
+        dat.setPolicyResponse(policyResponse);
     }
 
-    /**
-     * dat.setLoginRequest
-     * @param loginRequest
-     */
+    public void setPolicyResponse(byte[] policyResponse) {
+        dat.setPolicyResponse(policyResponse);
+    }
+
+    public void setPolicyRequest(byte[] policyRequest) {
+        dat.setPolicyRequest(policyRequest);
+    }
+
+    public void setPolicyRequest(String policyRequest) {
+        dat.setPolicyRequest(policyRequest);
+    }
+
+    public void setLoginResponse(LoginResponse lr) {
+        dat.setLoginResponse(lr);
+    }
+
     public void setLoginRequest(LoginRequest loginRequest) {
         dat.setLoginRequest(loginRequest);
     }
 
-    /**
-     * @return dat.getLoginRequest()
-     */
+    public void setHasPolicyResponse(boolean policyFileRecieved) {
+        dat.setHasPolicyResponse(policyFileRecieved);
+    }
+
+    public void setHasPolicyRequest(boolean recievedPolicyRequest) {
+        dat.setHasPolicyRequest(recievedPolicyRequest);
+    }
+
+    public boolean hasPolicyResponse() {
+        return dat.hasPolicyResponse();
+    }
+
+    public boolean hasPolicyRequest() {
+        return dat.hasPolicyRequest();
+    }
+
+    public boolean hasLoginResponse() {
+        return dat.hasLoginResponse();
+    }
+
+    public boolean hasLoginRequest() {
+        return dat.hasLoginRequest();
+    }
+
+    public String getVersionRequest() {
+        return dat.getVersionRequest();
+    }
+
+    public byte[] getPolicyResponseBytes() {
+        return dat.getPolicyResponseBytes();
+    }
+
+    public String getPolicyResponse() {
+        return dat.getPolicyResponse();
+    }
+
+    public byte[] getPolicyRequestBytes() {
+        return dat.getPolicyRequestBytes();
+    }
+
+    public String getPolicyRequest() {
+        return dat.getPolicyRequest();
+    }
+
+    public LoginResponse getLoginResponse() {
+        return dat.getLoginResponse();
+    }
+
     public LoginRequest getLoginRequest() {
         return dat.getLoginRequest();
     }
+
+
 }

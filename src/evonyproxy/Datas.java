@@ -4,18 +4,14 @@
  */
 package evonyproxy;
 
-import evonyproxy.common.beans.CastleBean;
 import evonyproxy.common.custom.LoginRequest;
-import evonyproxy.common.server.events.LoginResponse;
-import evonyproxy.constants.EConst;
-import evonyproxy.event.PolicyListener;
-import evonyproxy.event.PolicyRequestEvent;
-import evonyproxy.event.PolicyResponseEvent;
-import flex.messaging.io.SerializationContext;
-import flex.messaging.io.amf.ASObject;
-import flex.messaging.io.amf.Amf3Input;
-import java.io.ByteArrayInputStream;
-import java.util.ArrayList;
+import evonyproxy.connectors.EvonyServer;
+import evonyproxy.evony.common.beans.CastleBean;
+import evonyproxy.evony.common.server.events.LoginResponse;
+import evonyproxy.connectors.event.PolicyListener;
+import evonyproxy.connectors.event.PolicyObserver;
+import evonyproxy.connectors.event.PolicyRequestEvent;
+import evonyproxy.connectors.event.PolicyResponseEvent;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,11 +20,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * @version .01
  * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
+ * I appear to have used this class to encapsulate the methods that listen for
+ * the Flash policy that is transmitted whenever you start a Flash program, as
+ * well as the Evony login response. I think I did this to allow for the
+ * program to operate under several Evony user contexts at once. The context
+ * being a particular Evony account on a particular server.
  */
-public class Datas implements PolicyListener {
+public class Datas implements PolicyListener, PolicyObserver {
     protected IO io;
     boolean debug;
     protected String policyRequest, policyResponse;
@@ -167,6 +165,7 @@ public class Datas implements PolicyListener {
         for(PolicyListener listener : policyResponseListeners) {
             listener.onPolicyResponse(pre);
         }
+        policyResponseListeners = new CopyOnWriteArrayList<PolicyListener>();
     }
 
     public void setDebug(boolean debug) {

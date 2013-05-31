@@ -4,15 +4,16 @@
  */
 package evonyproxy;
 
+import evonyproxy.connectors.EvonyPolicy;
+import evonyproxy.connectors.EvonyConnectorFactory;
+import evonyproxy.connectors.EvonyServer;
+import evonyproxy.connectors.EvonyClient;
 import java.net.*;
 import java.io.*;
 
 /**
- * @version .01
- * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
+ * Initialises Efony. Appears to be hard coded.
+ * @author HP_Administrator
  */
 public class Main {
 
@@ -22,7 +23,9 @@ public class Main {
     public static void main(String[] args) {
         boolean verbose = false;
 
+        /* IO is used to allow the EvonyConnectors to communicate */
         IO io = new IO(verbose);
+        /* Datas is a context containing the Flash Policy and Evony Login info */
         Datas dat = new Datas(io);
         io.setDat(dat);
         
@@ -32,11 +35,18 @@ public class Main {
 //
 //        Thread serverThread = new Thread(server);
 
+        /* Starts a connection to an Evony Server */
         Thread server = new Thread(new EvonyServer(io,verbose,443,"64.156.195.60"),"EvonyServer");
         server.start();
 
-        Thread policyConnector = new Thread(new EvonyConnector(io,verbose, EvonyPolicy.class.getName()), "policyConnector");
-        Thread clientConnector = new Thread(new EvonyConnector(io,verbose, EvonyClient.class.getName()), "clientConnector");
+        /* Starts a policy listener that listens for the policy that all 
+         * flash programs transmit before they start up.
+         */
+        Thread policyConnector = new Thread(new EvonyConnectorFactory(io,verbose, EvonyPolicy.class.getName()), "policyConnector");
+        /* Listens for Evony Clients. Their configurations need to be modified
+         * to point to a local port.
+         */
+        Thread clientConnector = new Thread(new EvonyConnectorFactory(io,verbose, EvonyClient.class.getName()), "clientConnector");
 
 
 //        serverThread.start();

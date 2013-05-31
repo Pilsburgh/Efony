@@ -4,8 +4,6 @@
  */
 package evonyproxy.console;
 
-import evonyproxy.AMF;
-import evonyproxy.IO;
 import evonyproxy.console.event.ConsoleAdapter;
 import evonyproxy.console.event.ConsoleRequestEvent;
 import evonyproxy.console.event.ConsoleListener;
@@ -14,11 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Listens for certain Events and notifys the client through the games
+ * chat interface. It also allows a user to send commands through the games
+ * chat interface.
  * @version .01
  * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
  */
 public class Console implements ConsoleConstants {
     protected boolean debug = false, verbose = false;
@@ -33,30 +31,30 @@ public class Console implements ConsoleConstants {
     public Console() {
     }
 
-    public Console(AMF amf) {
-        observeAmf(amf);
-    }
+//    public Console(AMF amf) {
+//        observeAmf(amf);
+//    }
 
     public Console(boolean verbose) {
         this.verbose = verbose;
     }
 
-    public Console(AMF amf, boolean verbose) {
-        this.verbose = verbose;
-        observeAmf(amf);
-    }
+//    public Console(AMF amf, boolean verbose) {
+//        this.verbose = verbose;
+//        observeAmf(amf);
+//    }
 
-    public void observeAmf(AMF amf) {
-        amf.addConsoleListener(
-                new ConsoleAdapter() {
-                    @Override
-                    public void onConsoleRequestEvent(ConsoleRequestEvent event) {
-                        read(event.msg());
-                    }
-                });
-    }
+//    public void observeAmf(AMF amf) {
+//        amf.addConsoleListener(
+//                new ConsoleAdapter() {
+//                    @Override
+//                    public void onConsoleRequestEvent(ConsoleRequestEvent event) {
+//                        read(event.msg());
+//                    }
+//                });
+//    }
 
-    protected void read(String msg) {
+    public void read(String msg) {
         splitSpace = msg.split(" ");
         for(int i = 0; i < splitSpace.length; i++) {
             splEq = splitSpace[i].split("=");
@@ -77,7 +75,7 @@ public class Console implements ConsoleConstants {
         for(i += 1; i < splitSpace.length; i++) {
             str += splitSpace[i] + " ";
         }
-        str.trim();
+        str = str.trim();
         fireConsoleResponseEvent(formatResponse(str));
     }
 

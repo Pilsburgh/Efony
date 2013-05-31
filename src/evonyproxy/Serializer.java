@@ -8,9 +8,7 @@ package evonyproxy;
 /**
  * @version .01
  * @author Michael Archibald
- * @deprecated
- * This only exists for reverse compatability. Use the modularized version of
- * this class instead.
+ * Made this so that the client command senders know what can serialize an ASObject
  */
 public interface Serializer {
     byte[] serialize(String cmd, Object data);
