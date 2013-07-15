@@ -42,18 +42,18 @@ public class Main {
 
         /* Starts a connection to an Evony Server */
         Thread server = null;
-        if (args[0] != null) {
-            try {
-                server = new Thread(new EvonyServer(io, verbose, 443, args[0]), "EvonyServer");
-                server.start();
-            } catch (Exception ioe) {
-                log.log(Level.SEVERE, "{0}is not a valid IP for an Evony server.", args[0]);
-            }
-        } else {
+//        if (args[0] != null) {
+//            try {
+//                server = new Thread(new EvonyServer(io, verbose, 443, args[0]), "EvonyServer");
+//                server.start();
+//            } catch (Exception ioe) {
+//                log.log(Level.SEVERE, "{0}is not a valid IP for an Evony server.", args[0]);
+//            }
+//        } else {
             /* If you want to hard code an Evony server, do it here */
-            server = new Thread(new EvonyServer(io, verbose, 443, "64.156.195.60"), "EvonyServer");
+            server = new Thread(new EvonyServer(io, verbose, 443, "199.127.58.163"), "EvonyServer");
             server.start();
-        }
+//        }
 
         /* Starts a policy listener that listens for the policy that all 
          * flash programs transmit before they start up.

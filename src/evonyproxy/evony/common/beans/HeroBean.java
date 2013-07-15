@@ -12,43 +12,43 @@ import flex.messaging.io.ArrayCollection;
  */
 public class HeroBean implements EvonyPacket {
 
-    private Integer stratagem = null;
-    private Integer experience = null;
-    private Integer loyalty = null;
-    private Integer fieldtype = null;
+    private Object stratagem = null;
+    private Object experience = null;
+    private Object loyalty = null;
+    private Object fieldtype = null;
     private String infro = null;
-    private Integer defence = null;
-    private Integer management = null;
-    private Integer politics = null;
-    private Integer managementBuffAdded = null;
-    private Integer speed = null;
-    private Integer morale = null;
-    private Integer power = null;
-    private Integer powerBuffAdded = null;
-    private Integer id = null;
+    private Object defence = null;
+    private Object management = null;
+    private Object politics = null;
+    private Object managementBuffAdded = null;
+    private Object speed = null;
+    private Object morale = null;
+    private Object power = null;
+    private Object powerBuffAdded = null;
+    private Object id = null;
     private Boolean sex = null;
-    private Integer npc_id = null;
+    private Object npc_id = null;
     private ArrayList<BuffBean> buffs = null;
     private String facebook_id = null;
-    private Integer remainPoint = null;
+    private Object remainPoint = null;
     private String logoUrl = null;
-    private Integer stratagemAdded = null;
-    private Integer maxStrength = null;
-    private Integer intelligence = null;
-    private Integer leadershipAdded = null;
-    private Integer status = null;
+    private Object stratagemAdded = null;
+    private Object maxStrength = null;
+    private Object intelligence = null;
+    private Object leadershipAdded = null;
+    private Object status = null;
     private String name = null;
-    private Integer stratagemBuffAdded = null;
-    private Integer level = null;
-    private Integer managementAdded = null;
-    private Integer upgradeExp = null;
-    private Integer isHero = null;
-    private Integer powerAdded = null;
-    private Integer leadership = null;
-    private Integer stamina = null;
+    private Object stratagemBuffAdded = null;
+    private Object level = null;
+    private Object managementAdded = null;
+    private Object upgradeExp = null;
+    private Object isHero = null;
+    private Object powerAdded = null;
+    private Object leadership = null;
+    private Object stamina = null;
     private String itemId = null;
-    private Integer attack = null;
-    private Integer itemAmount = null;
+    private Object attack = null;
+    private Object itemAmount = null;
     private ArrayList<EquipmentBean> equipmentbean = null;
 
     public HeroBean(ASObject aso) {
@@ -56,19 +56,19 @@ public class HeroBean implements EvonyPacket {
         equipmentbean = new ArrayList<EquipmentBean>();
 
         if (aso.get("stratagem") != null) {
-            this.stratagem = (Integer) aso.get("stratagem");
+            this.stratagem =  aso.get("stratagem");
         }
 
         if (aso.get("experience") != null) {
-            this.experience = (Integer) aso.get("experience");
+            this.experience =  aso.get("experience");
         }
 
         if (aso.get("loyalty") != null) {
-            this.loyalty = (Integer) aso.get("loyalty");
+            this.loyalty =  aso.get("loyalty");
         }
 
         if (aso.get("fieldtype") != null) {
-            this.fieldtype = (Integer) aso.get("fieldtype");
+            this.fieldtype =  aso.get("fieldtype");
         }
 
         if (aso.get("infro") != null) {
@@ -76,39 +76,39 @@ public class HeroBean implements EvonyPacket {
         }
 
         if (aso.get("defence") != null) {
-            this.defence = (Integer) aso.get("defence");
+            this.defence =  aso.get("defence");
         }
 
         if (aso.get("management") != null) {
-            this.management = (Integer) aso.get("management");
+            this.management =  aso.get("management");
         }
 
         if (aso.get("politics") != null) {
-            this.politics = (Integer) aso.get("politics");
+            this.politics =  aso.get("politics");
         }
 
         if (aso.get("managementBuffAdded") != null) {
-            this.managementBuffAdded = (Integer) aso.get("managementBuffAdded");
+            this.managementBuffAdded =  aso.get("managementBuffAdded");
         }
 
         if (aso.get("speed") != null) {
-            this.speed = (Integer) aso.get("speed");
+            this.speed =  aso.get("speed");
         }
 
         if (aso.get("morale") != null) {
-            this.morale = (Integer) aso.get("morale");
+            this.morale =  aso.get("morale");
         }
 
         if (aso.get("power") != null) {
-            this.power = (Integer) aso.get("power");
+            this.power =  aso.get("power");
         }
 
         if (aso.get("powerBuffAdded") != null) {
-            this.powerBuffAdded = (Integer) aso.get("powerBuffAdded");
+            this.powerBuffAdded =  aso.get("powerBuffAdded");
         }
 
         if (aso.get("id") != null) {
-            this.id = (Integer) aso.get("id");
+            this.id =  aso.get("id");
         }
 
         if (aso.get("sex") != null) {
@@ -116,7 +116,7 @@ public class HeroBean implements EvonyPacket {
         }
 
         if (aso.get("npc_id") != null) {
-            this.npc_id = (Integer) aso.get("npc_id");
+            this.npc_id =  aso.get("npc_id");
         }
 
         if (aso.get("buffs") != null) {
@@ -131,7 +131,7 @@ public class HeroBean implements EvonyPacket {
         }
 
         if (aso.get("remainPoint") != null) {
-            this.remainPoint = (Integer) aso.get("remainPoint");
+            this.remainPoint =  aso.get("remainPoint");
         }
 
         if (aso.get("logoUrl") != null) {
@@ -139,23 +139,23 @@ public class HeroBean implements EvonyPacket {
         }
 
         if (aso.get("stratagemAdded") != null) {
-            this.stratagemAdded = (Integer) aso.get("stratagemAdded");
+            this.stratagemAdded =  aso.get("stratagemAdded");
         }
 
         if (aso.get("maxStrength") != null) {
-            this.maxStrength = (Integer) aso.get("maxStrength");
+            this.maxStrength =  aso.get("maxStrength");
         }
 
         if (aso.get("intelligence") != null) {
-            this.intelligence = (Integer) aso.get("intelligence");
+            this.intelligence =  aso.get("intelligence");
         }
 
         if (aso.get("leadershipAdded") != null) {
-            this.leadershipAdded = (Integer) aso.get("leadershipAdded");
+            this.leadershipAdded =  aso.get("leadershipAdded");
         }
 
         if (aso.get("status") != null) {
-            this.status = (Integer) aso.get("status");
+            this.status =  aso.get("status");
         }
 
         if (aso.get("name") != null) {
@@ -163,35 +163,35 @@ public class HeroBean implements EvonyPacket {
         }
 
         if (aso.get("stratagemBuffAdded") != null) {
-            this.stratagemBuffAdded = (Integer) aso.get("stratagemBuffAdded");
+            this.stratagemBuffAdded =  aso.get("stratagemBuffAdded");
         }
 
         if (aso.get("level") != null) {
-            this.level = (Integer) aso.get("level");
+            this.level =  aso.get("level");
         }
 
         if (aso.get("managementAdded") != null) {
-            this.managementAdded = (Integer) aso.get("managementAdded");
+            this.managementAdded =  aso.get("managementAdded");
         }
 
         if (aso.get("upgradeExp") != null) {
-            this.upgradeExp = (Integer) aso.get("upgradeExp");
+            this.upgradeExp =  aso.get("upgradeExp");
         }
 
         if (aso.get("isHero") != null) {
-            this.isHero = (Integer) aso.get("isHero");
+            this.isHero =  aso.get("isHero");
         }
 
         if (aso.get("powerAdded") != null) {
-            this.powerAdded = (Integer) aso.get("powerAdded");
+            this.powerAdded =  aso.get("powerAdded");
         }
 
         if (aso.get("leadership") != null) {
-            this.leadership = (Integer) aso.get("leadership");
+            this.leadership =  aso.get("leadership");
         }
 
         if (aso.get("stamina") != null) {
-            this.stamina = (Integer) aso.get("stamina");
+            this.stamina =  aso.get("stamina");
         }
 
         if (aso.get("itemId") != null) {
@@ -199,11 +199,11 @@ public class HeroBean implements EvonyPacket {
         }
 
         if (aso.get("attack") != null) {
-            this.attack = (Integer) aso.get("attack");
+            this.attack =  aso.get("attack");
         }
 
         if (aso.get("itemAmount") != null) {
-            this.itemAmount = (Integer) aso.get("itemAmount");
+            this.itemAmount =  aso.get("itemAmount");
         }
 
         if (aso.get("equipmentbean") != null) {
@@ -556,35 +556,35 @@ public class HeroBean implements EvonyPacket {
         return aso;
     }
 
-    public Integer getStratagem() {
+    public Object getStratagem() {
         return stratagem;
     }
 
-    public void setStratagem(Integer stratagem) {
+    public void setStratagem(Object stratagem) {
         this.stratagem = stratagem;
     }
 
-    public Integer getExperience() {
+    public Object getExperience() {
         return experience;
     }
 
-    public void setExperience(Integer experience) {
+    public void setExperience(Object experience) {
         this.experience = experience;
     }
 
-    public Integer getLoyalty() {
+    public Object getLoyalty() {
         return loyalty;
     }
 
-    public void setLoyalty(Integer loyalty) {
+    public void setLoyalty(Object loyalty) {
         this.loyalty = loyalty;
     }
 
-    public Integer getFieldtype() {
+    public Object getFieldtype() {
         return fieldtype;
     }
 
-    public void setFieldtype(Integer fieldtype) {
+    public void setFieldtype(Object fieldtype) {
         this.fieldtype = fieldtype;
     }
 
@@ -596,75 +596,75 @@ public class HeroBean implements EvonyPacket {
         this.infro = infro;
     }
 
-    public Integer getDefence() {
+    public Object getDefence() {
         return defence;
     }
 
-    public void setDefence(Integer defence) {
+    public void setDefence(Object defence) {
         this.defence = defence;
     }
 
-    public Integer getManagement() {
+    public Object getManagement() {
         return management;
     }
 
-    public void setManagement(Integer management) {
+    public void setManagement(Object management) {
         this.management = management;
     }
 
-    public Integer getPolitics() {
+    public Object getPolitics() {
         return politics;
     }
 
-    public void setPolitics(Integer politics) {
+    public void setPolitics(Object politics) {
         this.politics = politics;
     }
 
-    public Integer getManagementBuffAdded() {
+    public Object getManagementBuffAdded() {
         return managementBuffAdded;
     }
 
-    public void setManagementBuffAdded(Integer managementBuffAdded) {
+    public void setManagementBuffAdded(Object managementBuffAdded) {
         this.managementBuffAdded = managementBuffAdded;
     }
 
-    public Integer getSpeed() {
+    public Object getSpeed() {
         return speed;
     }
 
-    public void setSpeed(Integer speed) {
+    public void setSpeed(Object speed) {
         this.speed = speed;
     }
 
-    public Integer getMorale() {
+    public Object getMorale() {
         return morale;
     }
 
-    public void setMorale(Integer morale) {
+    public void setMorale(Object morale) {
         this.morale = morale;
     }
 
-    public Integer getPower() {
+    public Object getPower() {
         return power;
     }
 
-    public void setPower(Integer power) {
+    public void setPower(Object power) {
         this.power = power;
     }
 
-    public Integer getPowerBuffAdded() {
+    public Object getPowerBuffAdded() {
         return powerBuffAdded;
     }
 
-    public void setPowerBuffAdded(Integer powerBuffAdded) {
+    public void setPowerBuffAdded(Object powerBuffAdded) {
         this.powerBuffAdded = powerBuffAdded;
     }
 
-    public Integer getId() {
+    public Object getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Object id) {
         this.id = id;
     }
 
@@ -676,11 +676,11 @@ public class HeroBean implements EvonyPacket {
         this.sex = sex;
     }
 
-    public Integer getNpc_id() {
+    public Object getNpc_id() {
         return npc_id;
     }
 
-    public void setNpc_id(Integer npc_id) {
+    public void setNpc_id(Object npc_id) {
         this.npc_id = npc_id;
     }
 
@@ -700,11 +700,11 @@ public class HeroBean implements EvonyPacket {
         this.facebook_id = facebook_id;
     }
 
-    public Integer getRemainPoint() {
+    public Object getRemainPoint() {
         return remainPoint;
     }
 
-    public void setRemainPoint(Integer remainPoint) {
+    public void setRemainPoint(Object remainPoint) {
         this.remainPoint = remainPoint;
     }
 
@@ -716,43 +716,43 @@ public class HeroBean implements EvonyPacket {
         this.logoUrl = logoUrl;
     }
 
-    public Integer getStratagemAdded() {
+    public Object getStratagemAdded() {
         return stratagemAdded;
     }
 
-    public void setStratagemAdded(Integer stratagemAdded) {
+    public void setStratagemAdded(Object stratagemAdded) {
         this.stratagemAdded = stratagemAdded;
     }
 
-    public Integer getMaxStrength() {
+    public Object getMaxStrength() {
         return maxStrength;
     }
 
-    public void setMaxStrength(Integer maxStrength) {
+    public void setMaxStrength(Object maxStrength) {
         this.maxStrength = maxStrength;
     }
 
-    public Integer getIntelligence() {
+    public Object getIntelligence() {
         return intelligence;
     }
 
-    public void setIntelligence(Integer intelligence) {
+    public void setIntelligence(Object intelligence) {
         this.intelligence = intelligence;
     }
 
-    public Integer getLeadershipAdded() {
+    public Object getLeadershipAdded() {
         return leadershipAdded;
     }
 
-    public void setLeadershipAdded(Integer leadershipAdded) {
+    public void setLeadershipAdded(Object leadershipAdded) {
         this.leadershipAdded = leadershipAdded;
     }
 
-    public Integer getStatus() {
+    public Object getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(Object status) {
         this.status = status;
     }
 
@@ -764,67 +764,67 @@ public class HeroBean implements EvonyPacket {
         this.name = name;
     }
 
-    public Integer getStratagemBuffAdded() {
+    public Object getStratagemBuffAdded() {
         return stratagemBuffAdded;
     }
 
-    public void setStratagemBuffAdded(Integer stratagemBuffAdded) {
+    public void setStratagemBuffAdded(Object stratagemBuffAdded) {
         this.stratagemBuffAdded = stratagemBuffAdded;
     }
 
-    public Integer getLevel() {
+    public Object getLevel() {
         return level;
     }
 
-    public void setLevel(Integer level) {
+    public void setLevel(Object level) {
         this.level = level;
     }
 
-    public Integer getManagementAdded() {
+    public Object getManagementAdded() {
         return managementAdded;
     }
 
-    public void setManagementAdded(Integer managementAdded) {
+    public void setManagementAdded(Object managementAdded) {
         this.managementAdded = managementAdded;
     }
 
-    public Integer getUpgradeExp() {
+    public Object getUpgradeExp() {
         return upgradeExp;
     }
 
-    public void setUpgradeExp(Integer upgradeExp) {
+    public void setUpgradeExp(Object upgradeExp) {
         this.upgradeExp = upgradeExp;
     }
 
-    public Integer getIsHero() {
+    public Object getIsHero() {
         return isHero;
     }
 
-    public void setIsHero(Integer isHero) {
+    public void setIsHero(Object isHero) {
         this.isHero = isHero;
     }
 
-    public Integer getPowerAdded() {
+    public Object getPowerAdded() {
         return powerAdded;
     }
 
-    public void setPowerAdded(Integer powerAdded) {
+    public void setPowerAdded(Object powerAdded) {
         this.powerAdded = powerAdded;
     }
 
-    public Integer getLeadership() {
+    public Object getLeadership() {
         return leadership;
     }
 
-    public void setLeadership(Integer leadership) {
+    public void setLeadership(Object leadership) {
         this.leadership = leadership;
     }
 
-    public Integer getStamina() {
+    public Object getStamina() {
         return stamina;
     }
 
-    public void setStamina(Integer stamina) {
+    public void setStamina(Object stamina) {
         this.stamina = stamina;
     }
 
@@ -836,19 +836,19 @@ public class HeroBean implements EvonyPacket {
         this.itemId = itemId;
     }
 
-    public Integer getAttack() {
+    public Object getAttack() {
         return attack;
     }
 
-    public void setAttack(Integer attack) {
+    public void setAttack(Object attack) {
         this.attack = attack;
     }
 
-    public Integer getItemAmount() {
+    public Object getItemAmount() {
         return itemAmount;
     }
 
-    public void setItemAmount(Integer itemAmount) {
+    public void setItemAmount(Object itemAmount) {
         this.itemAmount = itemAmount;
     }
 
