@@ -25,4 +25,5 @@ flex-messaging          Contains the Flex library. It is used for the handling o
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/7b7e1669e348e25a44452a7ec867fee0 "githalytics.com")](http://githalytics.com/Pilsburgh/Efony)
 
+[![Analytics](https://ga-beacon.appspot.com/UA-54737482-2/Pilsburgh/Efony?pixel)](https://github.com/igrigorik/ga-beacon)
 
